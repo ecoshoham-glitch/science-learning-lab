@@ -6,6 +6,9 @@
   supplied by the owner and resized) beside the illustration on the 1673 timeline card.
 - Timeline events can show up to three images; on phones several images sit in a row above the text.
 - Media entries record their pixel size (checked by a test).
+- Fix (microscope-lens 1.0.0, pre-release): switching samples twice within one animation frame skipped the
+  first sample's observation. Observations are now recorded on every change; only drawing is coalesced.
+  Regression test added (failed before the fix).
 
 ## 0.7.1 – 2026-10-09 (prototype, not released)
 

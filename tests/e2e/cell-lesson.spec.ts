@@ -66,6 +66,21 @@ test.describe("microscope simulation", () => {
     await expect(frame.locator("#found-list")).toContainText("המיקרוסקופ המורכב לא מראה חיידקים");
   });
 
+  test("switching samples twice within one frame still records both observations", async ({ page }) => {
+    await page.goto("/he/simulations/microscope-lens");
+    const frame = simFrame(page);
+    // Wait until the platform has initialized the simulation (it stays inert until then).
+    await expect(frame.locator("body")).not.toHaveAttribute("aria-busy", "true");
+    await expect(frame.locator("#found-list")).toContainText("דפנות תאי שעם");
+    // Both clicks run in the same task, before the next animation frame.
+    await frame.locator("body").evaluate(() => {
+      (document.querySelector('input[name="sample"][value="pond"]') as HTMLInputElement).click();
+      (document.querySelector('input[name="sample"][value="blood"]') as HTMLInputElement).click();
+    });
+    await expect(frame.locator("#found-list")).toContainText("חד-תאיים במים");
+    await expect(frame.locator("#found-list")).toContainText("תאי דם אדומים");
+  });
+
   test("activity tasks tick from the simulation's observations", async ({ page }) => {
     await page.goto("/he/simulations/microscope-lens");
     const frame = simFrame(page);

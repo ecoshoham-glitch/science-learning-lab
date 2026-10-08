@@ -390,17 +390,20 @@
   }
 
   // Changes are coalesced into one update per frame, so dragging the slider cannot flood the host.
+  // Observations are recorded at once, on every change, so a quick switch between samples is never
+  // missed. Only drawing and reporting are coalesced into one per frame (no flooding the host).
   var pending = false;
   function update() {
+    addOnce(state.samplesViewed, state.sample);
+    addOnce(state.instrumentsUsed, state.instrument);
+    var now = currentMagnification();
+    updateDiscoveries(now, visibility(now));
     if (pending) return;
     pending = true;
     window.requestAnimationFrame(function () {
       pending = false;
-      addOnce(state.samplesViewed, state.sample);
-      addOnce(state.instrumentsUsed, state.instrument);
       var m = currentMagnification();
       var seen = visibility(m);
-      updateDiscoveries(m, seen);
       draw(m, seen);
       renderText(m, seen);
       bridge.reportObservables(computeObservables(m, seen));
