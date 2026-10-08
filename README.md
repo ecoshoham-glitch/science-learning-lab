@@ -14,8 +14,9 @@ Core principle: one platform, many independent scientific simulations, and multi
   - **From gene to protein** (`public/sims/genetic-code/1.0.0`) – DOM/SVG
 - Three activities (data, not code); two of them reuse the same enzyme lab
 - Activity tasks checked live against what the simulation reports (protocol level 3)
+- Lessons: one demo lesson generated from a transcript, playable self-paced or teacher-led
 
-Not yet: accounts, database, teachers' tools, AI, hosting. See `docs/DEVELOPMENT_ROADMAP.md`.
+Not yet: accounts, database, teachers' tools, the in-app AI connection, hosting. See `docs/DEVELOPMENT_ROADMAP.md`.
 
 ## Run it locally
 

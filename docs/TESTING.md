@@ -29,7 +29,17 @@
 
 ## Last run
 
-2026-10-08: unit 44/44 passed; end-to-end 26/26 passed (13 scenarios × desktop and phone).
+2026-10-08 (0.2.0): unit 54/54 passed; end-to-end 38/38 passed (19 scenarios × desktop and phone).
+One intermittent timeout was seen once in the genetic-code e2e test under load; 12 repeated runs passed.
+
+## Lesson tests
+
+- Lesson references resolve to available simulation versions and compatible activities; a wrong version is detected.
+- Transcript lessons keep only a fingerprint and stay unreviewed until review.
+- Privacy screen removes e-mails, phones, valid Israeli IDs and links; keeps ordinary numbers.
+- E2E: self-paced blocks "next" until a question is answered; the lesson's simulation activity completes
+  through the real simulation; teacher-led hides answers until revealed and moves with arrow keys;
+  provenance shown; English + accessibility.
 
 ## Not yet verified
 

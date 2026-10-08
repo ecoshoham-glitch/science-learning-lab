@@ -11,7 +11,8 @@
     "skip": "Skip to main content",
     "switchLanguage": "עברית",
     "switchLanguageLabel": "עבור לעברית",
-    "prototype": "Prototype – not for use with students"
+    "prototype": "Prototype – not for use with students",
+    "lessons": "Lessons"
   },
   "home": {
     "title": "See science happen",
@@ -88,12 +89,70 @@
       "builder": "Build an activity on any simulation, without code",
       "ai": "Create activities and lessons with AI",
       "import": "Upload existing simulations",
-      "studio": "Describe a new simulation, and AI builds it"
+      "studio": "Describe a new simulation, and AI builds it",
+      "transcript": "Create a complete lesson from a lesson or video transcript"
     },
-    "status": "Planned"
+    "status": "Planned",
+    "exampleText": "What it will look like: a lesson created with AI from a video transcript",
+    "exampleLink": "See the example lesson"
   },
   "footer": {
     "text": "Science Learning Lab · prototype in development",
     "privacy": "The site does not collect personal information at this stage."
+  },
+  "lessons": {
+    "title": "Lessons",
+    "lead": "Complete lessons that combine explanation, simulations, questions and discussion. Every lesson works teacher-led and self-paced.",
+    "open": "Open lesson",
+    "minutes": "{count} minutes",
+    "blocks": "{count} parts",
+    "fromTranscript": "Created with AI from a transcript",
+    "notReviewed": "Draft – not reviewed",
+    "modeLabel": "How to learn",
+    "selfPaced": "Self-paced",
+    "teacherLed": "Teacher-led",
+    "selfPacedHint": "The student moves on alone, part by part.",
+    "teacherLedHint": "Classroom display. The teacher moves on and decides when to reveal answers. Arrow keys work too.",
+    "part": "Part {current} of {total}",
+    "next": "Next part",
+    "prev": "Previous part",
+    "answerFirst": "Answer the question to continue",
+    "check": "Check",
+    "reveal": "Reveal the answer to the class",
+    "hide": "Hide the answer",
+    "correctAnswer": "Correct answer",
+    "misconception": "Common misconception",
+    "prediction": "Prediction",
+    "checkpoint": "Check your understanding",
+    "discussion": "Discussion",
+    "teacherNote": "Note for the teacher",
+    "summary": "Summary",
+    "next_lesson": "Coming next",
+    "simulation": "Simulation",
+    "aiBlock": "AI-generated · not reviewed",
+    "libraryBlock": "From the library",
+    "done": "You finished the lesson",
+    "restart": "Start over",
+    "objectives": "Learning objectives",
+    "misconceptions": "Misconceptions this lesson addresses",
+    "howMade": "How this lesson was made",
+    "transcript": "Source",
+    "transcriptNote": "The transcript itself is not stored on the site; only a fingerprint is kept, for traceability.",
+    "steps": {
+      "rights": "Right to use the transcript",
+      "privacy": "Privacy screening before AI",
+      "analysis": "Analysis: topics, objectives, misconceptions",
+      "outline": "Teacher approves the outline",
+      "generation": "Lesson generation",
+      "teacherReview": "Teacher review and editing",
+      "contentReview": "Content review before public publication"
+    },
+    "status": {
+      "done": "Done",
+      "pending": "Pending",
+      "skipped-demo": "Skipped in demo"
+    },
+    "notSaved": "Progress is not saved in the prototype.",
+    "empty": "No lessons yet."
   }
 }

@@ -80,15 +80,22 @@
     }
 
     var lastHeight = 0;
+    // Measure the content (body), not the document: the document is never shorter than the frame,
+    // so measuring it would let the frame grow but never shrink.
+    function contentHeight() {
+      var body = root.document.body;
+      var style = root.getComputedStyle(body);
+      return body.getBoundingClientRect().height + parseFloat(style.marginTop) + parseFloat(style.marginBottom);
+    }
     function resize() {
-      var h = Math.ceil(root.document.documentElement.scrollHeight);
+      var h = Math.ceil(contentHeight());
       if (Math.abs(h - lastHeight) > 4) {
         lastHeight = h;
         send("resize", { height: Math.max(200, Math.min(4000, h)) });
       }
     }
     if (typeof root.ResizeObserver === "function") {
-      new root.ResizeObserver(resize).observe(root.document.documentElement);
+      new root.ResizeObserver(resize).observe(root.document.body);
     }
 
     return {

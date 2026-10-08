@@ -4,6 +4,9 @@ Newest first. "Owner" = project owner approval.
 
 | Date | Decision | Status |
 | --- | --- | --- |
+| 2026-10-08 | Demo lesson "viruses-intro" generated from an owner-supplied transcript by running the §9.2 pipeline manually (Claude as the AI step). Transcript not committed; fingerprint only. Lesson text written in original words | Implemented, awaiting owner review |
+| 2026-10-08 | Lesson delivery modes are one component with configuration, not two copies (self-paced: answer before next; teacher-led: teacher reveals answers, arrow keys) | Implemented |
+| 2026-10-08 | Bridge measures body height (frames can shrink as well as grow). Packages are still pre-release 1.0.0, so updated in place | Implemented |
 | 2026-10-08 | Language routing without middleware/proxy (root page redirects to `/he`) so the site does not depend on Node-runtime proxy support at the host | Implemented |
 | 2026-10-08 | Hebrew is the default language regardless of browser language (`localeDetection: false`) | Implemented, reversible |
 | 2026-10-08 | Fonts self-hosted via @fontsource (no Google Fonts requests from students' browsers) | Implemented |

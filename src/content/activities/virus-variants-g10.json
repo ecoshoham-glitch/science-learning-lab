@@ -1,0 +1,91 @@
+{
+  "activityVersion": 1,
+  "id": "virus-variants-g10",
+  "simulation": {
+    "id": "genetic-code",
+    "version": "1.0.0"
+  },
+  "title": {
+    "he": "מהגן אל החלבון – גם כשהגן הוא של נגיף",
+    "en": "From gene to protein – even when the gene is a virus's"
+  },
+  "audience": {
+    "he": "כיתה י', חלק משיעור, כ-10 דקות",
+    "en": "Grade 10, part of a lesson, about 10 minutes"
+  },
+  "objectives": [
+    {
+      "he": "להסביר שהתא מתרגם כל mRNA לפי אותו קוד גנטי – גם mRNA של נגיף",
+      "en": "Explain that the cell translates any mRNA with the same genetic code – including a virus's mRNA"
+    },
+    {
+      "he": "להבחין בין שינוי ב-DNA שאינו משנה את החלבון לבין שינוי שמחליף חומצת אמינו",
+      "en": "Distinguish a DNA change that leaves the protein unchanged from one that replaces an amino acid"
+    }
+  ],
+  "curriculum": {
+    "status": "suggested",
+    "note": {
+      "he": "הצעה בלבד – טרם נבדקה מול תוכנית הלימודים הרשמית בביולוגיה.",
+      "en": "Suggestion only – not yet checked against the official biology curriculum."
+    }
+  },
+  "config": {
+    "params": {},
+    "lockedParams": []
+  },
+  "steps": [
+    {
+      "kind": "task",
+      "prompt": {
+        "he": "דמיינו שהגן בסימולציה הוא גן של חלבון מעטפת של נגיף. מצאו שינוי של בסיס אחד שלא משנה את החלבון, ושינוי של בסיס אחד שמחליף חומצת אמינו. בין שינוי לשינוי, חזרו לגן המקורי.",
+        "en": "Imagine the gene in the simulation codes for a virus's coat protein. Find a one-base change that leaves the protein unchanged, and a one-base change that replaces an amino acid. Go back to the original gene between changes."
+      },
+      "hint": {
+        "he": "שנו את הבסיס השלישי בקודון GCC (בסיס 6). אחר כך נסו את הבסיס הראשון בקודון AAA (בסיס 10).",
+        "en": "Change the third base of the GCC codon (base 6). Then try the first base of the AAA codon (base 10)."
+      },
+      "conditions": [
+        {
+          "op": "includesAll",
+          "observable": "mutationTypesFound",
+          "values": [
+            "silent"
+          ]
+        },
+        {
+          "op": "includesAll",
+          "observable": "mutationTypesFound",
+          "values": [
+            "missense"
+          ]
+        }
+      ],
+      "checklist": [
+        {
+          "he": "מצאתם שינוי שלא משנה את החלבון (מוטציה שקטה)",
+          "en": "You found a change that leaves the protein unchanged (silent mutation)"
+        },
+        {
+          "he": "מצאתם שינוי שמחליף חומצת אמינו",
+          "en": "You found a change that replaces an amino acid"
+        }
+      ],
+      "success": {
+        "he": "מצאתם את שני סוגי השינויים.",
+        "en": "You found both kinds of change."
+      }
+    },
+    {
+      "kind": "reflect",
+      "prompt": {
+        "he": "מערכת החיסון \"זוכרת\" נגיף לפי הצורה של החלבונים שעל פניו. מה עלול לקרות לזיכרון הזה אם בגן של חלבון המעטפת מופיעה מוטציה שמחליפה חומצת אמינו?",
+        "en": "The immune system \"remembers\" a virus by the shape of the proteins on its surface. What might happen to that memory if a mutation in the coat-protein gene replaces an amino acid?"
+      },
+      "sampleAnswer": {
+        "he": "החלפת חומצת אמינו עלולה לשנות מעט את צורת החלבון שעל פני הנגיף. אם השינוי נמצא באזור שמערכת החיסון מזהה, הזיהוי עלול להיחלש, והנגיף יכול להדביק שוב גם מי שכבר נחשף אליו או התחסן. זו אחת הסיבות שחיסונים נגד נגיפים שמשתנים מהר, כמו שפעת, מתעדכנים מדי פעם. מוטציה שקטה לא משנה את החלבון, ולכן לא משפיעה על הזיהוי.",
+        "en": "Replacing an amino acid may slightly change the shape of the virus's surface protein. If the change is in a region the immune system recognizes, recognition may weaken, and the virus can infect again even people who were exposed or vaccinated. This is one reason vaccines against fast-changing viruses, such as influenza, are updated from time to time. A silent mutation does not change the protein, so it does not affect recognition."
+      }
+    }
+  ]
+}

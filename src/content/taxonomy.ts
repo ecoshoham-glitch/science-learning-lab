@@ -31,6 +31,11 @@ export const concepts: Record<string, LocalizedText> = {
   mutations: { he: "מוטציות", en: "Mutations" },
   ribosome: { he: "ריבוזום", en: "Ribosome" },
   trna: { he: "tRNA", en: "tRNA" },
+  virus: { he: "נגיפים", en: "Viruses" },
+  "host-cell": { he: "תא מאכסן", en: "Host cell" },
+  "protein-synthesis": { he: "סינתזת חלבונים", en: "Protein synthesis" },
+  "immune-memory": { he: "זיכרון חיסוני", en: "Immune memory" },
+  vaccine: { he: "חיסונים", en: "Vaccines" },
 };
 
 export const difficulties: Record<string, LocalizedText> = {

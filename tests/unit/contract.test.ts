@@ -94,3 +94,43 @@ describe("protocol messages from simulations", () => {
     expect(allowed).toBeLessThanOrEqual(11);
   });
 });
+
+describe("lessons", () => {
+  it("every lesson references available simulations and compatible activities", async () => {
+    const { lessons, checkLessonReferences } = await import("@/content/registry");
+    expect(lessons.length).toBeGreaterThan(0);
+    for (const l of lessons) expect(checkLessonReferences(l), l.id).toEqual([]);
+  });
+
+  it("detects a lesson that points to a simulation version the library does not have", async () => {
+    const { lessons, checkLessonReferences } = await import("@/content/registry");
+    const l = structuredClone(lessons[0]);
+    const block = l.blocks.find((b) => b.kind === "simulation");
+    if (block?.kind === "simulation") block.simulation.version = "9.9.9";
+    expect(checkLessonReferences(l).join(" ")).toContain("library has 1.0.0");
+  });
+
+  it("transcript-based lessons store a fingerprint, never the transcript, and stay unreviewed until a person reviews them", async () => {
+    const { lessons } = await import("@/content/registry");
+    for (const l of lessons.filter((x) => x.provenance.source === "transcript")) {
+      expect(l.provenance.transcript?.sha256).toMatch(/^[0-9a-f]{64}$/);
+      expect(JSON.stringify(l)).not.toContain("transcriptText");
+      expect(l.provenance.pipeline.privacy.status).toBe("done");
+      const aiBlocks = l.blocks.filter((b) => b.origin === "ai-generated");
+      if (l.provenance.pipeline.teacherReview.status !== "done") expect(aiBlocks.every((b) => !b.reviewed)).toBe(true);
+    }
+  });
+
+  it("lesson concepts exist in the taxonomy", async () => {
+    const { lessons } = await import("@/content/registry");
+    for (const l of lessons) for (const c of l.keyConcepts) expect(concepts[c], c).toBeDefined();
+  });
+});
+
+describe("activity checklists", () => {
+  it("each checklist line corresponds to exactly one condition", () => {
+    for (const a of activities)
+      for (const s of a.steps)
+        if (s.kind === "task" && s.checklist) expect(s.checklist.length, `${a.id}`).toBe(s.conditions.length);
+  });
+});

@@ -9,4 +9,4 @@
 | 4 · AI and import | Classes, join codes, assignments, progress; review/publish workflow; AI activity builder; import of HTML/ZIP, approved iframes, links | Planned |
 | 5 · Pilot | 1–2 classes with partner teachers; device and accessibility testing | Planned |
 | 6 · Simulation studio (beta) | Teachers describe new simulations; AI writes sandboxed code with tests; validation report; approval | Planned |
-| Later | Lessons from transcripts (teacher-led and self-paced), AI tutor, H5P/xAPI, LTI 1.3, AR, NFC | Planned |
+| Later | Lessons from transcripts: model, player and demo **done**; upload, AI calls, outline approval, editor and review queue planned. AI tutor, H5P/xAPI, LTI 1.3, AR, NFC | Partly prototyped |

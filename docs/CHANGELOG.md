@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.0 – 2026-10-08 (prototype, not released)
+
+- Lesson model v1 (blocks, delivery modes, provenance) and lesson player with self-paced and teacher-led modes.
+- Lessons list and lesson pages; "Lessons" in the main navigation; example link on the teachers page.
+- Demo lesson from a transcript: "Viruses: what they are, how they take over cells, and how the body remembers them".
+- New activity `virus-variants-g10` on `genetic-code@1.0.0` (the simulation now has two activities).
+- Privacy screening for transcripts (deterministic pass) with tests.
+- Fix: simulation frames can shrink to fit their content.
+- Fix: checklist lines must match task conditions one-to-one (enforced by a test).
+
 ## 0.1.0 – 2026-10-08 (prototype, not released)
 
 - Next.js 16 project with Hebrew (default, RTL) and English (LTR).
