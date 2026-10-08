@@ -137,6 +137,24 @@ describe("lessons", () => {
     expect(problems).toContain("duplicate item ids");
   });
 
+  it("detects broken timelines: unknown stage or track, year order, stages going backwards", async () => {
+    const { getLesson, checkLessonReferences } = await import("@/content/registry");
+    const l = structuredClone(getLesson("cell-discovery")!);
+    const tl = l.blocks.find((b) => b.kind === "timeline");
+    expect(tl).toBeDefined();
+    if (tl?.kind === "timeline") {
+      tl.events[0].stage = "nope";
+      tl.events[1].track = "nope";
+      tl.events[3].year = 1500;
+      tl.events[tl.events.length - 1].stage = tl.stages[1].id;
+    }
+    const problems = checkLessonReferences(l).join(" | ");
+    expect(problems).toContain("unknown stage nope");
+    expect(problems).toContain("unknown track nope");
+    expect(problems).toContain("out of year order");
+    expect(problems).toContain("goes back to an earlier stage");
+  });
+
   it("lesson concepts exist in the taxonomy", async () => {
     const { lessons } = await import("@/content/registry");
     for (const l of lessons) for (const c of l.keyConcepts) expect(concepts[c], c).toBeDefined();

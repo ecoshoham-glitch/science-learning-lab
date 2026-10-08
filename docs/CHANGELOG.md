@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0 – 2026-10-08 (prototype, not released)
+
+- Lesson model: `timeline` block – an integrative timeline with stages of progress, parallel tracks (e.g.
+  tools vs ideas), a proportional overview strip, gaps between periods, expandable events, a track filter,
+  and a teacher-only mark on events added beyond the source.
+- Lesson `cell-discovery` 0.2.0: new part 11, "The full timeline: tools and ideas" (12 events, 6 stages,
+  1590–1939).
+
 ## 0.4.0 – 2026-10-08 (prototype, not released)
 
 - Biology topic "The cell – the unit of life" (first topic), with new concepts `cell`, `cell-theory`, `microscope`.

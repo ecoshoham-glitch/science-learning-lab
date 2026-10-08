@@ -20,6 +20,10 @@ Player: `src/components/lesson/LessonPlayer.tsx`. Pages: `/[locale]/lessons`, `/
   - `categorize` – sort items into categories (e.g. true / false), with an optional explanation per item.
   Games are shuffled deterministically by block id (never starting solved), scored per item, and must be
   checked once before "next" in self-paced mode; teacher-led mode adds "show the solution to the class".
+- `timeline` – an integrative timeline: `stages` (periods of progress), `tracks` (parallel strands, e.g.
+  tools and ideas) and `events` in year order (year, optional approximate `yearLabel`, stage, track, title,
+  text, `fromSource`). Shown as a proportional overview strip (always left-to-right) plus an accessible
+  list grouped by stage, with gaps of 40+ years marked. Not scored.
 - Every block records `origin` (`ai-generated`, `teacher`, `library`) and `reviewed`. Unreviewed AI blocks
   are labelled in the UI.
 - Lessons reference library items; they never copy simulation code. `checkLessonReferences` verifies that

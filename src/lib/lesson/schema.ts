@@ -99,6 +99,35 @@ const categorizeBlock = z.object({
   feedback: gameFeedback,
 });
 
+/**
+ * An integrative timeline: events grouped into stages of progress and into parallel tracks
+ * (for example tools vs ideas), so students see how one drives the other. Events are in year order.
+ * `fromSource: false` marks content added beyond the source material, for the teacher's review.
+ */
+const timelineBlock = z.object({
+  ...blockMeta,
+  kind: z.literal("timeline"),
+  title: localizedText,
+  intro: localizedText,
+  stages: z.array(z.object({ id: itemId, title: localizedText })).min(1),
+  tracks: z.array(z.object({ id: itemId, label: localizedText })).min(1),
+  events: z
+    .array(
+      z.object({
+        id: itemId,
+        year: z.number().int(),
+        /** Shown instead of the bare year when the date is approximate (e.g. "~1590"). */
+        yearLabel: localizedText.optional(),
+        stage: itemId,
+        track: itemId,
+        title: localizedText,
+        text: localizedText,
+        fromSource: z.boolean(),
+      }),
+    )
+    .min(2),
+});
+
 export const GAME_KINDS = ["sequence", "match", "categorize"] as const;
 
 export const lessonBlockSchema = z.discriminatedUnion("kind", [
@@ -110,6 +139,7 @@ export const lessonBlockSchema = z.discriminatedUnion("kind", [
   sequenceBlock,
   matchBlock,
   categorizeBlock,
+  timelineBlock,
 ]);
 export type LessonBlock = z.infer<typeof lessonBlockSchema>;
 

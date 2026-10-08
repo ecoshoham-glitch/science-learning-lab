@@ -9,6 +9,7 @@ import type { ObservableValues } from "@/lib/simulation/protocol";
 import { SimulationHost } from "@/components/SimulationHost";
 import { ActivityPanel } from "@/components/ActivityPanel";
 import { Game } from "@/components/lesson/GameBlocks";
+import { TimelineBlock } from "@/components/lesson/TimelineBlock";
 
 type Mode = "self-paced" | "teacher-led";
 
@@ -232,6 +233,8 @@ function Block({
     case "match":
     case "categorize":
       return <Game block={block} locale={locale} teacher={teacher} onChecked={(id) => onAnswered(id, "checked")} />;
+    case "timeline":
+      return <TimelineBlock block={block} locale={locale} teacher={teacher} />;
     case "summary":
       return (
         <div className="grid gap-4 max-w-[68ch]">

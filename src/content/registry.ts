@@ -103,6 +103,26 @@ export function checkLessonReferences(lesson: Lesson): string[] {
         if (!block.items.some((i) => i.category === c)) problems.push(`block ${block.id}: category ${c} has no items`);
       }
     }
+    if (block.kind === "timeline") {
+      const stages = new Set(block.stages.map((s) => s.id));
+      const tracks = new Set(block.tracks.map((t) => t.id));
+      const eventIds = block.events.map((e) => e.id);
+      if (new Set(eventIds).size !== eventIds.length) problems.push(`block ${block.id}: duplicate event ids`);
+      block.events.forEach((e, i) => {
+        if (!stages.has(e.stage)) problems.push(`block ${block.id}: event ${e.id} has unknown stage ${e.stage}`);
+        if (!tracks.has(e.track)) problems.push(`block ${block.id}: event ${e.id} has unknown track ${e.track}`);
+        if (i > 0 && e.year < block.events[i - 1].year) problems.push(`block ${block.id}: event ${e.id} is out of year order`);
+      });
+      for (const s of stages) if (!block.events.some((e) => e.stage === s)) problems.push(`block ${block.id}: stage ${s} has no events`);
+      // Stages must follow each other in time: a stage cannot start before the previous one starts.
+      let lastStage = -1;
+      const order = block.stages.map((s) => s.id);
+      for (const e of block.events) {
+        const idx = order.indexOf(e.stage);
+        if (idx < lastStage) problems.push(`block ${block.id}: event ${e.id} goes back to an earlier stage`);
+        lastStage = Math.max(lastStage, idx);
+      }
+    }
     if (block.kind !== "simulation") continue;
     const sim = getSimulation(block.simulation.id);
     if (!sim || sim.status !== "available") {

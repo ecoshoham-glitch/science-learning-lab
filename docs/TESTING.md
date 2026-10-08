@@ -50,7 +50,9 @@ Root cause of the earlier intermittent genetic-code failure found and fixed in 0
 - E2E (desktop + phone): topic is first in Biology; microscope magnifications and bacteria visibility in the
   real UI; activity ticks; lesson prediction and simulation; timeline solved with buttons, focus follows
   the moved item; matching and true/false scoring; teacher "show solution"; English; axe.
-- Last run 2026-10-08: unit 75/75; end-to-end 60/60.
+- Timeline (0.5.0): gaps, stage ranges, scale and overview range (unit); broken timelines detected
+  (contract); stages, gaps, expand, filter, teacher-only "added" marks, axe (e2e, desktop + phone).
+- Last run 2026-10-08: unit 80/80; end-to-end 64/64.
 
 ## Not yet verified
 

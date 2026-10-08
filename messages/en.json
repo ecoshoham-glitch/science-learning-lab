@@ -173,6 +173,17 @@
       "showSolution": "Show the solution to the class",
       "solutionShown": "This is the solution.",
       "tryAgain": "Change what is marked as not correct and check again."
+    },
+    "timeline": {
+      "label": "Timeline",
+      "filter": "Show",
+      "all": "All",
+      "gap": "{years} years",
+      "added": "Added – not from the source",
+      "overview": "The whole timeline, from {from} to {to}: {count} events in {stages} stages.",
+      "more": "More about {title}",
+      "stage": "Stage {n}",
+      "legend": "Legend"
     }
   },
   "subjects": {

@@ -28,7 +28,7 @@ async function goToPart(page: Page, part: number) {
   await page.getByRole("radio", { name: "בהובלת מורה" }).click();
   for (let i = 1; i < part; i++) await page.getByRole("button", { name: "לחלק הבא" }).click();
   await page.getByRole("radio", { name: "בקצב אישי" }).click();
-  await expect(page.getByText(`חלק ${part} מתוך 12`)).toBeVisible();
+  await expect(page.getByText(`חלק ${part} מתוך 13`)).toBeVisible();
 }
 
 test.describe("topic: the cell – the unit of life", () => {
@@ -184,11 +184,51 @@ test.describe("cell-discovery lesson", () => {
     await expect(await axeSerious(page)).toEqual([]);
   });
 
+  test("integrative timeline: stages by year, two tracks, gaps, expandable events, filter", async ({ page }) => {
+    await goToPart(page, 11);
+    await expect(page.getByRole("heading", { name: "ציר הזמן המלא: כלים ורעיונות" })).toBeVisible();
+    // Self-paced: reading the timeline is not blocked by a check.
+    await expect(page.getByRole("button", { name: "לחלק הבא" })).toBeEnabled();
+
+    const list = page.getByTestId("timeline-list");
+    await expect(list.getByRole("heading", { level: 3 })).toHaveText([
+      "1נולד כלי חדש", "2תצפיות ראשונות", "3עדשות טובות יותר – מבט לתוך התא",
+      "4הכללה – תורת התא", "5מאין באים תאים?", "6מעבר לגבולות האור",
+    ]);
+    await expect(page.getByTestId("gap-achromatic")).toHaveText("154 שנים");
+    await expect(page.getByRole("img", { name: /מ-1550 עד 1950: 12 אירועים ב-6 שלבים/ })).toBeVisible();
+
+    const bacteria = page.getByTestId("event-bacteria").getByRole("button");
+    await expect(bacteria).toHaveAttribute("aria-expanded", "false");
+    await expect(bacteria).toContainText("1676");
+    await bacteria.click();
+    await expect(bacteria).toHaveAttribute("aria-expanded", "true");
+    await expect(page.getByText("ליווינהוק מתאר יצורים קטנים עוד יותר – חיידקים.")).toBeVisible();
+
+    // Filter to the tools track: only the four tool events remain.
+    await page.getByLabel("כלים וטכנולוגיה").check();
+    await expect(list.locator('[data-testid^="event-"]')).toHaveCount(4);
+    await page.getByLabel("הכול").check();
+    await expect(list.locator('[data-testid^="event-"]')).toHaveCount(12);
+    // Additions beyond the transcript are marked only for the teacher.
+    await expect(page.getByText("תוספת – לא מהמקור")).toHaveCount(0);
+    await expect(await axeSerious(page)).toEqual([]);
+  });
+
+  test("teacher-led timeline marks events added beyond the transcript", async ({ page }) => {
+    await page.goto(URL);
+    await page.getByRole("radio", { name: "בהובלת מורה" }).click();
+    for (let i = 1; i < 11; i++) await page.keyboard.press("ArrowLeft");
+    await expect(page.getByText("חלק 11 מתוך 13")).toBeVisible();
+    await expect(page.getByTestId("event-virchow").getByText("תוספת – לא מהמקור")).toBeVisible();
+    await expect(page.getByTestId("event-hooke-cork").getByText("תוספת – לא מהמקור")).toHaveCount(0);
+  });
+
   test("teacher-led: the teacher can show a game's solution to the class", async ({ page }) => {
     await page.goto(URL);
     await page.getByRole("radio", { name: "בהובלת מורה" }).click();
     for (let i = 1; i < 7; i++) await page.keyboard.press("ArrowLeft");
-    await expect(page.getByText("חלק 7 מתוך 12")).toBeVisible();
+    await expect(page.getByText("חלק 7 מתוך 13")).toBeVisible();
     await page.getByRole("button", { name: "הצג פתרון לכיתה" }).click();
     await expect(page.getByText("זה הפתרון.")).toBeVisible();
     await expect(page.locator('[data-testid^="seq-item-"]').first()).toHaveAttribute("data-testid", "seq-item-hooke");

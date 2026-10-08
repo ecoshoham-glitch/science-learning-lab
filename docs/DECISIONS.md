@@ -4,6 +4,7 @@ Newest first. "Owner" = project owner approval.
 
 | Date | Decision | Status |
 | --- | --- | --- |
+| 2026-10-08 | Timeline block is lesson data with stages and tracks; each event records `fromSource` so additions beyond the transcript are visible to the teacher (not to students) for review. Validation enforces year order and forward-moving stages | Implemented |
 | 2026-10-08 | Game blocks (`sequence`, `match`, `categorize`) are lesson data, not simulations: no code per game, shuffled deterministically by block id, scored by pure functions (`src/lib/lesson/games.ts`). Ordering uses up/down buttons rather than drag-and-drop, for keyboard and screen-reader access | Implemented |
 | 2026-10-08 | New simulation `microscope-lens` built for the cell lesson because no library simulation fitted (§9.2 step 4). Simplified model: ball-lens optics, fixed ×50 compound microscope, 0.2 mm visibility limit | Implemented, awaiting owner scientific review |
 | 2026-10-08 | Lesson "cell-discovery" from transcript: corrected "150 years" to about 170; added Virchow (1855) and that Hooke saw dead cells; omitted an age-inappropriate anecdote and the unproven Vermeer-model claim | Implemented, awaiting owner review |

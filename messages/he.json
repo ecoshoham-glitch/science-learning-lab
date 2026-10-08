@@ -173,6 +173,17 @@
       "showSolution": "הצג פתרון לכיתה",
       "solutionShown": "זה הפתרון.",
       "tryAgain": "שנו את מה שמסומן כלא נכון ובדקו שוב."
+    },
+    "timeline": {
+      "label": "ציר זמן",
+      "filter": "הצגה",
+      "all": "הכול",
+      "gap": "{years} שנים",
+      "added": "תוספת – לא מהמקור",
+      "overview": "ציר הזמן כולו, מ-{from} עד {to}: {count} אירועים ב-{stages} שלבים.",
+      "more": "עוד על {title}",
+      "stage": "שלב {n}",
+      "legend": "מקרא"
     }
   },
   "subjects": {
