@@ -1,6 +1,6 @@
 import { manifestSchema, type SimulationManifest } from "@/lib/simulation/manifest";
 import { activitySchema, type Activity } from "@/lib/activity/schema";
-import { lessonSchema, type Lesson } from "@/lib/lesson/schema";
+import { eventMedia, lessonSchema, type Lesson } from "@/lib/lesson/schema";
 import { topicMapSchema, type TopicMap } from "@/lib/topic-map/schema";
 import { checkMapStructure } from "@/lib/topic-map/layout";
 import { topics } from "./taxonomy";
@@ -151,7 +151,7 @@ export function checkLessonReferences(lesson: Lesson): string[] {
         if (i > 0 && e.year < block.events[i - 1].year) problems.push(`block ${block.id}: event ${e.id} is out of year order`);
       });
       for (const e of block.events) {
-        if (e.media && !getMedia(e.media)) problems.push(`block ${block.id}: event ${e.id} uses unknown media ${e.media}`);
+        for (const id of eventMedia(e)) if (!getMedia(id)) problems.push(`block ${block.id}: event ${e.id} uses unknown media ${id}`);
       }
       for (const s of stages) if (!block.events.some((e) => e.stage === s)) problems.push(`block ${block.id}: stage ${s} has no events`);
       // Stages must follow each other in time: a stage cannot start before the previous one starts.

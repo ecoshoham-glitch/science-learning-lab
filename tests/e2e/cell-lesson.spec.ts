@@ -212,8 +212,11 @@ test.describe("cell-discovery lesson", () => {
     await expect(hooke).toContainText("שחזור אמנותי מודרני");
     await expect(page.getByTestId("event-ball-lens").getByRole("img", { name: /המיקרוסקופ של ליווינהוק מאחור/ })).toBeVisible();
     await expect(page.getByTestId("event-ball-lens")).toContainText("איור סכמטי");
+    await expect(page.getByTestId("event-ball-lens").getByRole("img", { name: /צילום של המיקרוסקופ של ליווינהוק/ })).toBeVisible();
+    await expect(page.getByTestId("event-ball-lens")).toContainText("Jeroen Rouwkema");
+    await expect(page.getByTestId("event-ball-lens").locator("img")).toHaveCount(2);
     for (const id of ["hooke-cork", "ball-lens", "protists", "schleiden", "schwann"]) {
-      const img = page.getByTestId(`event-${id}`).locator("img");
+      const img = page.getByTestId(`event-${id}`).locator("img").first();
       await expect(img).toBeVisible();
       expect(await img.evaluate((el) => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(100);
     }

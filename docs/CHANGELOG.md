@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.2 – 2026-10-09 (prototype, not released)
+
+- Real photo of Leeuwenhoek's microscope (exact replica; Jeroen Rouwkema, Wikimedia Commons, CC BY-SA 3.0,
+  supplied by the owner and resized) beside the illustration on the 1673 timeline card.
+- Timeline events can show up to three images; on phones several images sit in a row above the text.
+- Media entries record their pixel size (checked by a test).
+
 ## 0.7.1 – 2026-10-09 (prototype, not released)
 
 - Original illustration of Leeuwenhoek's single-lens microscope (SVG, gentle focusing motion, respects

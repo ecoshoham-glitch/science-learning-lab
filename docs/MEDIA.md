@@ -17,6 +17,7 @@ confirmed before public publication.
 | Schleiden | 19th-century engraving, later colouring | Public domain (age); colouring source to confirm | No |
 | Schwann | 19th-century photograph | Public domain (age) | No |
 
+| Leeuwenhoek's microscope (photo) | Exact replica, photo by Jeroen Rouwkema | CC BY-SA 3.0 (credit + licence shown; resized copy stays CC BY-SA) | Yes – Wikimedia Commons |
 | Leeuwenhoek's microscope | Original schematic SVG drawn for the platform from descriptions of surviving instruments | Original | Yes (lensonleeuwenhoek.net, parts) |
 
 The four portrait files were supplied by the owner (a screenshot) and cropped; they are small (165×225 px).

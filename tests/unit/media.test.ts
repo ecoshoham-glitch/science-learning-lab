@@ -26,6 +26,21 @@ describe("media library", () => {
     }
   });
 
+  it("share-alike and attribution licences name the author in the credit", () => {
+    const photo = media.find((m) => m.id === "leeuwenhoek-microscope-photo")!;
+    expect(photo.licence).toBe("cc-by-sa-3.0");
+    expect(photo.credit.he).toContain("Jeroen Rouwkema");
+    expect(photo.credit.he).toContain("CC BY-SA 3.0");
+  });
+
+  it("declared sizes match the image files", async () => {
+    const { imageSize } = await import("./image-size");
+    for (const m of media) {
+      const s = imageSize(path.join("public", m.file));
+      expect(s, m.id).toEqual({ width: m.width, height: m.height });
+    }
+  });
+
   it("modern reconstructions are labelled as such for students", () => {
     for (const m of media.filter((x) => x.kind === "reconstruction")) expect(m.note, m.id).toBeDefined();
   });

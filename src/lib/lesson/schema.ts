@@ -123,12 +123,17 @@ const timelineBlock = z.object({
         title: localizedText,
         text: localizedText,
         /** Optional picture from the media library (e.g. a portrait of the person who made the discovery). */
-        media: itemId.optional(),
+        media: z.union([itemId, z.array(itemId).min(1).max(3)]).optional(),
         fromSource: z.boolean(),
       }),
     )
     .min(2),
 });
+
+/** Media ids of a timeline event, whether written as one id or a list. */
+export function eventMedia(e: { media?: string | string[] }): string[] {
+  return e.media === undefined ? [] : Array.isArray(e.media) ? e.media : [e.media];
+}
 
 export const GAME_KINDS = ["sequence", "match", "categorize"] as const;
 

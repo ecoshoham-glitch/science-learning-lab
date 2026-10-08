@@ -22,7 +22,9 @@
     },
     "licence": "free-art-license",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:13_Portrait_of_Robert_Hooke.JPG",
-    "sourceVerified": true
+    "sourceVerified": true,
+    "width": 165,
+    "height": 225
   },
   {
     "id": "leeuwenhoek",
@@ -43,7 +45,9 @@
     },
     "licence": "public-domain",
     "sourceUrl": "https://www.rijksmuseum.nl/en/collection/SK-A-957",
-    "sourceVerified": true
+    "sourceVerified": true,
+    "width": 165,
+    "height": 225
   },
   {
     "id": "schleiden",
@@ -63,7 +67,9 @@
       "en": "19th-century engraving (later colouring). Public domain."
     },
     "licence": "public-domain",
-    "sourceVerified": false
+    "sourceVerified": false,
+    "width": 165,
+    "height": 225
   },
   {
     "id": "schwann",
@@ -84,7 +90,9 @@
     },
     "licence": "public-domain",
     "sourceUrl": "https://wellcomecollection.org/works/wtwafh6w",
-    "sourceVerified": false
+    "sourceVerified": false,
+    "width": 165,
+    "height": 224
   },
   {
     "id": "leeuwenhoek-microscope",
@@ -94,7 +102,6 @@
       "he": "המיקרוסקופ של ליווינהוק",
       "en": "Leeuwenhoek's microscope"
     },
-    "years": "1670s",
     "alt": {
       "he": "איור של המיקרוסקופ של ליווינהוק מאחור: לוח פליז מלבני ובראשו עדשה זעירה; מולה סיכה שעליה הדגימה, על בסיס שזז למעלה ולמטה בעזרת ברגים",
       "en": "Illustration of Leeuwenhoek's microscope from the back: a rectangular brass plate with a tiny lens near the top; facing it, a pin holding the specimen, on a block moved up and down by screws"
@@ -109,6 +116,34 @@
     },
     "licence": "original",
     "sourceUrl": "https://lensonleeuwenhoek.net/content/parts",
+    "sourceVerified": true,
+    "width": 330,
+    "height": 450
+  },
+  {
+    "id": "leeuwenhoek-microscope-photo",
+    "kind": "photo",
+    "file": "/media/instruments/leeuwenhoek-microscope-photo.jpg",
+    "name": {
+      "he": "המיקרוסקופ של ליווינהוק",
+      "en": "Leeuwenhoek's microscope"
+    },
+    "width": 420,
+    "height": 699,
+    "alt": {
+      "he": "צילום של המיקרוסקופ של ליווינהוק: לוח פליז קטן עם ארבע מסמרות, עדשה זעירה בחלקו העליון, סיכה מול העדשה, ובורג ארוך עם ידית בצורת כנף",
+      "en": "Photo of Leeuwenhoek's microscope: a small brass plate with four rivets, a tiny lens near the top, a pin facing the lens, and a long screw with a wing-shaped handle"
+    },
+    "note": {
+      "he": "העתק מדויק של המכשיר. המיקרוסקופים המקוריים שמורים במוזיאונים.",
+      "en": "An exact replica. The original microscopes are kept in museums."
+    },
+    "credit": {
+      "he": "צילום: Jeroen Rouwkema, ויקימדיה. CC BY-SA 3.0 (הוקטן).",
+      "en": "Photo: Jeroen Rouwkema, Wikimedia Commons. CC BY-SA 3.0 (resized)."
+    },
+    "licence": "cc-by-sa-3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leeuwenhoek_Microscope.png",
     "sourceVerified": true
   }
 ]

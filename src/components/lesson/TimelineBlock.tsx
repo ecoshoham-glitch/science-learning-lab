@@ -2,7 +2,7 @@
 
 import { Fragment, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
-import type { LessonBlock } from "@/lib/lesson/schema";
+import { eventMedia, type LessonBlock } from "@/lib/lesson/schema";
 import type { Media } from "@/lib/media/schema";
 import { overviewRange, scaleYear, stageRanges, timelineGaps } from "@/lib/lesson/timeline";
 
@@ -156,7 +156,8 @@ export function TimelineBlock({
           const stage = stageIndex.get(e.stage) ?? 0;
           const newStage = i === 0 || visible[i - 1].stage !== e.stage;
           const ti = trackIndex.get(e.track) ?? 0;
-          const m = e.media ? media[e.media] : undefined;
+          const ms = eventMedia(e).map((id) => media[id]).filter((x): x is Media => !!x);
+          const m = ms[0];
           return (
             <Fragment key={e.id}>
               {gaps[e.id] && (
@@ -179,21 +180,30 @@ export function TimelineBlock({
                 </span>
                 <article
                   aria-labelledby={`${block.id}-${e.id}-title`}
-                  className={"flex items-start gap-3 sm:gap-4 p-3 rounded-xl border bg-surface " + (selected === e.id ? "border-leaf" : "border-line")}
+                  className={
+                    "flex items-start gap-3 sm:gap-4 p-3 rounded-xl border bg-surface " +
+                    (ms.length > 1 ? "flex-col sm:flex-row " : "") +
+                    (selected === e.id ? "border-leaf" : "border-line")
+                  }
                 >
-                  {m && (
-                    <figure className="m-0 shrink-0 w-20 sm:w-28">
-                      {/* Self-hosted, small portrait; next/image adds nothing for these static thumbnails. */}
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={m.file}
-                        alt={m.alt[locale]}
-                        width={165}
-                        height={225}
-                        loading="lazy"
-                        className="block w-full h-auto aspect-[165/225] object-cover rounded-lg border border-line bg-paper"
-                      />
-                    </figure>
+                  {ms.length > 0 && (
+                    <div className={"shrink-0 grid gap-2 " + (ms.length > 1 ? "grid-cols-2 sm:grid-cols-1 w-full max-w-[15rem] sm:w-32 items-start" : "w-20 sm:w-28")}>
+                      {ms.map((x) => (
+                        <figure key={x.id} className="m-0">
+                          {/* Self-hosted static images; next/image adds nothing for these thumbnails. */}
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={x.file}
+                            alt={x.alt[locale]}
+                            width={x.width}
+                            height={x.height}
+                            loading="lazy"
+                            style={{ aspectRatio: `${x.width} / ${x.height}` }}
+                            className="block w-full h-auto object-cover rounded-lg border border-line bg-paper"
+                          />
+                        </figure>
+                      ))}
+                    </div>
                   )}
                   <div className="min-w-0 grid gap-1">
                     <p className="m-0 text-sm text-muted flex flex-wrap items-center gap-x-2">
@@ -202,17 +212,18 @@ export function TimelineBlock({
                     </p>
                     {m && (
                       <p className="m-0 text-lg font-bold leading-snug">
-                        {m.name[locale]} <span dir="ltr" className="text-sm font-normal text-muted whitespace-nowrap"><bdi>({m.years})</bdi></span>
+                        {m.name[locale]}{" "}
+                        {m.years && <span dir="ltr" className="text-sm font-normal text-muted whitespace-nowrap"><bdi>({m.years})</bdi></span>}
                       </p>
                     )}
                     <h4 id={`${block.id}-${e.id}-title`} className={"m-0 leading-snug " + (m ? "font-semibold" : "font-bold text-lg")}>{e.title[locale]}</h4>
                     <p className="m-0">{e.text[locale]}</p>
-                    {m?.note && <p className="m-0 text-sm font-semibold text-warn">{m.note[locale]}</p>}
-                    {m && <p className="m-0 text-xs text-muted">{t("timeline.imageCredit")}: {m.credit[locale]}</p>}
-                    {teacher && (!e.fromSource || (m && !m.sourceVerified)) && (
+                    {ms.map((x) => x.note && <p key={`note-${x.id}`} className="m-0 text-sm font-semibold text-warn">{x.note[locale]}</p>)}
+                    {ms.map((x) => <p key={`credit-${x.id}`} className="m-0 text-xs text-muted">{t("timeline.imageCredit")}: {x.credit[locale]}</p>)}
+                    {teacher && (!e.fromSource || ms.some((x) => !x.sourceVerified)) && (
                       <p className="m-0 flex flex-wrap gap-2">
                         {!e.fromSource && <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-warn-soft text-warn">{t("timeline.added")}</span>}
-                        {m && !m.sourceVerified && <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-warn-soft text-warn">{t("timeline.unverifiedSource")}</span>}
+                        {ms.some((x) => !x.sourceVerified) && <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-warn-soft text-warn">{t("timeline.unverifiedSource")}</span>}
                       </p>
                     )}
                   </div>

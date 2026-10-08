@@ -7,7 +7,7 @@ import { getActivity, getLesson, getMedia, getSimulation, lessons } from "@/cont
 import type { Media } from "@/lib/media/schema";
 import type { SimulationManifest } from "@/lib/simulation/manifest";
 import type { Activity } from "@/lib/activity/schema";
-import type { Lesson } from "@/lib/lesson/schema";
+import { eventMedia, type Lesson } from "@/lib/lesson/schema";
 import { LessonPlayer } from "@/components/lesson/LessonPlayer";
 
 type Params = Promise<{ locale: string; id: string }>;
@@ -39,8 +39,10 @@ export default async function LessonPage({ params }: { params: Params }) {
   for (const b of lesson.blocks) {
     if (b.kind === "timeline") {
       for (const e of b.events) {
-        const m = e.media ? getMedia(e.media) : undefined;
-        if (m) mediaById[m.id] = m;
+        for (const id of eventMedia(e)) {
+          const m = getMedia(id);
+          if (m) mediaById[m.id] = m;
+        }
       }
     }
     if (b.kind !== "simulation") continue;
