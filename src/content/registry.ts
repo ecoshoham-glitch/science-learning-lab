@@ -5,21 +5,24 @@ import { lessonSchema, type Lesson } from "@/lib/lesson/schema";
 import enzymeLab from "./simulations/enzyme-lab.json";
 import geneticCode from "./simulations/genetic-code.json";
 import ribosome3d from "./simulations/ribosome-3d.json";
+import microscopeLens from "./simulations/microscope-lens.json";
 
 import enzymeTemperatureG10 from "./activities/enzyme-temperature-g10.json";
 import enzymePhInquiryG12 from "./activities/enzyme-ph-inquiry-g12.json";
 import mutationTypesG10 from "./activities/mutation-types-g10.json";
 import virusVariantsG10 from "./activities/virus-variants-g10.json";
+import microscopeDiscoveryG10 from "./activities/microscope-discovery-g10.json";
 
 import virusesIntro from "./lessons/viruses-intro.json";
+import cellDiscovery from "./lessons/cell-discovery.json";
 
 /**
  * Prototype content registry. In the next phase this moves to the database;
  * the validation below stays the same.
  */
-const rawManifests: unknown[] = [enzymeLab, geneticCode, ribosome3d];
-const rawActivities: unknown[] = [enzymeTemperatureG10, enzymePhInquiryG12, mutationTypesG10, virusVariantsG10];
-const rawLessons: unknown[] = [virusesIntro];
+const rawManifests: unknown[] = [enzymeLab, geneticCode, microscopeLens, ribosome3d];
+const rawActivities: unknown[] = [enzymeTemperatureG10, enzymePhInquiryG12, mutationTypesG10, virusVariantsG10, microscopeDiscoveryG10];
+const rawLessons: unknown[] = [cellDiscovery, virusesIntro];
 
 export const simulations: SimulationManifest[] = rawManifests.map((m) => manifestSchema.parse(m));
 export const activities: Activity[] = rawActivities.map((a) => activitySchema.parse(a));
@@ -82,6 +85,23 @@ export function checkLessonReferences(lesson: Lesson): string[] {
     ids.add(block.id);
     if (block.kind === "question" && !block.options.some((o) => o.id === block.correct)) {
       problems.push(`block ${block.id}: correct answer ${block.correct} is not an option`);
+    }
+    if (block.kind === "sequence" || block.kind === "match" || block.kind === "categorize") {
+      const itemIds = block.kind === "match" ? block.pairs.map((p) => p.id) : block.items.map((i) => i.id);
+      if (new Set(itemIds).size !== itemIds.length) problems.push(`block ${block.id}: duplicate item ids`);
+    }
+    if (block.kind === "match") {
+      const rights = block.pairs.map((p) => p.right.he);
+      if (new Set(rights).size !== rights.length) problems.push(`block ${block.id}: two pairs share the same right side`);
+    }
+    if (block.kind === "categorize") {
+      const cats = new Set(block.categories.map((c) => c.id));
+      for (const item of block.items) {
+        if (!cats.has(item.category)) problems.push(`block ${block.id}: item ${item.id} has unknown category ${item.category}`);
+      }
+      for (const c of cats) {
+        if (!block.items.some((i) => i.category === c)) problems.push(`block ${block.id}: category ${c} has no items`);
+      }
     }
     if (block.kind !== "simulation") continue;
     const sim = getSimulation(block.simulation.id);

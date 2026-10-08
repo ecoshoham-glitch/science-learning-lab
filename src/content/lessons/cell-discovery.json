@@ -1,0 +1,465 @@
+{
+  "lessonVersion": 1,
+  "id": "cell-discovery",
+  "version": "0.1.0",
+  "title": {
+    "he": "גילוי התא: מכדור זכוכית לתורת התא",
+    "en": "Discovering the cell: from a glass ball to cell theory"
+  },
+  "summary": {
+    "he": "איך סוחר בדים מדלפט ראה לראשונה חיידקים, מה רוברט הוק ראה באמת בשעם, ואיך שליידן ושוואן הגיעו למסקנה שכל היצורים החיים בנויים מתאים. כולל סימולציית מיקרוסקופ, משחק ציר זמן, משחק התאמה ומשחק נכון/לא נכון.",
+    "en": "How a cloth merchant from Delft first saw bacteria, what Robert Hooke really saw in cork, and how Schleiden and Schwann concluded that all living things are made of cells. Includes a microscope simulation, a timeline game, a matching game and a true/false game."
+  },
+  "audience": {
+    "he": "כיתה י', שיעור פתיחה ליחידת התא, כ-45 דקות",
+    "en": "Grade 10, opening lesson of the cell unit, about 45 minutes"
+  },
+  "subject": "biology",
+  "grades": { "from": 10, "to": 12 },
+  "durationMinutes": 45,
+  "objectives": [
+    {
+      "he": "לתאר את התגליות של ליווינהוק, הוק, שליידן ושוואן ולסדר אותן על ציר הזמן",
+      "en": "Describe the discoveries of Leeuwenhoek, Hooke, Schleiden and Schwann and place them on a timeline"
+    },
+    {
+      "he": "להסביר את הקשר בין גודל עדשת הכדור להגדלה, ואיך הטכנולוגיה קבעה מה אפשר היה לגלות",
+      "en": "Explain the relationship between ball-lens size and magnification, and how technology determined what could be discovered"
+    },
+    {
+      "he": "לנסח את שתי הטענות של תורת התא ולהבחין בין תצפית לבין הכללה",
+      "en": "State the two claims of cell theory and distinguish an observation from a generalization"
+    }
+  ],
+  "keyConcepts": ["cell", "cell-theory", "microscope"],
+  "misconceptions": [
+    {
+      "he": "\"הוק ראה תאים חיים\" – בשעם הוא ראה דפנות של תאים מתים, חללים ריקים.",
+      "en": "\"Hooke saw living cells\" – in cork he saw the walls of dead cells, empty spaces."
+    },
+    {
+      "he": "\"מיקרוסקופ עם הרבה עדשות תמיד מגדיל יותר\" – בתקופה ההיא עדשת כדור אחת וזעירה הגדילה פי חמישה יותר.",
+      "en": "\"A microscope with many lenses always magnifies more\" – at the time a single tiny ball lens magnified five times more."
+    },
+    {
+      "he": "\"תצפית אחת מספיקה כדי להכריז על חוק כללי\" – תורת התא נבנתה מהצטברות של תצפיות רבות בצמחים ובבעלי חיים.",
+      "en": "\"One observation is enough to declare a general law\" – cell theory was built from many observations in plants and animals."
+    }
+  ],
+  "curriculum": {
+    "status": "suggested",
+    "note": {
+      "he": "הצעה של ה-AI בלבד – מקביל לנושא \"התא – יחידת המבנה והתפקוד\" ולהיסטוריה של המדע. טרם נבדק מול תוכנית הלימודים הרשמית.",
+      "en": "AI suggestion only – parallels the topic \"the cell – the unit of structure and function\" and the history of science. Not yet checked against the official curriculum."
+    }
+  },
+  "delivery": {
+    "modes": ["self-paced", "teacher-led"],
+    "selfPaced": { "requireAnswerBeforeNext": true },
+    "teacherLed": { "revealAnswersByTeacher": true }
+  },
+  "provenance": {
+    "source": "transcript",
+    "transcript": {
+      "label": {
+        "he": "תמלול סרטון על גילוי התאים (89 שורות)",
+        "en": "Transcript of a video on the discovery of cells (89 lines)"
+      },
+      "sha256": "863500ffc6bbe6701157c82841e7e91829eb65f8ce055cccc7f569878ba5488b",
+      "characters": 5959
+    },
+    "pipeline": {
+      "rights": {
+        "status": "pending",
+        "note": {
+          "he": "נדרש אישור המורה שמותר להשתמש בתמלול. נראה שהוא מסרטון חיצוני שפורסם; השיעור נכתב במילים מקוריות ואינו מעתיק את הטקסט.",
+          "en": "The teacher must confirm the right to use the transcript. It appears to come from a published external video; the lesson is written in original words and does not copy its text."
+        }
+      },
+      "privacy": {
+        "status": "done",
+        "note": {
+          "he": "סינון אוטומטי: 0 פרטים הוסרו. השמות בתמלול הם של דמויות היסטוריות בלבד. אין קולות של תלמידים.",
+          "en": "Automatic screening: 0 details removed. The names in the transcript are historical figures only. No student voices."
+        }
+      },
+      "analysis": {
+        "status": "done",
+        "note": {
+          "he": "תיקונים ותוספות: מהוק (1665) עד שליידן ושוואן (1838–1839) עברו כ-170 שנה, לא 150. נוספו: וירכוב (1855) \"כל תא נוצר מתא\", וההבהרה שהוק ראה תאים מתים. הושמטו: אנקדוטה שאינה מתאימה לגיל, והטענה שליווינהוק דגמן לציורי ורמיר (השערה שלא הוכחה).",
+          "en": "Corrections and additions: about 170 years passed from Hooke (1665) to Schleiden and Schwann (1838–1839), not 150. Added: Virchow (1855) \"every cell from a cell\", and the clarification that Hooke saw dead cells. Omitted: an anecdote unsuitable for the age group, and the claim that Leeuwenhoek modelled for Vermeer's paintings (an unproven hypothesis)."
+        }
+      },
+      "outline": {
+        "status": "skipped-demo",
+        "note": {
+          "he": "בהדגמה: המבנה לא אושר לפני היצירה. בתהליך האמיתי המורה מאשר את המבנה קודם.",
+          "en": "Demo: the outline was not approved before generation. In the real flow the teacher approves it first."
+        }
+      },
+      "generation": {
+        "status": "done",
+        "note": {
+          "he": "נוצר על ידי Claude בתפקיד שלב ה-AI. לא הייתה בספרייה סימולציה מתאימה, ולכן נבנתה סימולציה חדשה (המיקרוסקופ של ליווינהוק) עם בדיקות מדעיות אוטומטיות, ופעילות עליה. נוספו שלושה משחקים: ציר זמן, התאמה ונכון/לא נכון.",
+          "en": "Generated by Claude acting as the AI step. The library had no suitable simulation, so a new one (Leeuwenhoek's microscope) was built with automated scientific tests, plus an activity on it. Three games were added: timeline, matching and true/false."
+        }
+      },
+      "teacherReview": {
+        "status": "pending",
+        "note": { "he": "ממתין לבדיקה ולעריכה של המורה.", "en": "Waiting for the teacher to review and edit." }
+      },
+      "contentReview": {
+        "status": "pending",
+        "note": { "he": "נדרשת בדיקת תוכן לפני פרסום ציבורי.", "en": "Content review is required before public publication." }
+      }
+    }
+  },
+  "blocks": [
+    {
+      "id": "hook",
+      "kind": "explanation",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "title": { "he": "סוחר בדים שגילה עולם שלם", "en": "A cloth merchant who discovered a whole world" },
+      "body": [
+        {
+          "he": "האדם הראשון שראה חיידקים לא היה מדען. אנטוני ואן ליווינהוק היה סוחר בדים בעיר דלפט שבהולנד, במאה ה-17.",
+          "en": "The first person to see bacteria was not a scientist. Antonie van Leeuwenhoek was a cloth merchant in the city of Delft, in the Netherlands, in the 17th century."
+        },
+        {
+          "he": "כמו סוחרי בדים אחרים, הוא בדק את איכות האריגים בעזרת זכוכית מגדלת – כדור קטן של זכוכית. מתוך סקרנות הוא התחיל להכין כדורי זכוכית בגדלים שונים, ובדק כמה כל אחד מהם מגדיל.",
+          "en": "Like other cloth merchants, he checked the quality of fabric with a magnifying glass – a small ball of glass. Out of curiosity he began making glass balls of different sizes and testing how much each one magnified."
+        },
+        {
+          "he": "בסוף הוא בנה מיקרוסקופ פשוט מאוד: עדשה אחת בלבד. ובכל זאת, בשנות ה-1670 הוא ראה בו משהו שאף אחד לא ראה לפניו.",
+          "en": "In the end he built a very simple microscope: just one lens. And yet in the 1670s he saw something through it that no one had seen before."
+        }
+      ]
+    },
+    {
+      "id": "predict-ball",
+      "kind": "question",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "purpose": "prediction",
+      "prompt": {
+        "he": "ליווינהוק השווה כדורי זכוכית בגדלים שונים. מה לדעתכם הוא גילה?",
+        "en": "Leeuwenhoek compared glass balls of different sizes. What do you think he discovered?"
+      },
+      "options": [
+        { "id": "big", "text": { "he": "כדור גדול יותר מגדיל יותר", "en": "A bigger ball magnifies more" } },
+        { "id": "small", "text": { "he": "כדור קטן יותר מגדיל יותר", "en": "A smaller ball magnifies more" } },
+        { "id": "same", "text": { "he": "הגודל לא משנה – כל הכדורים מגדילים אותו דבר", "en": "Size does not matter – all balls magnify the same" } }
+      ],
+      "correct": "small",
+      "feedback": {
+        "correct": {
+          "he": "זה מה שליווינהוק גילה: ככל שהכדור קטן יותר, ההגדלה גדולה יותר. בואו נבדוק את זה בעצמנו בסימולציה.",
+          "en": "That is what Leeuwenhoek discovered: the smaller the ball, the greater the magnification. Let's check it ourselves in the simulation."
+        },
+        "incorrect": {
+          "he": "זו השערה סבירה – והיא תיבדק עכשיו בסימולציה. שימו לב מה קורה להגדלה כשמשנים את קוטר הכדור.",
+          "en": "That is a reasonable guess – and you will test it now in the simulation. Watch what happens to the magnification when you change the ball's diameter."
+        }
+      }
+    },
+    {
+      "id": "sim-microscope",
+      "kind": "simulation",
+      "origin": "library",
+      "reviewed": false,
+      "simulation": { "id": "microscope-lens", "version": "1.0.0" },
+      "activityId": "microscope-discovery-g10",
+      "intro": {
+        "he": "עכשיו אתם ליווינהוק. שנו את גודל כדור הזכוכית, הסתכלו בדגימות, ונסו לגלות את מה שהוא גילה.",
+        "en": "Now you are Leeuwenhoek. Change the size of the glass ball, look at the samples, and try to discover what he discovered."
+      }
+    },
+    {
+      "id": "hooke",
+      "kind": "explanation",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "title": { "he": "רוברט הוק ופרוסת השעם", "en": "Robert Hooke and the slice of cork" },
+      "body": [
+        {
+          "he": "כמה שנים קודם, ב-1665, פרסם המדען האנגלי רוברט הוק ספר בשם \"מיקרוגרפיה\" – ציורים ותיאורים של עצמים זעירים כפי שנראו במיקרוסקופ.",
+          "en": "A few years earlier, in 1665, the English scientist Robert Hooke published a book called \"Micrographia\" – drawings and descriptions of tiny objects as seen through a microscope."
+        },
+        {
+          "he": "המיקרוסקופ של הוק היה מיקרוסקופ מורכב, עם כמה עדשות. הוא היה נוח לשימוש, אבל ההגדלה שלו הייתה מוגבלת – בערך פי 50. עדשות הכדור הזעירות של ליווינהוק הגיעו להגדלה של כ-250 ויותר.",
+          "en": "Hooke's microscope was a compound microscope, with several lenses. It was convenient to use, but its magnification was limited – about 50 times. Leeuwenhoek's tiny ball lenses reached about 250 times or more."
+        },
+        {
+          "he": "באחת התצפיות בספר, הוק חתך בסכין גילוח פרוסה דקה מאוד של שעם, ומצא שהיא מלאה בחללים קטנים, \"כמו חלת דבש\". הוא קרא לחללים האלה תאים (cells) – כמו חדרים קטנים.",
+          "en": "In one of the book's observations, Hooke cut a very thin slice of cork with a razor and found it full of small spaces, \"like a honeycomb\". He called these spaces cells – like little rooms."
+        },
+        {
+          "he": "שימו לב: שעם הוא רקמה מתה. הוק ראה רק את הדפנות של תאים מתים, עם חלל ריק בתוכם. הוא לא ידע שהתאים הם יחידות החיים.",
+          "en": "Note: cork is dead tissue. Hooke saw only the walls of dead cells, with an empty space inside. He did not know that cells are the units of life."
+        }
+      ]
+    },
+    {
+      "id": "check-hooke",
+      "kind": "question",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "purpose": "checkpoint",
+      "prompt": { "he": "מה בדיוק ראה רוברט הוק בפרוסת השעם?", "en": "What exactly did Robert Hooke see in the slice of cork?" },
+      "options": [
+        { "id": "living", "text": { "he": "תאים חיים, מלאים בתוכן", "en": "Living cells, full of contents" } },
+        { "id": "walls", "text": { "he": "דפנות של תאים מתים סביב חללים ריקים", "en": "Walls of dead cells around empty spaces" } },
+        { "id": "bacteria", "text": { "he": "חיידקים שחיים בתוך השעם", "en": "Bacteria living inside the cork" } },
+        { "id": "nuclei", "text": { "he": "גרעינים של תאים", "en": "Cell nuclei" } }
+      ],
+      "correct": "walls",
+      "feedback": {
+        "correct": {
+          "he": "נכון. השעם מורכב מתאים מתים, ולכן הוק ראה רק את הדפנות. השם \"תא\" נשאר עד היום.",
+          "en": "Correct. Cork is made of dead cells, so Hooke saw only the walls. The name \"cell\" has stayed to this day."
+        },
+        "incorrect": {
+          "he": "לא בדיוק. חשבו: האם השעם חי? ומה אפשר לראות בהגדלה של פי 50 בלבד?",
+          "en": "Not quite. Think: is cork alive? And what can be seen at only 50 times magnification?"
+        }
+      },
+      "misconception": {
+        "he": "קל לחשוב שהוק גילה את \"התא החי\". בפועל הוא נתן את השם, אבל לא הבין שהתאים חיים או שהם נמצאים בכל היצורים.",
+        "en": "It is easy to think Hooke discovered \"the living cell\". In fact he gave the name, but did not understand that cells are alive or that they are in all living things."
+      }
+    },
+    {
+      "id": "cell-theory",
+      "kind": "explanation",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "title": { "he": "כל היצורים החיים בנויים מתאים", "en": "All living things are made of cells" },
+      "body": [
+        {
+          "he": "עברו כ-170 שנה. ב-1838 חקר הבוטניקאי מתיאס שליידן רקמות של צמחים – עלים, גבעולים ושורשים – ומצא שכל רקמה שבדק בנויה מתאים, ולכל תא יש גרעין.",
+          "en": "About 170 years passed. In 1838 the botanist Matthias Schleiden studied plant tissues – leaves, stems and roots – and found that every tissue he examined was made of cells, each with a nucleus."
+        },
+        {
+          "he": "לפי הסיפור המפורסם, שליידן סיפר על כך בשיחה עם הזואולוג תיאודור שוואן. שוואן הבין שגם ברקמות של בעלי חיים שבדק הוא ראה תאים עם גרעין. ב-1839 הוא פרסם את המסקנה המשותפת: גם צמחים וגם בעלי חיים בנויים מתאים.",
+          "en": "According to the famous story, Schleiden described this in a conversation with the zoologist Theodor Schwann. Schwann realized that he too had seen cells with nuclei in the animal tissues he examined. In 1839 he published the shared conclusion: both plants and animals are made of cells."
+        },
+        {
+          "he": "כך נולדה תורת התא, עם שתי טענות: (1) כל היצורים החיים בנויים מתא אחד או יותר. (2) התא הוא יחידת החיים הבסיסית. את הטענה השנייה הם לא הוכיחו באמת באותה תקופה – אבל מחקרים מאוחרים יותר אישרו אותה.",
+          "en": "This is how cell theory was born, with two claims: (1) all living things are made of one or more cells. (2) The cell is the basic unit of life. They did not really prove the second claim at the time – but later research confirmed it."
+        },
+        {
+          "he": "שליידן ושוואן טעו בשאלה איך נוצרים תאים חדשים. ב-1855 ניסח הרופא רודולף וירכוב טענה שלישית, שהפכה לחלק מתורת התא: כל תא נוצר מתא אחר.",
+          "en": "Schleiden and Schwann were wrong about how new cells form. In 1855 the physician Rudolf Virchow stated a third claim that became part of cell theory: every cell comes from another cell."
+        }
+      ]
+    },
+    {
+      "id": "timeline",
+      "kind": "sequence",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "title": { "he": "ציר הזמן של גילוי התא", "en": "The timeline of the cell's discovery" },
+      "prompt": {
+        "he": "סדרו את התגליות מהמוקדמת (למעלה) למאוחרת (למטה). אפשר להזיז כל שורה בחיצים.",
+        "en": "Order the discoveries from earliest (top) to latest (bottom). Move each row with the arrows."
+      },
+      "items": [
+        {
+          "id": "hooke",
+          "text": { "he": "הוק מתאר \"תאים\" בפרוסת שעם", "en": "Hooke describes \"cells\" in a slice of cork" },
+          "detail": { "he": "1665 – הספר \"מיקרוגרפיה\"", "en": "1665 – the book \"Micrographia\"" }
+        },
+        {
+          "id": "leeuwenhoek",
+          "text": { "he": "ליווינהוק רואה חיידקים וחד-תאיים בטיפת מים", "en": "Leeuwenhoek sees bacteria and single-celled organisms in a drop of water" },
+          "detail": { "he": "שנות ה-1670", "en": "The 1670s" }
+        },
+        {
+          "id": "schleiden",
+          "text": { "he": "שליידן: כל רקמות הצמח בנויות מתאים", "en": "Schleiden: all plant tissues are made of cells" },
+          "detail": { "he": "1838", "en": "1838" }
+        },
+        {
+          "id": "schwann",
+          "text": { "he": "שוואן: גם בעלי חיים בנויים מתאים – תורת התא", "en": "Schwann: animals are made of cells too – cell theory" },
+          "detail": { "he": "1839", "en": "1839" }
+        },
+        {
+          "id": "virchow",
+          "text": { "he": "וירכוב: כל תא נוצר מתא", "en": "Virchow: every cell comes from a cell" },
+          "detail": { "he": "1855", "en": "1855" }
+        }
+      ],
+      "feedback": {
+        "correct": {
+          "he": "הסדר נכון. שימו לב לפער: כ-170 שנה בין התצפית הראשונה בתאים לבין ההבנה שהם יחידות החיים.",
+          "en": "The order is correct. Notice the gap: about 170 years between the first observation of cells and the understanding that they are the units of life."
+        },
+        "incorrect": { "he": "עוד לא.", "en": "Not yet." }
+      }
+    },
+    {
+      "id": "match-scientists",
+      "kind": "match",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "title": { "he": "מי גילה מה?", "en": "Who discovered what?" },
+      "prompt": { "he": "התאימו לכל אדם את התרומה שלו.", "en": "Match each person with their contribution." },
+      "pairs": [
+        {
+          "id": "leeuwenhoek",
+          "left": { "he": "אנטוני ואן ליווינהוק", "en": "Antonie van Leeuwenhoek" },
+          "right": { "he": "ראה לראשונה חיידקים בעדשת כדור זעירה", "en": "First saw bacteria through a tiny ball lens" }
+        },
+        {
+          "id": "hooke",
+          "left": { "he": "רוברט הוק", "en": "Robert Hooke" },
+          "right": { "he": "נתן לתאים את שמם, לפי מה שראה בשעם", "en": "Gave cells their name, based on what he saw in cork" }
+        },
+        {
+          "id": "schleiden",
+          "left": { "he": "מתיאס שליידן", "en": "Matthias Schleiden" },
+          "right": { "he": "הראה שכל רקמות הצמח בנויות מתאים", "en": "Showed that all plant tissues are made of cells" }
+        },
+        {
+          "id": "schwann",
+          "left": { "he": "תיאודור שוואן", "en": "Theodor Schwann" },
+          "right": { "he": "הראה שגם רקמות בעלי חיים בנויות מתאים", "en": "Showed that animal tissues are made of cells too" }
+        },
+        {
+          "id": "virchow",
+          "left": { "he": "רודולף וירכוב", "en": "Rudolf Virchow" },
+          "right": { "he": "טען שכל תא נוצר מתא אחר", "en": "Stated that every cell comes from another cell" }
+        }
+      ],
+      "feedback": {
+        "correct": { "he": "כל ההתאמות נכונות.", "en": "All matches are correct." },
+        "incorrect": { "he": "חלק מההתאמות לא נכונות.", "en": "Some matches are not correct." }
+      }
+    },
+    {
+      "id": "check-generalization",
+      "kind": "question",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "purpose": "checkpoint",
+      "prompt": {
+        "he": "מה איפשר לשליידן ולשוואן להכריז ש\"כל היצורים החיים בנויים מתאים\"?",
+        "en": "What allowed Schleiden and Schwann to declare that \"all living things are made of cells\"?"
+      },
+      "options": [
+        { "id": "many", "text": { "he": "הם חיברו תצפיות רבות – ברקמות שונות של צמחים וגם של בעלי חיים", "en": "They combined many observations – in different tissues of plants and of animals" } },
+        { "id": "one", "text": { "he": "תצפית אחת חדה במיקרוסקופ חזק במיוחד", "en": "One sharp observation with an especially strong microscope" } },
+        { "id": "proof", "text": { "he": "ניסוי שהוכיח שכל תא חי", "en": "An experiment that proved every cell is alive" } },
+        { "id": "hooke", "text": { "he": "הם רק חזרו על מה שהוק כבר כתב ב-1665", "en": "They only repeated what Hooke had already written in 1665" } }
+      ],
+      "correct": "many",
+      "feedback": {
+        "correct": {
+          "he": "נכון. זו הכללה: כשהם ראו את אותו דבר שוב ושוב, בצמחים ובבעלי חיים, הם הסיקו שזה חוק כללי.",
+          "en": "Correct. This is a generalization: when they saw the same thing again and again, in plants and animals, they concluded it is a general rule."
+        },
+        "incorrect": {
+          "he": "לא בדיוק. חזרו להסבר: מה כל אחד מהם בדק, ומה קרה כשהם חיברו את התצפיות שלהם?",
+          "en": "Not quite. Go back to the explanation: what did each of them examine, and what happened when they combined their observations?"
+        }
+      },
+      "misconception": {
+        "he": "תצפית אחת לא מספיקה להכללה. דווקא הצירוף של תצפיות רבות מסוגים שונים הוא שאיפשר את תורת התא.",
+        "en": "One observation is not enough for a generalization. It was the combination of many observations of different kinds that made cell theory possible."
+      }
+    },
+    {
+      "id": "true-false",
+      "kind": "categorize",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "title": { "he": "נכון או לא נכון?", "en": "True or false?" },
+      "prompt": { "he": "מיינו כל משפט: נכון או לא נכון.", "en": "Sort each statement: true or false." },
+      "categories": [
+        { "id": "true", "label": { "he": "נכון", "en": "True" } },
+        { "id": "false", "label": { "he": "לא נכון", "en": "False" } }
+      ],
+      "items": [
+        {
+          "id": "smaller-ball",
+          "text": { "he": "כדור זכוכית קטן יותר מגדיל יותר.", "en": "A smaller glass ball magnifies more." },
+          "category": "true",
+          "explanation": { "he": "נכון – זו התגלית של ליווינהוק, וראיתם אותה בסימולציה.", "en": "True – this is Leeuwenhoek's discovery, and you saw it in the simulation." }
+        },
+        {
+          "id": "hooke-living",
+          "text": { "he": "בשעם ראה הוק תאים חיים.", "en": "In cork, Hooke saw living cells." },
+          "category": "false",
+          "explanation": { "he": "לא נכון – השעם עשוי מתאים מתים; הוק ראה רק את הדפנות.", "en": "False – cork is made of dead cells; Hooke saw only the walls." }
+        },
+        {
+          "id": "compound-stronger",
+          "text": { "he": "המיקרוסקופ המורכב של המאה ה-17 הגדיל יותר מעדשת הכדור של ליווינהוק.", "en": "The 17th-century compound microscope magnified more than Leeuwenhoek's ball lens." },
+          "category": "false",
+          "explanation": { "he": "לא נכון – כ-50 לעומת כ-250. יותר עדשות לא תמיד אומר יותר הגדלה.", "en": "False – about 50 versus about 250. More lenses does not always mean more magnification." }
+        },
+        {
+          "id": "all-cells",
+          "text": { "he": "כל היצורים החיים בנויים מתא אחד או יותר.", "en": "All living things are made of one or more cells." },
+          "category": "true",
+          "explanation": { "he": "נכון – זו הטענה הראשונה של תורת התא.", "en": "True – this is the first claim of cell theory." }
+        },
+        {
+          "id": "virus-cell",
+          "text": { "he": "נגיף הוא תא.", "en": "A virus is a cell." },
+          "category": "false",
+          "explanation": { "he": "לא נכון – נגיף אינו תא ואינו יכול להתרבות בלי תא מאכסן. נלמד על כך בשיעור על נגיפים.", "en": "False – a virus is not a cell and cannot reproduce without a host cell. We will learn about this in the lesson on viruses." }
+        },
+        {
+          "id": "proved-alive",
+          "text": { "he": "שליידן ושוואן הוכיחו בניסוי שהתאים חיים.", "en": "Schleiden and Schwann proved by experiment that cells are alive." },
+          "category": "false",
+          "explanation": { "he": "לא נכון – הם הציעו זאת בלי הוכחה של ממש; מחקרים מאוחרים יותר אישרו את הטענה.", "en": "False – they proposed it without real proof; later research confirmed the claim." }
+        },
+        {
+          "id": "cell-from-cell",
+          "text": { "he": "כל תא נוצר מתא אחר.", "en": "Every cell comes from another cell." },
+          "category": "true",
+          "explanation": { "he": "נכון – זו הטענה של וירכוב (1855), שהפכה לחלק מתורת התא.", "en": "True – this is Virchow's claim (1855), which became part of cell theory." }
+        }
+      ],
+      "feedback": {
+        "correct": { "he": "מיינתם את כל המשפטים נכון.", "en": "You sorted all statements correctly." },
+        "incorrect": { "he": "חלק מהמשפטים לא מוינו נכון.", "en": "Some statements were not sorted correctly." }
+      }
+    },
+    {
+      "id": "discuss",
+      "kind": "discussion",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "prompt": {
+        "he": "ליווינהוק לא היה מדען, ובכל זאת שינה את המדע. ומה שהוא ראה היה תלוי בכלי שבנה. איזו טכנולוגיה היום מאפשרת לנו לראות דברים שלא יכולנו לראות קודם?",
+        "en": "Leeuwenhoek was not a scientist, yet he changed science. And what he saw depended on the tool he built. What technology today lets us see things we could not see before?"
+      },
+      "teacherNote": {
+        "he": "אפשר לחבר לשיעור על נגיפים: נגיפים קטנים מדי לכל מיקרוסקופ אור, ונראו לראשונה רק במיקרוסקופ האלקטרונים (משנת 1939). דוגמאות עכשוויות: טלסקופים בחלל, ריצוף DNA, מיקרוסקופיה קריוגנית של חלבונים. כדאי גם לדון בשאלה מי יכול לתרום למדע – סקרנות, התמדה ובדיקה זהירה.",
+        "en": "You can link to the lesson on viruses: viruses are too small for any light microscope and were first seen only with the electron microscope (from 1939). Current examples: space telescopes, DNA sequencing, cryo-electron microscopy of proteins. Also discuss who can contribute to science – curiosity, persistence and careful testing."
+      }
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "points": [
+        { "he": "1665: רוברט הוק ראה בשעם דפנות של תאים מתים ונתן להם את השם \"תאים\".", "en": "1665: Robert Hooke saw the walls of dead cells in cork and named them \"cells\"." },
+        { "he": "שנות ה-1670: ליווינהוק גילה שכדור זכוכית קטן מגדיל יותר, וראה לראשונה חיידקים וחד-תאיים.", "en": "The 1670s: Leeuwenhoek discovered that a small glass ball magnifies more, and first saw bacteria and single-celled organisms." },
+        { "he": "1838–1839: שליידן ושוואן חיברו תצפיות בצמחים ובבעלי חיים לתורת התא – כל היצורים החיים בנויים מתאים, והתא הוא יחידת החיים.", "en": "1838–1839: Schleiden and Schwann combined observations in plants and animals into cell theory – all living things are made of cells, and the cell is the unit of life." },
+        { "he": "1855: וירכוב – כל תא נוצר מתא אחר.", "en": "1855: Virchow – every cell comes from another cell." },
+        { "he": "מה שאפשר לגלות תלוי בכלים: התגליות התאפשרו בזכות שיפור במיקרוסקופים.", "en": "What we can discover depends on our tools: these discoveries were made possible by better microscopes." }
+      ],
+      "next": {
+        "he": "מה יש בתוך התא? המבנה של התא והאברונים שלו.",
+        "en": "What is inside the cell? The cell's structure and its organelles."
+      }
+    }
+  ]
+}

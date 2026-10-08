@@ -41,6 +41,17 @@ Root cause of the earlier intermittent genetic-code failure found and fixed in 0
   through the real simulation; teacher-led hides answers until revealed and moves with arrow keys;
   provenance shown; English + accessibility.
 
+## Cell lesson tests (0.4.0)
+
+- Microscope model: ball-lens focal length and magnification formula, ~1.3 mm ≈ 260×, monotonic and
+  inverse-proportional in diameter, compound fixed at 50×, bacteria need ×100 (threshold ≈ 3.4 mm), clamping.
+- Games logic: stable shuffle that never returns the solved order, moves at the edges, scoring of all three games.
+- Contract: broken game blocks (unknown/empty category, duplicate ids) are detected.
+- E2E (desktop + phone): topic is first in Biology; microscope magnifications and bacteria visibility in the
+  real UI; activity ticks; lesson prediction and simulation; timeline solved with buttons, focus follows
+  the moved item; matching and true/false scoring; teacher "show solution"; English; axe.
+- Last run 2026-10-08: unit 75/75; end-to-end 60/60.
+
 ## Not yet verified
 
 - Real iPhone/Safari and Firefox (tests use Chromium only).

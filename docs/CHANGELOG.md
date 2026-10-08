@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.4.0 – 2026-10-08 (prototype, not released)
+
+- Biology topic "The cell – the unit of life" (first topic), with new concepts `cell`, `cell-theory`, `microscope`.
+- New simulation `microscope-lens@1.0.0` (pre-release): Leeuwenhoek ball lens vs Hooke's ×50 compound
+  microscope; cork, pond water and blood samples; scientific model with unit tests.
+- New activity `microscope-discovery-g10` (5 steps: observe, find bacteria, threshold question, compound
+  microscope, reflection).
+- Lesson model: three game blocks – `sequence` (timeline), `match`, `categorize` (e.g. true/false) – scored,
+  deterministic shuffle, keyboard-accessible, "show solution" in teacher-led mode, must be checked before
+  moving on in self-paced mode.
+- Lesson "Discovering the cell" generated from an owner-supplied transcript (12 parts, 3 games).
+
 ## 0.3.0 – 2026-10-08 (prototype, not released)
 
 - Subjects: "Subjects" page and a page per subject. Biology has three topic folders: the cell, genetic

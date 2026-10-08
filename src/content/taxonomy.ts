@@ -36,6 +36,9 @@ export const concepts: Record<string, LocalizedText> = {
   "protein-synthesis": { he: "סינתזת חלבונים", en: "Protein synthesis" },
   "immune-memory": { he: "זיכרון חיסוני", en: "Immune memory" },
   vaccine: { he: "חיסונים", en: "Vaccines" },
+  cell: { he: "התא", en: "The cell" },
+  "cell-theory": { he: "תורת התא", en: "Cell theory" },
+  microscope: { he: "מיקרוסקופ", en: "Microscope" },
 };
 
 export const difficulties: Record<string, LocalizedText> = {
@@ -62,6 +65,16 @@ export type Topic = {
 };
 
 export const topics: Topic[] = [
+  {
+    id: "the-cell",
+    subject: "biology",
+    title: { he: "התא – יחידת החיים", en: "The cell – the unit of life" },
+    description: {
+      he: "איך גילו את התאים, איך המיקרוסקופ איפשר את הגילוי, ולמה כל היצורים החיים עשויים מתאים.",
+      en: "How cells were discovered, how the microscope made it possible, and why all living things are made of cells.",
+    },
+    concepts: ["cell", "cell-theory", "microscope"],
+  },
   {
     id: "cell-and-proteins",
     subject: "biology",

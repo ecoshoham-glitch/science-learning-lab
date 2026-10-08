@@ -154,7 +154,26 @@
       "skipped-demo": "דולג בהדגמה"
     },
     "notSaved": "באב-הטיפוס ההתקדמות לא נשמרת.",
-    "empty": "אין שיעורים עדיין."
+    "empty": "אין שיעורים עדיין.",
+    "answerFirstGame": "בדקו את המשחק כדי להמשיך",
+    "games": {
+      "sequence": "משחק סידור",
+      "match": "משחק התאמה",
+      "categorize": "משחק מיון",
+      "score": "{correct} מתוך {total} נכונים",
+      "allCorrect": "מושלם!",
+      "moveUp": "הזיזו את \"{item}\" מקום אחד למעלה",
+      "moveDown": "הזיזו את \"{item}\" מקום אחד למטה",
+      "moved": "\"{item}\" עכשיו במקום {position} מתוך {total}",
+      "position": "מקום {position}",
+      "right": "נכון",
+      "wrong": "לא נכון",
+      "choose": "בחרו…",
+      "unanswered": "יש פריטים שעוד לא בחרתם עבורם תשובה.",
+      "showSolution": "הצג פתרון לכיתה",
+      "solutionShown": "זה הפתרון.",
+      "tryAgain": "שנו את מה שמסומן כלא נכון ובדקו שוב."
+    }
   },
   "subjects": {
     "title": "נושאים",

@@ -1,0 +1,119 @@
+{
+  "activityVersion": 1,
+  "id": "microscope-discovery-g10",
+  "simulation": { "id": "microscope-lens", "version": "1.0.0" },
+  "title": {
+    "he": "בעקבות ליווינהוק: מה צריך כדי לראות חיידק?",
+    "en": "Following Leeuwenhoek: what does it take to see a bacterium?"
+  },
+  "audience": {
+    "he": "כיתה י', חלק משיעור, כ-12 דקות",
+    "en": "Grade 10, part of a lesson, about 12 minutes"
+  },
+  "objectives": [
+    {
+      "he": "להסביר את הקשר בין קוטר עדשת הכדור לבין ההגדלה שלה",
+      "en": "Explain the relationship between a ball lens's diameter and its magnification"
+    },
+    {
+      "he": "להסביר למה הטכנולוגיה של המיקרוסקופ קבעה מה אפשר היה לגלות על תאים",
+      "en": "Explain why microscope technology determined what could be discovered about cells"
+    }
+  ],
+  "curriculum": {
+    "status": "suggested",
+    "note": {
+      "he": "הצעה בלבד – טרם נבדקה מול תוכנית הלימודים הרשמית בביולוגיה.",
+      "en": "Suggestion only – not yet checked against the official biology curriculum."
+    }
+  },
+  "config": { "params": { "lensDiameter": 6 }, "lockedParams": [] },
+  "steps": [
+    {
+      "kind": "task",
+      "prompt": {
+        "he": "עם עדשת הכדור, הסתכלו בשלוש הדגימות: שעם, מי אגם ודם. מה מצליחים לראות בכל אחת?",
+        "en": "With the ball lens, look at all three samples: cork, pond water and blood. What can you see in each?"
+      },
+      "conditions": [
+        { "op": "includesAll", "observable": "observations", "values": ["cork-cells"] },
+        { "op": "includesAll", "observable": "observations", "values": ["protists"] },
+        { "op": "includesAll", "observable": "observations", "values": ["blood-cells"] }
+      ],
+      "checklist": [
+        { "he": "ראיתם את דפנות תאי השעם", "en": "You saw the cork cell walls" },
+        { "he": "ראיתם יצורים חד-תאיים בטיפת המים", "en": "You saw single-celled organisms in the water drop" },
+        { "he": "ראיתם תאי דם אדומים", "en": "You saw red blood cells" }
+      ],
+      "success": {
+        "he": "יפה. שימו לב: בטיפת המים יש גם נקודות זעירות ולא ברורות. מה הן?",
+        "en": "Well done. Notice the tiny, unclear specks in the water drop too. What are they?"
+      }
+    },
+    {
+      "kind": "task",
+      "prompt": {
+        "he": "בחרו את טיפת המים מהאגם. שנו את קוטר כדור הזכוכית עד שהנקודות הזעירות הופכות לחיידקים ברורים.",
+        "en": "Choose the pond-water drop. Change the glass ball's diameter until the tiny specks become clear bacteria."
+      },
+      "hint": {
+        "he": "ליווינהוק גילה שככל שהכדור קטן יותר, ההגדלה גדולה יותר. נסו כדור קטן מ-3 מ\"מ.",
+        "en": "Leeuwenhoek discovered that the smaller the ball, the greater the magnification. Try a ball smaller than 3 mm."
+      },
+      "conditions": [{ "op": "includesAll", "observable": "observations", "values": ["bacteria-visible"] }],
+      "checklist": [{ "he": "ראיתם חיידקים", "en": "You saw bacteria" }],
+      "success": {
+        "he": "ראיתם חיידקים – כמו ליווינהוק בשנות ה-1670.",
+        "en": "You saw bacteria – as Leeuwenhoek did in the 1670s."
+      }
+    },
+    {
+      "kind": "choice",
+      "prompt": {
+        "he": "מהו בערך הקוטר הגדול ביותר של כדור זכוכית שעדיין מראה חיידקים בבירור? בדקו בסימולציה.",
+        "en": "Roughly what is the largest glass ball that still shows bacteria clearly? Check in the simulation."
+      },
+      "options": [
+        { "id": "a", "text": { "he": "כ-1 מ\"מ", "en": "About 1 mm" } },
+        { "id": "b", "text": { "he": "כ-3.4 מ\"מ", "en": "About 3.4 mm" } },
+        { "id": "c", "text": { "he": "כ-6 מ\"מ", "en": "About 6 mm" } },
+        { "id": "d", "text": { "he": "כל גודל – גם 10 מ\"מ", "en": "Any size – even 10 mm" } }
+      ],
+      "correct": "b",
+      "feedback": {
+        "correct": {
+          "he": "נכון. בכדור של כ-3.4 מ\"מ ההגדלה היא בערך ×100 – המינימום כדי לראות חיידק בגודל 2 מיקרומטר. כל כדור קטן יותר מגדיל יותר.",
+          "en": "Correct. A ball of about 3.4 mm magnifies about 100× – the minimum for seeing a 2-micrometre bacterium. Any smaller ball magnifies more."
+        },
+        "incorrect": {
+          "he": "לא בדיוק. הזיזו את המחוון לאט מ-1 מ\"מ כלפי מעלה, ובדקו מתי החיידקים חוזרים להיות נקודות לא ברורות.",
+          "en": "Not quite. Move the slider slowly up from 1 mm and check when the bacteria turn back into unclear specks."
+        }
+      }
+    },
+    {
+      "kind": "task",
+      "prompt": {
+        "he": "עכשיו עברו למיקרוסקופ המורכב של רוברט הוק והסתכלו שוב בטיפת המים.",
+        "en": "Now switch to Robert Hooke's compound microscope and look at the water drop again."
+      },
+      "conditions": [{ "op": "includesAll", "observable": "observations", "values": ["bacteria-hidden-compound"] }],
+      "checklist": [{ "he": "הסתכלתם בטיפת המים במיקרוסקופ המורכב", "en": "You looked at the water drop with the compound microscope" }],
+      "success": {
+        "he": "במיקרוסקופ המורכב (×50) החיידקים נראים רק כנקודות. בשעם, לעומת זאת, הוק ראה היטב את התאים.",
+        "en": "With the compound microscope (×50) the bacteria are only specks. In cork, on the other hand, Hooke saw the cells well."
+      }
+    },
+    {
+      "kind": "reflect",
+      "prompt": {
+        "he": "רוברט הוק היה מדען מוביל, וליווינהוק היה סוחר בדים. למה דווקא ליווינהוק היה הראשון שראה חיידקים?",
+        "en": "Robert Hooke was a leading scientist and Leeuwenhoek was a cloth merchant. Why was Leeuwenhoek the first to see bacteria?"
+      },
+      "sampleAnswer": {
+        "he": "כי המכשיר של ליווינהוק הגדיל יותר. הוא גילה שכדור זכוכית קטן מגדיל יותר, ויצר כדורים זעירים שנתנו הגדלה של כ-×250, בעוד שהמיקרוסקופים המורכבים של התקופה לא עברו ×50. חיידק קטן מאוד (כ-2 מיקרומטר), ובהגדלה של ×50 הוא נראה רק כנקודה. מה שאפשר לגלות תלוי בכלים שיש בידינו – ולא רק בהשכלה של החוקר.",
+        "en": "Because Leeuwenhoek's instrument magnified more. He discovered that a small glass ball magnifies more and made tiny balls that magnified about 250×, while the compound microscopes of the time never exceeded 50×. A bacterium is very small (about 2 micrometres), and at 50× it appears only as a speck. What we can discover depends on the tools we have – not only on the researcher's training."
+      }
+    }
+  ]
+}

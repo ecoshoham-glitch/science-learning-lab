@@ -121,6 +121,22 @@ describe("lessons", () => {
     }
   });
 
+  it("detects broken game blocks: unknown category, empty category, duplicate items", async () => {
+    const { getLesson, checkLessonReferences } = await import("@/content/registry");
+    const l = structuredClone(getLesson("cell-discovery")!);
+    const cat = l.blocks.find((b) => b.kind === "categorize");
+    if (cat?.kind === "categorize") {
+      cat.items[0].category = "maybe";
+      cat.categories.push({ id: "unused", label: { he: "x", en: "x" } });
+    }
+    const seq = l.blocks.find((b) => b.kind === "sequence");
+    if (seq?.kind === "sequence") seq.items[1].id = seq.items[0].id;
+    const problems = checkLessonReferences(l).join(" | ");
+    expect(problems).toContain("unknown category maybe");
+    expect(problems).toContain("category unused has no items");
+    expect(problems).toContain("duplicate item ids");
+  });
+
   it("lesson concepts exist in the taxonomy", async () => {
     const { lessons } = await import("@/content/registry");
     for (const l of lessons) for (const c of l.keyConcepts) expect(concepts[c], c).toBeDefined();

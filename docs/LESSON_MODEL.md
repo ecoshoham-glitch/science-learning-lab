@@ -13,7 +13,13 @@ Player: `src/components/lesson/LessonPlayer.tsx`. Pages: `/[locale]/lessons`, `/
   misconceptions, curriculum mapping marked `suggested`), delivery configuration, provenance, and blocks.
 - Block kinds: `explanation`, `question` (purpose `prediction` or `checkpoint`, with feedback and the
   targeted misconception), `simulation` (reference to `{id, version}` + optional activity id), `discussion`
-  (with optional teacher note), `summary`.
+  (with optional teacher note), `summary`, and three games:
+  - `sequence` – put items in order; the solution is the order in the data; optional `detail` (e.g. a year)
+    is revealed when solved.
+  - `match` – pair each left item with its right item; each pair in the data is a correct match.
+  - `categorize` – sort items into categories (e.g. true / false), with an optional explanation per item.
+  Games are shuffled deterministically by block id (never starting solved), scored per item, and must be
+  checked once before "next" in self-paced mode; teacher-led mode adds "show the solution to the class".
 - Every block records `origin` (`ai-generated`, `teacher`, `library`) and `reviewed`. Unreviewed AI blocks
   are labelled in the UI.
 - Lessons reference library items; they never copy simulation code. `checkLessonReferences` verifies that

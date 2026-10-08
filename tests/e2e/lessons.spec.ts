@@ -8,8 +8,9 @@ test.describe("lesson generated from a transcript", () => {
     await page.goto("/he");
     await page.getByRole("navigation").getByRole("link", { name: "שיעורים" }).click();
     await expect(page.getByRole("heading", { level: 1 })).toHaveText("שיעורים");
-    await expect(page.getByText("נוצר בעזרת AI מתמלול")).toBeVisible();
-    await expect(page.getByText("טיוטה – לא נבדקה")).toBeVisible();
+    const item = page.getByRole("listitem").filter({ hasText: "נגיפים: מה הם" });
+    await expect(item.getByText("נוצר בעזרת AI מתמלול")).toBeVisible();
+    await expect(item.getByText("טיוטה – לא נבדקה")).toBeVisible();
   });
 
   test("self-paced: questions must be answered before moving on; feedback appears", async ({ page }) => {

@@ -154,7 +154,26 @@
       "skipped-demo": "Skipped in demo"
     },
     "notSaved": "Progress is not saved in the prototype.",
-    "empty": "No lessons yet."
+    "empty": "No lessons yet.",
+    "answerFirstGame": "Check the game to continue",
+    "games": {
+      "sequence": "Ordering game",
+      "match": "Matching game",
+      "categorize": "Sorting game",
+      "score": "{correct} of {total} correct",
+      "allCorrect": "Perfect!",
+      "moveUp": "Move \"{item}\" up one place",
+      "moveDown": "Move \"{item}\" down one place",
+      "moved": "\"{item}\" is now in place {position} of {total}",
+      "position": "Place {position}",
+      "right": "Correct",
+      "wrong": "Not correct",
+      "choose": "Choose…",
+      "unanswered": "Some items do not have an answer yet.",
+      "showSolution": "Show the solution to the class",
+      "solutionShown": "This is the solution.",
+      "tryAgain": "Change what is marked as not correct and check again."
+    }
   },
   "subjects": {
     "title": "Subjects",

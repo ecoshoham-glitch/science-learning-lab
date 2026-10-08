@@ -8,6 +8,7 @@ import type { Activity } from "@/lib/activity/schema";
 import type { ObservableValues } from "@/lib/simulation/protocol";
 import { SimulationHost } from "@/components/SimulationHost";
 import { ActivityPanel } from "@/components/ActivityPanel";
+import { Game } from "@/components/lesson/GameBlocks";
 
 type Mode = "self-paced" | "teacher-led";
 
@@ -34,10 +35,11 @@ export function LessonPlayer({
   const total = lesson.blocks.length;
   const block = lesson.blocks[index];
 
+  const isGame = block.kind === "sequence" || block.kind === "match" || block.kind === "categorize";
   const mustAnswer =
     mode === "self-paced" &&
     lesson.delivery.selfPaced.requireAnswerBeforeNext &&
-    block.kind === "question" &&
+    (block.kind === "question" || isGame) &&
     !answered[block.id];
 
   const go = useCallback(
@@ -158,7 +160,7 @@ export function LessonPlayer({
           >
             {t("next")}
           </button>
-          {mustAnswer && <span id="must-answer" className="text-sm text-muted">{t("answerFirst")}</span>}
+          {mustAnswer && <span id="must-answer" className="text-sm text-muted">{isGame ? t("answerFirstGame") : t("answerFirst")}</span>}
         </div>
       )}
     </div>
@@ -226,6 +228,10 @@ function Block({
           )}
         </div>
       );
+    case "sequence":
+    case "match":
+    case "categorize":
+      return <Game block={block} locale={locale} teacher={teacher} onChecked={(id) => onAnswered(id, "checked")} />;
     case "summary":
       return (
         <div className="grid gap-4 max-w-[68ch]">

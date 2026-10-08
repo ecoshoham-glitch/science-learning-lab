@@ -43,7 +43,7 @@ test.describe("navigation and languages", () => {
 test.describe("simulation library", () => {
   test("search in Hebrew and filter by interaction type", async ({ page }) => {
     await page.goto("/he/library");
-    await expect(page.getByRole("status")).toHaveText("3 סימולציות");
+    await expect(page.getByRole("status")).toHaveText("4 סימולציות");
     await page.getByLabel("חיפוש").fill("מוטציה");
     await expect(page.getByRole("status")).toHaveText("סימולציה אחת");
     await expect(page.getByRole("heading", { name: "מהגן אל החלבון" })).toBeVisible();
@@ -51,7 +51,8 @@ test.describe("simulation library", () => {
     await page.getByRole("button", { name: "נקה סינון" }).click();
     await page.getByLabel("סוג אינטראקציה").selectOption("virtual-lab");
     await expect(page.getByRole("heading", { name: "מעבדת אנזים וירטואלית" })).toBeVisible();
-    await expect(page.getByRole("status")).toHaveText("סימולציה אחת");
+    await expect(page.getByRole("heading", { name: "המיקרוסקופ של ליווינהוק" })).toBeVisible();
+    await expect(page.getByRole("status")).toHaveText("2 סימולציות");
   });
 
   test("Hebrew interface also finds English terms", async ({ page }) => {

@@ -1,0 +1,62 @@
+{
+  "manifestVersion": 1,
+  "id": "microscope-lens",
+  "version": "1.0.0",
+  "title": { "he": "המיקרוסקופ של ליווינהוק", "en": "Leeuwenhoek's microscope" },
+  "summary": {
+    "he": "משנים את קוטר כדור הזכוכית, משווים למיקרוסקופ המורכב של הוק, ומגלים מה צריך כדי לראות תאי שעם, יצורים חד-תאיים, חיידקים ותאי דם.",
+    "en": "Change the diameter of the glass ball, compare with Hooke's compound microscope, and discover what it takes to see cork cells, single-celled organisms, bacteria and blood cells."
+  },
+  "subject": "biology",
+  "concepts": ["cell", "microscope", "cell-theory"],
+  "grades": { "from": 9, "to": 12 },
+  "difficulty": "intro",
+  "interaction": "virtual-lab",
+  "languages": ["he", "en"],
+  "status": "available",
+  "entry": "/sims/microscope-lens/1.0.0/index.html",
+  "protocol": { "version": 1, "capabilityLevel": 3 },
+  "parameters": [
+    {
+      "id": "lensDiameter",
+      "kind": "number",
+      "label": { "he": "קוטר כדור הזכוכית", "en": "Glass ball diameter" },
+      "unit": "mm",
+      "min": 1,
+      "max": 10,
+      "step": 0.1,
+      "default": 6
+    }
+  ],
+  "observables": [
+    { "id": "magnification", "type": "number", "label": { "he": "הגדלה", "en": "Magnification" } },
+    { "id": "lensDiameter", "type": "number", "unit": "mm", "label": { "he": "קוטר הכדור", "en": "Ball diameter" } },
+    { "id": "instrument", "type": "string", "label": { "he": "מכשיר (ball / compound)", "en": "Instrument (ball / compound)" } },
+    { "id": "sample", "type": "string", "label": { "he": "דגימה נוכחית", "en": "Current sample" } },
+    { "id": "bacteriaVisible", "type": "number", "label": { "he": "חיידקים נראים עכשיו (0/1)", "en": "Bacteria visible now (0/1)" } },
+    { "id": "samplesViewed", "type": "string[]", "label": { "he": "דגימות שנבדקו", "en": "Samples viewed" } },
+    { "id": "instrumentsUsed", "type": "string[]", "label": { "he": "מכשירים שנוסו", "en": "Instruments used" } },
+    { "id": "observations", "type": "string[]", "label": { "he": "תצפיות שנעשו", "en": "Observations made" } },
+    { "id": "observationsCount", "type": "number", "label": { "he": "מספר התצפיות", "en": "Number of observations" } }
+  ],
+  "events": ["observationMade"],
+  "device": { "minWidth": 320, "touch": true, "webgl": false },
+  "accessibility": {
+    "he": "כל הפקדים הם כפתורי רדיו ומחוון נגישים במקלדת. מה שרואים בשדה הראייה מתואר במילים ומוקרא לקורא מסך בכל שינוי.",
+    "en": "All controls are keyboard-accessible radio buttons and a slider. What is in the field of view is described in words and announced to screen readers on every change."
+  },
+  "license": { "id": "proprietary-draft", "holder": "Science Learning Lab", "source": "first-party" },
+  "scientificModel": {
+    "kind": "simplified-educational",
+    "description": {
+      "he": "עדשת כדור מזכוכית (n = 1.52): אורך מוקד f = nD/4(n−1), הגדלה M = 250 mm / f. כדור של כ-1.3 מ\"מ נותן כ-×260. המיקרוסקופ המורכב של שנות ה-1660 מקבל הגדלה קבועה ×50. עצם נחשב נראה בבירור כשגודלו הנראה (גודל אמיתי × הגדלה) מגיע ל-0.2 מ\"מ.",
+      "en": "A glass ball lens (n = 1.52): focal length f = nD/4(n−1), magnification M = 250 mm / f. A ball of about 1.3 mm gives about 260×. The 1660s compound microscope has a fixed 50×. An object is clearly visible when its apparent size (actual size × magnification) reaches 0.2 mm."
+    },
+    "assumptions": [
+      { "he": "מתעלמים מעקיפת אור, מפגמי עדשה, מעומק שדה ומתאורה; בפועל איכות הזכוכית והתאורה של ליווינהוק היו חשובות לא פחות מהגודל.", "en": "Diffraction, lens defects, depth of field and lighting are ignored; in reality Leeuwenhoek's glass quality and lighting mattered as much as size." },
+      { "he": "הגדלים טיפוסיים: תא שעם 30 µm, חד-תאי 100 µm, חיידק 2 µm, תא דם אדום 7.5 µm. התמונות סכמטיות.", "en": "Typical sizes: cork cell 30 µm, protist 100 µm, bacterium 2 µm, red blood cell 7.5 µm. The pictures are schematic." },
+      { "he": "ההגדלה ×50 למיקרוסקופ המורכב היא ערך מייצג לתקופה, לא מדידה של מכשיר מסוים.", "en": "The 50× for the compound microscope is a representative value for the period, not a measurement of a specific instrument." }
+    ]
+  },
+  "validation": { "status": "automated-tests-passed", "notes": "Unit tests in tests/unit/lens-model.test.ts. Awaiting owner scientific review." }
+}

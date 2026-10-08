@@ -59,12 +59,57 @@ const summaryBlock = z.object({
   next: localizedText.optional(),
 });
 
+/*
+ * Game blocks. Each is a short, scored interaction with immediate feedback. Items are shuffled
+ * deterministically (by block id) when shown; the data always holds the solution.
+ */
+const gameFeedback = z.object({ correct: localizedText, incorrect: localizedText });
+const itemId = z.string().regex(/^[a-z0-9-]+$/);
+
+/** Put items in order. The solution is the order of `items` in the data. */
+const sequenceBlock = z.object({
+  ...blockMeta,
+  kind: z.literal("sequence"),
+  title: localizedText,
+  prompt: localizedText,
+  items: z.array(z.object({ id: itemId, text: localizedText, detail: localizedText.optional() })).min(3),
+  feedback: gameFeedback,
+});
+
+/** Match each left item with its right item. Each pair in the data is a correct match. */
+const matchBlock = z.object({
+  ...blockMeta,
+  kind: z.literal("match"),
+  title: localizedText,
+  prompt: localizedText,
+  pairs: z.array(z.object({ id: itemId, left: localizedText, right: localizedText })).min(2),
+  feedback: gameFeedback,
+});
+
+/** Sort items into categories (for example true / false). */
+const categorizeBlock = z.object({
+  ...blockMeta,
+  kind: z.literal("categorize"),
+  title: localizedText,
+  prompt: localizedText,
+  categories: z.array(z.object({ id: itemId, label: localizedText })).min(2),
+  items: z
+    .array(z.object({ id: itemId, text: localizedText, category: itemId, explanation: localizedText.optional() }))
+    .min(2),
+  feedback: gameFeedback,
+});
+
+export const GAME_KINDS = ["sequence", "match", "categorize"] as const;
+
 export const lessonBlockSchema = z.discriminatedUnion("kind", [
   explanationBlock,
   questionBlock,
   simulationBlock,
   discussionBlock,
   summaryBlock,
+  sequenceBlock,
+  matchBlock,
+  categorizeBlock,
 ]);
 export type LessonBlock = z.infer<typeof lessonBlockSchema>;
 

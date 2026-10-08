@@ -4,6 +4,9 @@ Newest first. "Owner" = project owner approval.
 
 | Date | Decision | Status |
 | --- | --- | --- |
+| 2026-10-08 | Game blocks (`sequence`, `match`, `categorize`) are lesson data, not simulations: no code per game, shuffled deterministically by block id, scored by pure functions (`src/lib/lesson/games.ts`). Ordering uses up/down buttons rather than drag-and-drop, for keyboard and screen-reader access | Implemented |
+| 2026-10-08 | New simulation `microscope-lens` built for the cell lesson because no library simulation fitted (§9.2 step 4). Simplified model: ball-lens optics, fixed ×50 compound microscope, 0.2 mm visibility limit | Implemented, awaiting owner scientific review |
+| 2026-10-08 | Lesson "cell-discovery" from transcript: corrected "150 years" to about 170; added Virchow (1855) and that Hooke saw dead cells; omitted an age-inappropriate anecdote and the unproven Vermeer-model claim | Implemented, awaiting owner review |
 | 2026-10-08 | Subjects and topics: subject pages with topic "folders"; topics are data in the taxonomy, and items appear by shared concepts (no manual filing). First subject: Biology with 3 topics | Implemented |
 | 2026-10-08 | Bridge keeps an embedded simulation inert until `init` arrives (fixes lost early clicks; root cause of the intermittent genetic-code test) | Implemented, protocol v1 behaviour |
 | 2026-10-08 | Demo lesson "viruses-intro" generated from an owner-supplied transcript by running the §9.2 pipeline manually (Claude as the AI step). Transcript not committed; fingerprint only. Lesson text written in original words | Implemented, awaiting owner review |
