@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>מעבדת אנזים וירטואלית</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="lab" aria-labelledby="lab-title">
+    <h1 id="lab-title" class="visually-hidden" data-i18n="title"></h1>
+
+    <section class="bench" aria-labelledby="controls-title">
+      <h2 id="controls-title" data-i18n="controls"></h2>
+
+      <div class="control" data-param="temperature">
+        <label for="temperature"><span data-i18n="temperature"></span> <output id="temperature-out" for="temperature" dir="ltr"></output></label>
+        <input id="temperature" type="range" dir="ltr" min="0" max="80" step="1" value="20">
+        <p class="locked-note" data-i18n="locked" hidden></p>
+      </div>
+      <div class="control" data-param="pH">
+        <label for="pH"><span data-i18n="pH"></span> <output id="pH-out" for="pH" dir="ltr"></output></label>
+        <input id="pH" type="range" dir="ltr" min="1" max="14" step="0.5" value="7">
+        <p class="locked-note" data-i18n="locked" hidden></p>
+      </div>
+      <div class="control" data-param="substrate">
+        <label for="substrate"><span data-i18n="substrate"></span> <output id="substrate-out" for="substrate" dir="ltr"></output></label>
+        <input id="substrate" type="range" dir="ltr" min="0" max="20" step="0.5" value="10">
+        <p class="locked-note" data-i18n="locked" hidden></p>
+      </div>
+
+      <div class="tube-wrap">
+        <canvas id="tube" width="320" height="180" role="img" aria-describedby="tube-desc"></canvas>
+        <p id="tube-desc" class="tube-desc"></p>
+      </div>
+
+      <div class="actions">
+        <button id="measure" type="button" class="primary" data-i18n="measure"></button>
+        <button id="clear" type="button" class="quiet" data-i18n="clear"></button>
+      </div>
+      <p id="live" class="visually-hidden" aria-live="polite"></p>
+    </section>
+
+    <section class="results" aria-labelledby="results-title">
+      <h2 id="results-title" data-i18n="results"></h2>
+      <div class="graph-head">
+        <label for="xaxis" data-i18n="plotBy"></label>
+        <select id="xaxis">
+          <option value="temperature" data-i18n="temperature"></option>
+          <option value="pH" data-i18n="pH"></option>
+          <option value="substrate" data-i18n="substrate"></option>
+        </select>
+      </div>
+      <svg id="graph" viewBox="0 0 360 240" role="img" aria-labelledby="graph-title"><title id="graph-title"></title></svg>
+      <div class="table-wrap">
+        <table>
+          <caption data-i18n="tableCaption"></caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" data-i18n="temperatureShort"></th>
+              <th scope="col">pH</th>
+              <th scope="col" data-i18n="substrateShort"></th>
+              <th scope="col" data-i18n="rateShort"></th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <p id="empty" class="empty" data-i18n="empty"></p>
+      </div>
+      <details class="model">
+        <summary data-i18n="modelTitle"></summary>
+        <p data-i18n="modelText"></p>
+      </details>
+    </section>
+  </main>
+
+  <script src="sll-bridge.js"></script>
+  <script src="model.js"></script>
+  <script src="sim.js"></script>
+</body>
+</html>

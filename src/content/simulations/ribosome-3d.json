@@ -1,0 +1,33 @@
+{
+  "manifestVersion": 1,
+  "id": "ribosome-3d",
+  "version": "0.1.0",
+  "title": { "he": "בתוך הריבוזום", "en": "Inside the ribosome" },
+  "summary": {
+    "he": "מודל תלת-ממדי של ריבוזום עם mRNA ו-tRNA: מזהים את אתרי A, P ו-E ומסדרים את שלבי התרגום.",
+    "en": "A 3D ribosome model with mRNA and tRNA: identify the A, P and E sites and order the stages of translation."
+  },
+  "subject": "biology",
+  "concepts": ["translation", "ribosome", "trna"],
+  "grades": { "from": 10, "to": 12 },
+  "difficulty": "intermediate",
+  "interaction": "3d-model",
+  "languages": ["he", "en"],
+  "status": "planned",
+  "protocol": { "version": 1, "capabilityLevel": 3 },
+  "parameters": [],
+  "observables": [],
+  "events": [],
+  "device": { "minWidth": 320, "touch": true, "webgl": true },
+  "accessibility": {
+    "he": "מתוכנן: סיבוב וזום במקלדת ובכפתורים, ותיאור טקסטואלי של המודל.",
+    "en": "Planned: rotate and zoom with keyboard and buttons, and a text description of the model."
+  },
+  "license": { "id": "proprietary-draft", "holder": "Science Learning Lab", "source": "first-party" },
+  "scientificModel": {
+    "kind": "simplified-educational",
+    "description": { "he": "בפיתוח.", "en": "In development." },
+    "assumptions": [{ "he": "מודל לימודי מפושט; הפרופורציות אינן מבנה מולקולרי מדויק.", "en": "Simplified educational model; proportions are not an exact molecular structure." }]
+  },
+  "validation": { "status": "draft" }
+}

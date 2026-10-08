@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Science Learning Lab
 
-## Getting Started
+A standalone, multilingual (Hebrew/English) interactive science learning platform for high school.
+**Status: prototype (Phase 2 foundation). Not for use with students.**
 
-First, run the development server:
+Core principle: one platform, many independent scientific simulations, and multiple educational activities per simulation.
+
+## What works today
+
+- Hebrew (RTL, default) and English (LTR) interface, language switch on every page
+- Simulation library with search (both languages) and filters
+- Two independent simulations, each a self-contained package running in a sandbox:
+  - **Enzyme virtual lab** (`public/sims/enzyme-lab/1.0.0`) – Canvas + SVG
+  - **From gene to protein** (`public/sims/genetic-code/1.0.0`) – DOM/SVG
+- Three activities (data, not code); two of them reuse the same enzyme lab
+- Activity tasks checked live against what the simulation reports (protocol level 3)
+
+Not yet: accounts, database, teachers' tools, AI, hosting. See `docs/DEVELOPMENT_ROADMAP.md`.
+
+## Run it locally
+
+Requires Node.js 20.9 or later.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run build
+npm start          # http://localhost:3000  (redirects to /he)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For development with live reload: `npm run dev`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run check      # type check + lint + unit tests + production build
+npm run test:e2e   # browser tests on desktop and phone sizes (needs Playwright's Chromium,
+                   # or CHROMIUM_PATH=/path/to/chromium)
+```
 
-## Learn More
+## Layout
 
-To learn more about Next.js, take a look at the following resources:
+| Path | What it is |
+| --- | --- |
+| `src/app/[locale]/` | Pages (home, library, simulation, teachers) |
+| `src/components/` | UI, including `SimulationHost` (sandbox + protocol) and `ActivityPanel` |
+| `src/lib/simulation/` | Manifest schema and message protocol (the shared contract) |
+| `src/lib/activity/` | Activity schema and condition evaluation |
+| `src/content/` | Manifests, activities and taxonomy (moves to the database in Phase 2) |
+| `public/sims/<id>/<version>/` | Immutable simulation packages |
+| `sdk/sll-bridge.js` | Optional helper for simulation authors |
+| `messages/` | Interface text, one file per language |
+| `docs/` | Project documentation |
+| `tests/unit`, `tests/e2e` | Scientific/contract tests and browser tests |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Documentation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Start with `docs/ARCHITECTURE.md`, then `docs/SIMULATION_PROTOCOL.md` and `docs/SIMULATION_MANIFEST.md`.
+Decisions are logged in `docs/DECISIONS.md`.

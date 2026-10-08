@@ -1,0 +1,38 @@
+# Testing
+
+## Suites
+
+| Command | What it checks |
+| --- | --- |
+| `npm run typecheck` | TypeScript strict |
+| `npm run lint` | ESLint (Next.js core-web-vitals + TypeScript rules) |
+| `npm test` | Vitest: scientific models against known values and invariants; manifest/activity contract; protocol validation; rate limiting |
+| `npm run test:e2e` | Playwright on desktop and phone (Pixel 7) sizes, against a production build, with axe-core accessibility checks (WCAG 2.0–2.2 A/AA, serious and critical) |
+
+## Scientific tests (examples)
+
+- Enzyme lab: factor 1 at 37 °C; Q10 = 2 below (½ at 27 °C, ¼ at 17 °C); Gaussian denaturation above;
+  rate = Vmax/2 at S = Km; rate within 0–100 over the whole range; noise within ±3 %; reproducible.
+- Genetic code: 64 codons; stops exactly UAA/UAG/UGA; known assignments; codon counts per amino acid;
+  correct translation of the starting gene; classification of silent, missense, nonsense, nonstop and
+  frameshift mutations.
+- The home-page curve uses the same formula as the package model (checked degree by degree).
+
+## End-to-end tests (examples)
+
+- Root goes to Hebrew/RTL; language switch keeps the page and flips direction.
+- Library: Hebrew search, cross-language search, filters, empty state.
+- Enzyme activity: configuration reaches the simulation (locked controls), five measurements complete the
+  task; measured values match the model; switching activity re-configures the same simulation.
+- Genetic activity: four mutation types found through the real UI; the activity notices.
+- Sandbox: from inside a simulation, cookies, storage, parent DOM and network are blocked.
+
+## Last run
+
+2026-10-08: unit 44/44 passed; end-to-end 26/26 passed (13 scenarios × desktop and phone).
+
+## Not yet verified
+
+- Real iPhone/Safari and Firefox (tests use Chromium only).
+- Manual screen-reader testing (VoiceOver, TalkBack).
+- Scientific review of the simulations by the owner (they are labelled as drafts).

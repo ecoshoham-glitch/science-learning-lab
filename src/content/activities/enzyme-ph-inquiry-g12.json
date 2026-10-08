@@ -1,0 +1,58 @@
+{
+  "activityVersion": 1,
+  "id": "enzyme-ph-inquiry-g12",
+  "simulation": { "id": "enzyme-lab", "version": "1.0.0" },
+  "title": { "he": "חקר: תכננו ניסוי לבדיקת השפעת pH", "en": "Inquiry: design an experiment on the effect of pH" },
+  "audience": { "he": "כיתה י\"ב, חקר פתוח, כ-40 דקות", "en": "Grade 12, open inquiry, about 40 minutes" },
+  "objectives": [
+    { "he": "לתכנן ניסוי מבוקר עם משתנה בלתי תלוי אחד", "en": "Design a controlled experiment with one independent variable" },
+    { "he": "לזהות משתנים שיש לשמור קבועים", "en": "Identify variables that must be held constant" },
+    { "he": "להסיק מסקנה הנתמכת בנתונים", "en": "Draw a conclusion supported by the data" }
+  ],
+  "curriculum": {
+    "status": "suggested",
+    "note": { "he": "הצעה בלבד – טרם נבדקה מול תוכנית הלימודים הרשמית ודרישות החקר בבגרות.", "en": "Suggestion only – not yet checked against the official curriculum or Bagrut inquiry requirements." }
+  },
+  "config": { "params": { "temperature": 30, "pH": 4, "substrate": 10 }, "lockedParams": [] },
+  "steps": [
+    {
+      "kind": "choice",
+      "prompt": { "he": "רוצים לבדוק את השפעת ה-pH על קצב התגובה. מה צריך להיות קבוע לאורך כל המדידות?", "en": "You want to test how pH affects the reaction rate. What must stay constant across all measurements?" },
+      "options": [
+        { "id": "ph", "text": { "he": "ה-pH", "en": "The pH" } },
+        { "id": "temp-sub", "text": { "he": "הטמפרטורה וריכוז המצע", "en": "Temperature and substrate concentration" } },
+        { "id": "rate", "text": { "he": "קצב התגובה", "en": "The reaction rate" } },
+        { "id": "nothing", "text": { "he": "שום דבר – כדאי לשנות הכול כדי לקבל יותר נתונים", "en": "Nothing – change everything to get more data" } }
+      ],
+      "correct": "temp-sub",
+      "feedback": {
+        "correct": { "he": "נכון. ה-pH הוא המשתנה הבלתי תלוי, הקצב הוא המשתנה התלוי, וכל השאר נשמר קבוע.", "en": "Correct. pH is the independent variable, rate is the dependent variable, and everything else is held constant." },
+        "incorrect": { "he": "לא בדיוק. אם משנים כמה משתנים בבת אחת, אי אפשר לדעת מה גרם לשינוי בקצב.", "en": "Not quite. If several variables change at once, you cannot tell which one caused the change in rate." }
+      }
+    },
+    {
+      "kind": "task",
+      "prompt": { "he": "בצעו את הניסוי: מדדו בלפחות חמישה ערכי pH שונים, בלי לשנות את הטמפרטורה בין המדידות. כדאי לנקות את הטבלה לפני שמתחילים.", "en": "Run the experiment: measure at five or more different pH values without changing the temperature between measurements. Clear the table before you start." },
+      "hint": { "he": "בחרו טמפרטורה אחת, ושנו רק את ה-pH. חזרות על אותה מדידה עוזרות לראות את השונות.", "en": "Pick one temperature and change only the pH. Repeating a measurement helps you see the variation." },
+      "conditions": [
+        { "op": "gte", "observable": "distinctPH", "value": 5 },
+        { "op": "gte", "observable": "temperatureHeldConstant", "value": 1 },
+        { "op": "between", "observable": "bestPH", "min": 6, "max": 8 }
+      ],
+      "checklist": [
+        { "he": "מדדתם בחמישה ערכי pH או יותר", "en": "You measured at five or more pH values" },
+        { "he": "הטמפרטורה נשארה קבועה בכל המדידות", "en": "The temperature stayed the same in all measurements" },
+        { "he": "הנתונים מראים את אזור ה-pH האופטימלי", "en": "The data show the optimal pH region" }
+      ],
+      "success": { "he": "ניסוי מבוקר: משתנה אחד השתנה, השאר נשמרו קבועים, והנתונים מראים שיא סביב pH 7.", "en": "A controlled experiment: one variable changed, the others stayed constant, and the data show a peak around pH 7." }
+    },
+    {
+      "kind": "reflect",
+      "prompt": { "he": "כתבו מסקנה של 2–3 משפטים, והציעו מגבלה אחת של הניסוי או של המודל.", "en": "Write a 2–3 sentence conclusion, and suggest one limitation of the experiment or the model." },
+      "sampleAnswer": {
+        "he": "קצב התגובה היה הגבוה ביותר סביב pH 7, וירד ככל שה-pH התרחק ממנו לשני הכיוונים. מגבלה: המודל מניח שהשפעת ה-pH אינה תלויה בטמפרטורה; בנוסף, נמדדו מעט חזרות בכל ערך, ולכן קשה להעריך את השונות.",
+        "en": "The reaction rate was highest around pH 7 and decreased as the pH moved away from it in either direction. Limitation: the model assumes the pH effect does not depend on temperature; also, few repeats were measured at each value, so the variation is hard to estimate."
+      }
+    }
+  ]
+}

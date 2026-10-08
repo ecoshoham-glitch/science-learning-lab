@@ -1,0 +1,187 @@
+{
+  "manifestVersion": 1,
+  "id": "enzyme-lab",
+  "version": "1.0.0",
+  "title": {
+    "he": "מעבדת אנזים וירטואלית",
+    "en": "Enzyme virtual lab"
+  },
+  "summary": {
+    "he": "משנים טמפרטורה, pH וריכוז מצע, מודדים את קצב התגובה ובונים גרף – כמו בניסוי מעבדה.",
+    "en": "Change temperature, pH and substrate concentration, measure the reaction rate and build a graph – like a lab experiment."
+  },
+  "subject": "biology",
+  "concepts": [
+    "enzymes",
+    "reaction-rate",
+    "denaturation",
+    "controlled-experiment"
+  ],
+  "grades": {
+    "from": 10,
+    "to": 12
+  },
+  "difficulty": "intermediate",
+  "interaction": "virtual-lab",
+  "languages": [
+    "he",
+    "en"
+  ],
+  "status": "available",
+  "entry": "/sims/enzyme-lab/1.0.0/index.html",
+  "protocol": {
+    "version": 1,
+    "capabilityLevel": 3
+  },
+  "parameters": [
+    {
+      "id": "temperature",
+      "kind": "number",
+      "label": {
+        "he": "טמפרטורה",
+        "en": "Temperature"
+      },
+      "unit": "°C",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "id": "pH",
+      "kind": "number",
+      "label": {
+        "he": "pH",
+        "en": "pH"
+      },
+      "unit": "",
+      "min": 1,
+      "max": 14,
+      "step": 0.5,
+      "default": 7
+    },
+    {
+      "id": "substrate",
+      "kind": "number",
+      "label": {
+        "he": "ריכוז מצע",
+        "en": "Substrate concentration"
+      },
+      "unit": "mM",
+      "min": 0,
+      "max": 20,
+      "step": 0.5,
+      "default": 10
+    }
+  ],
+  "observables": [
+    {
+      "id": "measurementsCount",
+      "type": "number",
+      "label": {
+        "he": "מספר מדידות",
+        "en": "Number of measurements"
+      }
+    },
+    {
+      "id": "distinctTemperatures",
+      "type": "number",
+      "label": {
+        "he": "טמפרטורות שונות שנמדדו",
+        "en": "Distinct temperatures measured"
+      }
+    },
+    {
+      "id": "distinctPH",
+      "type": "number",
+      "label": {
+        "he": "ערכי pH שונים שנמדדו",
+        "en": "Distinct pH values measured"
+      }
+    },
+    {
+      "id": "bestTemperature",
+      "type": "number",
+      "label": {
+        "he": "הטמפרטורה עם הקצב הגבוה ביותר שנמדד",
+        "en": "Temperature with the highest measured rate"
+      },
+      "unit": "°C"
+    },
+    {
+      "id": "bestPH",
+      "type": "number",
+      "label": {
+        "he": "ה-pH עם הקצב הגבוה ביותר שנמדד",
+        "en": "pH with the highest measured rate"
+      }
+    },
+    {
+      "id": "lastRate",
+      "type": "number",
+      "label": {
+        "he": "קצב אחרון שנמדד",
+        "en": "Last measured rate"
+      },
+      "unit": "%"
+    },
+    {
+      "id": "temperatureHeldConstant",
+      "type": "number",
+      "label": {
+        "he": "הטמפרטורה נשמרה קבועה (1/0)",
+        "en": "Temperature held constant (1/0)"
+      }
+    },
+    {
+      "id": "substrateHeldConstant",
+      "type": "number",
+      "label": {
+        "he": "ריכוז המצע נשמר קבוע (1/0)",
+        "en": "Substrate held constant (1/0)"
+      }
+    }
+  ],
+  "events": [
+    "measurementTaken"
+  ],
+  "device": {
+    "minWidth": 320,
+    "touch": true,
+    "webgl": false
+  },
+  "accessibility": {
+    "he": "כל הפקדים נגישים במקלדת. התוצאות זמינות גם כטבלה, וכל מדידה מוקראת לקורא מסך. במצב 'הפחתת תנועה' האנימציה מוחלפת בתמונה סטטית.",
+    "en": "All controls work with a keyboard. Results are also available as a table, and each measurement is announced to screen readers. With reduced motion, the animation is replaced by a still picture."
+  },
+  "license": {
+    "id": "proprietary-draft",
+    "holder": "Science Learning Lab",
+    "source": "first-party"
+  },
+  "scientificModel": {
+    "kind": "simplified-educational",
+    "description": {
+      "he": "קצב יחסי = ⁦100 × S/(Km+S) × f(T) × f(pH)⁩. מתחת ל-⁦37°C⁩ הקצב מוכפל בכל ⁦10°C⁩ (⁦Q10 = 2⁩); מעל ⁦37°C⁩ דה-נטורציה מתוארת כירידה גאוסיאנית (רוחב ⁦8°C⁩). pH אופטימלי 7 (רוחב 1.5). ⁦Km = 2 mM⁩. רעש מדידה עד ⁦±3%⁩.",
+      "en": "Relative rate = 100 × S/(Km+S) × f(T) × f(pH). Below 37°C the rate doubles every 10°C (Q10 = 2); above 37°C denaturation is a Gaussian fall-off (width 8°C). Optimal pH 7 (width 1.5). Km = 2 mM. Measurement noise up to ±3%."
+    },
+    "assumptions": [
+      {
+        "he": "אנזים כללי, לא אנזים מסוים; הערכים נבחרו לצורך הוראה.",
+        "en": "A generic enzyme, not a specific one; values were chosen for teaching."
+      },
+      {
+        "he": "הדה-נטורציה מיידית והפיכה במודל; במציאות היא תלויה בזמן ולרוב אינה הפיכה.",
+        "en": "Denaturation is instant and reversible in the model; in reality it depends on time and is usually irreversible."
+      },
+      {
+        "he": "השפעות הטמפרטורה, ה-pH והמצע בלתי תלויות זו בזו.",
+        "en": "Temperature, pH and substrate effects are independent of each other."
+      }
+    ]
+  },
+  "validation": {
+    "status": "automated-tests-passed",
+    "notes": "Unit tests in tests/unit/enzyme-model.test.ts. Awaiting owner scientific review."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "activityVersion": 1,
+  "id": "enzyme-temperature-g10",
+  "simulation": { "id": "enzyme-lab", "version": "1.0.0" },
+  "title": { "he": "איך הטמפרטורה משפיעה על פעילות אנזים?", "en": "How does temperature affect enzyme activity?" },
+  "audience": { "he": "כיתה י', היכרות, כ-25 דקות", "en": "Grade 10, introduction, about 25 minutes" },
+  "objectives": [
+    { "he": "לתאר את הקשר בין טמפרטורה לקצב תגובה אנזימטית", "en": "Describe how temperature affects the rate of an enzyme reaction" },
+    { "he": "להסביר את הירידה בקצב מעל הטמפרטורה האופטימלית בעזרת המושג דה-נטורציה", "en": "Explain the drop above the optimal temperature using the concept of denaturation" },
+    { "he": "לאסוף נתונים ולזהות מגמה בגרף", "en": "Collect data and identify a trend in a graph" }
+  ],
+  "curriculum": {
+    "status": "suggested",
+    "note": { "he": "הצעה בלבד – טרם נבדקה מול תוכנית הלימודים הרשמית בביולוגיה.", "en": "Suggestion only – not yet checked against the official biology curriculum." }
+  },
+  "config": { "params": { "temperature": 10, "pH": 7, "substrate": 10 }, "lockedParams": ["pH", "substrate"] },
+  "steps": [
+    {
+      "kind": "choice",
+      "prompt": { "he": "לפני הניסוי: מה לדעתכם יקרה לקצב התגובה כשנעלה את הטמפרטורה מ-10°C ל-70°C?", "en": "Before the experiment: what do you think will happen to the reaction rate as we raise the temperature from 10°C to 70°C?" },
+      "options": [
+        { "id": "up", "text": { "he": "הקצב יעלה כל הזמן", "en": "The rate will keep rising" } },
+        { "id": "down", "text": { "he": "הקצב ירד כל הזמן", "en": "The rate will keep falling" } },
+        { "id": "peak", "text": { "he": "הקצב יעלה עד נקודה מסוימת ואז ירד", "en": "The rate will rise up to a point and then fall" } },
+        { "id": "same", "text": { "he": "הקצב לא ישתנה", "en": "The rate will not change" } }
+      ],
+      "correct": "peak",
+      "feedback": {
+        "correct": { "he": "ניבוי מצוין. עכשיו בדקו אותו בניסוי.", "en": "Good prediction. Now test it in the experiment." },
+        "incorrect": { "he": "זה ניבוי – לא צריך לצדוק. בדקו אותו בניסוי, ובשלב הבא תראו אם הוא התאשש.", "en": "It is a prediction – it does not have to be right. Test it in the experiment and see if it holds." }
+      }
+    },
+    {
+      "kind": "task",
+      "prompt": { "he": "מדדו את קצב התגובה בלפחות חמש טמפרטורות שונות, ומצאו באיזו טמפרטורה הקצב הגבוה ביותר. ה-pH וריכוז המצע קבועים בפעילות הזאת.", "en": "Measure the reaction rate at five or more different temperatures, and find the temperature with the highest rate. pH and substrate are fixed in this activity." },
+      "hint": { "he": "התחילו בצעדים גדולים (10, 20, 30…) ואז מדדו בצפיפות סביב השיא.", "en": "Start with large steps (10, 20, 30…), then measure closely around the peak." },
+      "conditions": [
+        { "op": "gte", "observable": "distinctTemperatures", "value": 5 },
+        { "op": "between", "observable": "bestTemperature", "min": 33, "max": 41 }
+      ],
+      "checklist": [
+        { "he": "מדדתם בחמש טמפרטורות שונות או יותר", "en": "You measured at five or more temperatures" },
+        { "he": "מצאתם את אזור השיא", "en": "You found the peak region" }
+      ],
+      "success": { "he": "מצאתם את אזור הטמפרטורה האופטימלית במודל – סביב 37°C.", "en": "You found the optimal temperature region in the model – around 37°C." }
+    },
+    {
+      "kind": "reflect",
+      "prompt": { "he": "הסבירו במילים שלכם: למה הקצב יורד בחדות בטמפרטורות גבוהות מהאופטימום?", "en": "In your own words: why does the rate fall sharply at temperatures above the optimum?" },
+      "sampleAnswer": {
+        "he": "בטמפרטורה גבוהה הקשרים שמחזיקים את המבנה המרחבי של האנזים נפרמים (דה-נטורציה). צורת האתר הפעיל משתנה, המצע כבר לא נקשר אליו היטב, ולכן הקצב יורד. בטמפרטורות נמוכות הקצב איטי מסיבה אחרת: למולקולות יש פחות אנרגיה קינטית ופחות התנגשויות.",
+        "en": "At high temperature, the bonds that hold the enzyme's 3D structure break (denaturation). The active site changes shape, the substrate no longer binds well, so the rate falls. At low temperatures the rate is slow for a different reason: molecules have less kinetic energy and collide less often."
+      }
+    }
+  ]
+}

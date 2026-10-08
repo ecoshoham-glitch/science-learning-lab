@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Science Learning Lab",
+    "description": "Interactive science simulations for high school: biology, chemistry, physics and medicine."
+  },
+  "nav": {
+    "brand": "Science Learning Lab",
+    "home": "Home",
+    "library": "Simulation library",
+    "teachers": "For teachers",
+    "skip": "Skip to main content",
+    "switchLanguage": "עברית",
+    "switchLanguageLabel": "עבור לעברית",
+    "prototype": "Prototype – not for use with students"
+  },
+  "home": {
+    "title": "See science happen",
+    "lead": "Simulations where students change variables, measure, plot a graph and draw a conclusion – like in the lab, on any device.",
+    "ctaLibrary": "Open the simulation library",
+    "ctaTry": "Try the enzyme lab",
+    "curveTitle": "Enzyme reaction rate by temperature",
+    "curveCaption": "Simplified educational model: the rate rises with temperature up to an optimum, then falls sharply as the enzyme loses its structure.",
+    "curveAxisX": "Temperature (°C)",
+    "curveAxisY": "Relative rate (%)",
+    "howTitle": "How it is built",
+    "howSims": "Each simulation is an independent module with its own scientific model and documentation.",
+    "howActivities": "Each simulation can carry several activities – for different grades, levels and goals.",
+    "howTeachers": "Teachers will build activities without coding, and later with AI.",
+    "featuredTitle": "In the library now"
+  },
+  "library": {
+    "title": "Simulation library",
+    "lead": "Search by concept, or filter by subject, grade and interaction type.",
+    "search": "Search",
+    "searchPlaceholder": "For example: enzyme, mutation, ribosome",
+    "subject": "Subject",
+    "grade": "Grade",
+    "interaction": "Interaction type",
+    "all": "All",
+    "results": "{count, plural, =0 {No simulations found} one {One simulation} other {# simulations}}",
+    "empty": "No simulations match. Try another word or clear the filters.",
+    "clear": "Clear filters",
+    "open": "Open simulation",
+    "activities": "{count, plural, =0 {No activities yet} one {One activity} other {# activities}}",
+    "grades": "Grades {from}–{to}",
+    "planned": "In development"
+  },
+  "sim": {
+    "about": "About this simulation",
+    "model": "Scientific model",
+    "assumptions": "Assumptions and simplifications",
+    "concepts": "Concepts",
+    "version": "Version {version}",
+    "activitiesTitle": "Activities for this simulation",
+    "chooseActivity": "Choose an activity, or explore the simulation freely.",
+    "freeExplore": "Free exploration",
+    "loading": "Loading the simulation…",
+    "loadError": "The simulation did not load. Refresh the page; if it happens again, the simulation will be flagged for review.",
+    "sandboxNote": "The simulation runs in an isolated environment with no access to your data.",
+    "frameTitle": "Simulation: {title}",
+    "notReviewed": "Draft – not yet scientifically reviewed",
+    "license": "License: {license}",
+    "back": "Back to the library"
+  },
+  "activity": {
+    "step": "Step {current} of {total}",
+    "next": "Next step",
+    "prev": "Previous step",
+    "check": "Check",
+    "showAnswer": "Show a sample answer",
+    "done": "You finished the activity",
+    "restart": "Start over",
+    "correct": "Correct",
+    "tryAgain": "Not yet – try again",
+    "taskDone": "Task complete",
+    "taskPending": "Task not complete yet",
+    "progress": "Task progress",
+    "yourAnswer": "Your answer",
+    "objectives": "Learning objectives",
+    "notSaved": "Progress is not saved in the prototype.",
+    "hint": "Hint"
+  },
+  "teachers": {
+    "title": "For teachers",
+    "lead": "This area will be built in the next phases.",
+    "items": {
+      "classes": "Classes, join codes and progress tracking",
+      "builder": "Build an activity on any simulation, without code",
+      "ai": "Create activities and lessons with AI",
+      "import": "Upload existing simulations",
+      "studio": "Describe a new simulation, and AI builds it"
+    },
+    "status": "Planned"
+  },
+  "footer": {
+    "text": "Science Learning Lab · prototype in development",
+    "privacy": "The site does not collect personal information at this stage."
+  }
+}

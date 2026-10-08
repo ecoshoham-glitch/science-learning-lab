@@ -1,0 +1,46 @@
+{
+  "activityVersion": 1,
+  "id": "mutation-types-g10",
+  "simulation": { "id": "genetic-code", "version": "1.0.0" },
+  "title": { "he": "ציד מוטציות: ארבעה סוגים, ארבע תוצאות", "en": "Mutation hunt: four types, four outcomes" },
+  "audience": { "he": "כיתה י', כ-20 דקות", "en": "Grade 10, about 20 minutes" },
+  "objectives": [
+    { "he": "להסביר את הקשר בין רצף DNA, mRNA ורצף חומצות אמינו", "en": "Explain the link between DNA sequence, mRNA and amino acid sequence" },
+    { "he": "להבחין בין מוטציה שקטה, מחליפת משמעות, עצירה והזזת מסגרת", "en": "Distinguish silent, missense, nonsense and frameshift mutations" }
+  ],
+  "curriculum": {
+    "status": "suggested",
+    "note": { "he": "הצעה בלבד – טרם נבדקה מול תוכנית הלימודים הרשמית בביולוגיה.", "en": "Suggestion only – not yet checked against the official biology curriculum." }
+  },
+  "config": { "params": {}, "lockedParams": [] },
+  "steps": [
+    {
+      "kind": "choice",
+      "prompt": { "he": "החלפה של בסיס אחד ב-DNA. האם היא תמיד משנה את החלבון?", "en": "One DNA base is replaced. Does that always change the protein?" },
+      "options": [
+        { "id": "yes", "text": { "he": "כן, כל שינוי ב-DNA משנה את החלבון", "en": "Yes, every DNA change changes the protein" } },
+        { "id": "no", "text": { "he": "לא תמיד", "en": "Not always" } }
+      ],
+      "correct": "no",
+      "feedback": {
+        "correct": { "he": "נכון. בשלב הבא תמצאו בעצמכם מוטציה כזאת.", "en": "Correct. In the next step you will find such a mutation yourself." },
+        "incorrect": { "he": "בדקו את זה בסימולציה – ייתכן שתופתעו.", "en": "Test it in the simulation – you may be surprised." }
+      }
+    },
+    {
+      "kind": "task",
+      "prompt": { "he": "מצאו בסימולציה ארבעה סוגי מוטציות: שקטה, מחליפת משמעות, עצירה והזזת מסגרת. אחרי כל מוטציה, חזרו לגן המקורי.", "en": "Find four mutation types in the simulation: silent, missense, nonsense and frameshift. After each one, go back to the original gene." },
+      "hint": { "he": "נסו לשנות את הבסיס השלישי בקודון GCC. ולמוטציית עצירה – חפשו קודון שבסיס אחד מפריד בינו לבין UGA, UAA או UAG.", "en": "Try changing the third base of the GCC codon. For a nonsense mutation, look for a codon one base away from UGA, UAA or UAG." },
+      "conditions": [{ "op": "includesAll", "observable": "mutationTypesFound", "values": ["silent", "missense", "nonsense", "frameshift"] }],
+      "success": { "he": "מצאתם את כל ארבעת הסוגים.", "en": "You found all four types." }
+    },
+    {
+      "kind": "reflect",
+      "prompt": { "he": "איזה סוג מוטציה צפוי בדרך כלל להשפיע הכי מעט על החלבון, ואיזה הכי הרבה? נמקו.", "en": "Which mutation type usually affects the protein least, and which most? Explain." },
+      "sampleAnswer": {
+        "he": "מוטציה שקטה משפיעה הכי מעט, כי רצף חומצות האמינו לא משתנה. מוטציית הזזת מסגרת או עצירה מוקדמת משפיעות בדרך כלל הכי הרבה: הזזת מסגרת משנה את כל הקודונים שאחריה, ועצירה מוקדמת מקצרת את החלבון.",
+        "en": "A silent mutation affects it least, because the amino acid sequence does not change. Frameshift and early-stop mutations usually affect it most: a frameshift changes every codon after it, and an early stop shortens the protein."
+      }
+    }
+  ]
+}

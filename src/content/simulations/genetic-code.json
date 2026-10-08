@@ -1,0 +1,46 @@
+{
+  "manifestVersion": 1,
+  "id": "genetic-code",
+  "version": "1.0.0",
+  "title": { "he": "מהגן אל החלבון", "en": "From gene to protein" },
+  "summary": {
+    "he": "משנים בסיסים ב-DNA ורואים מיד את ה-mRNA ואת רצף חומצות האמינו – ומגלים מוטציה שקטה, מחליפת משמעות, עצירה והזזת מסגרת.",
+    "en": "Change DNA bases and instantly see the mRNA and the amino acid sequence – and discover silent, missense, nonsense and frameshift mutations."
+  },
+  "subject": "biology",
+  "concepts": ["genetic-code", "transcription", "translation", "mutations"],
+  "grades": { "from": 10, "to": 12 },
+  "difficulty": "intro",
+  "interaction": "manipulation",
+  "languages": ["he", "en"],
+  "status": "available",
+  "entry": "/sims/genetic-code/1.0.0/index.html",
+  "protocol": { "version": 1, "capabilityLevel": 3 },
+  "parameters": [],
+  "observables": [
+    { "id": "currentMutationType", "type": "string", "label": { "he": "סוג המוטציה הנוכחי", "en": "Current mutation type" } },
+    { "id": "mutationTypesFound", "type": "string[]", "label": { "he": "סוגי מוטציות שנמצאו", "en": "Mutation types found" } },
+    { "id": "mutationTypesFoundCount", "type": "number", "label": { "he": "מספר סוגי המוטציות שנמצאו", "en": "Number of mutation types found" } },
+    { "id": "proteinLength", "type": "number", "label": { "he": "אורך החלבון (חומצות אמינו)", "en": "Protein length (amino acids)" } },
+    { "id": "geneLength", "type": "number", "label": { "he": "אורך הגן (בסיסים)", "en": "Gene length (bases)" } }
+  ],
+  "events": ["mutationMade"],
+  "device": { "minWidth": 320, "touch": true, "webgl": false },
+  "accessibility": {
+    "he": "כל בסיס הוא כפתור נגיש במקלדת; תוצאת כל מוטציה מוקראת לקורא מסך. רצפים מוצגים תמיד משמאל לימין (5' ל-3').",
+    "en": "Every base is a keyboard-accessible button; each mutation result is announced to screen readers. Sequences always read left to right (5' to 3')."
+  },
+  "license": { "id": "proprietary-draft", "holder": "Science Learning Lab", "source": "first-party" },
+  "scientificModel": {
+    "kind": "simplified-educational",
+    "description": {
+      "he": "הקוד הגנטי התקני. mRNA זהה לגדיל המקודד עם U במקום T. התרגום מתחיל בבסיס הראשון (AUG) ונעצר בקודון העצירה הראשון. סיווג מוטציות לפי השוואה לחלבון המקורי.",
+      "en": "The standard genetic code. mRNA matches the coding strand with U instead of T. Translation starts at the first base (AUG) and stops at the first stop codon. Mutations are classified by comparing with the original protein."
+    },
+    "assumptions": [
+      { "he": "אין פרומוטור, אינטרונים, שחבור או אזורים לא מתורגמים.", "en": "No promoter, introns, splicing or untranslated regions." },
+      { "he": "השפעת המוטציה מתוארת ברמת רצף החלבון בלבד, לא ברמת המבנה או התפקוד.", "en": "Effects are described at the protein-sequence level only, not structure or function." }
+    ]
+  },
+  "validation": { "status": "automated-tests-passed", "notes": "Unit tests in tests/unit/genetic-model.test.ts. Awaiting owner scientific review." }
+}

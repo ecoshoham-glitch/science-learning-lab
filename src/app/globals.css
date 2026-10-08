@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens – "lab glass": cool paper, deep slate ink, chlorophyll green for actions,
+ * amber reserved for live data (measured points, current values).
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f6f8f7;
+  --surface: #ffffff;
+  --ink: #14252b;
+  --muted: #4e6168;
+  --line: #d3ddd9;
+  --leaf: #0e7c66;
+  --leaf-dark: #0a5e4d;
+  --leaf-tint: #e3f1ec;
+  --signal: #a86b00;
+  --signal-soft: #f6e7c4;
+  --warn: #8a3b12;
+  --warn-soft: #fbe9dd;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-leaf: var(--leaf);
+  --color-leaf-dark: var(--leaf-dark);
+  --color-leaf-tint: var(--leaf-tint);
+  --color-signal: var(--signal);
+  --color-signal-soft: var(--signal-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --font-display: "Rubik Variable", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Assistant Variable", "Segoe UI", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Mixed Hebrew/English: scientific notation and codes keep their own direction. */
+.ltr-island {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* The single orchestrated motion on the site: the hero curve draws once on load. */
+@keyframes draw-curve {
+  from { stroke-dashoffset: var(--curve-length); }
+  to { stroke-dashoffset: 0; }
+}
+.hero-curve-path {
+  stroke-dasharray: var(--curve-length);
+  stroke-dashoffset: 0;
+  animation: draw-curve 1.6s ease-out 0.2s both;
 }

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>מהגן אל החלבון</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="sim" aria-labelledby="sim-title">
+    <h1 id="sim-title" class="visually-hidden" data-i18n="title"></h1>
+
+    <section class="panel" aria-labelledby="seq-title">
+      <div class="panel-head">
+        <h2 id="seq-title" data-i18n="sequences"></h2>
+        <button id="reset" type="button" class="quiet" data-i18n="reset"></button>
+      </div>
+      <p class="instructions" data-i18n="instructions"></p>
+
+      <!-- Sequences always read 5'→3' left to right, in both languages. -->
+      <div class="strands" dir="ltr">
+        <div class="strand-row">
+          <span class="strand-label" data-i18n="coding"></span>
+          <span class="end">5'</span>
+          <div id="coding" class="bases" role="group"></div>
+          <span class="end">3'</span>
+        </div>
+        <div class="strand-row">
+          <span class="strand-label" data-i18n="template"></span>
+          <span class="end">3'</span>
+          <div id="template" class="bases static" aria-hidden="true"></div>
+          <span class="end">5'</span>
+        </div>
+        <div class="strand-row">
+          <span class="strand-label" data-i18n="mrna"></span>
+          <span class="end">5'</span>
+          <div id="mrna" class="bases static" aria-hidden="true"></div>
+          <span class="end">3'</span>
+        </div>
+        <div class="strand-row">
+          <span class="strand-label" data-i18n="protein"></span>
+          <span class="end">N</span>
+          <div id="protein" class="aminos"></div>
+          <span class="end">C</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel tools" aria-labelledby="tools-title">
+      <h2 id="tools-title" data-i18n="tools"></h2>
+      <p id="selection" class="selection"></p>
+      <div class="tool-group" role="group" aria-labelledby="replace-label">
+        <span id="replace-label" class="tool-label" data-i18n="replace"></span>
+        <div class="base-buttons" dir="ltr" data-action="replace"></div>
+      </div>
+      <div class="tool-group" role="group" aria-labelledby="insert-label">
+        <span id="insert-label" class="tool-label" data-i18n="insert"></span>
+        <div class="base-buttons" dir="ltr" data-action="insert"></div>
+      </div>
+      <button id="delete" type="button" class="quiet" data-i18n="delete"></button>
+    </section>
+
+    <section class="panel result" aria-labelledby="result-title">
+      <h2 id="result-title" data-i18n="result"></h2>
+      <p id="mutation" class="mutation" aria-live="polite"></p>
+      <p id="mutation-explain" class="explain"></p>
+      <div class="found">
+        <span data-i18n="found"></span>
+        <ul id="found-list" class="found-list"></ul>
+      </div>
+      <details class="model">
+        <summary data-i18n="modelTitle"></summary>
+        <p data-i18n="modelText"></p>
+      </details>
+    </section>
+  </main>
+
+  <script src="sll-bridge.js"></script>
+  <script src="model.js"></script>
+  <script src="sim.js"></script>
+</body>
+</html>
