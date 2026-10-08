@@ -1,0 +1,254 @@
+{
+  "mapVersion": 1,
+  "topic": "the-cell",
+  "origin": "ai-generated",
+  "reviewed": false,
+  "nodes": [
+    {
+      "id": "microscope",
+      "rank": 0,
+      "title": {
+        "he": "הכלי: המיקרוסקופ",
+        "en": "The tool: the microscope"
+      },
+      "summary": {
+        "he": "בלי הגדלה אי אפשר לראות תאים",
+        "en": "Without magnification cells cannot be seen"
+      },
+      "details": [
+        {
+          "he": "במאה ה-17 היו שני סוגי מכשירים: מיקרוסקופ מורכב עם כמה עדשות (הגדלה של כ-×50), ועדשת כדור יחידה וזעירה (כ-×250).",
+          "en": "In the 17th century there were two kinds of instrument: a compound microscope with several lenses (about 50×), and a single tiny ball lens (about 250×)."
+        },
+        {
+          "he": "ככל שכדור הזכוכית קטן יותר, ההגדלה גדולה יותר. מה שאפשר היה לגלות היה תלוי במכשיר.",
+          "en": "The smaller the glass ball, the greater the magnification. What could be discovered depended on the instrument."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "microscope-lens"
+      }
+    },
+    {
+      "id": "hooke",
+      "rank": 1,
+      "title": {
+        "he": "הוק, 1665: \"תאים\" בשעם",
+        "en": "Hooke, 1665: \"cells\" in cork"
+      },
+      "summary": {
+        "he": "נתן לתאים את שמם",
+        "en": "Gave cells their name"
+      },
+      "details": [
+        {
+          "he": "רוברט הוק חתך פרוסה דקה של שעם וראה במיקרוסקופ מורכב \"חלת דבש\" של חללים. הוא קרא להם תאים – כמו חדרים קטנים.",
+          "en": "Robert Hooke cut a thin slice of cork and saw a \"honeycomb\" of spaces under a compound microscope. He called them cells – like little rooms."
+        },
+        {
+          "he": "השעם הוא רקמה מתה: הוק ראה רק דפנות של תאים מתים, ולא הבין שהתאים הם יחידות החיים.",
+          "en": "Cork is dead tissue: Hooke saw only the walls of dead cells, and did not understand that cells are the units of life."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "cell-discovery"
+      }
+    },
+    {
+      "id": "leeuwenhoek",
+      "rank": 1,
+      "title": {
+        "he": "ליווינהוק, שנות ה-1670",
+        "en": "Leeuwenhoek, 1670s"
+      },
+      "summary": {
+        "he": "ראה לראשונה חיידקים וחד-תאיים",
+        "en": "First saw bacteria and single-celled organisms"
+      },
+      "details": [
+        {
+          "he": "סוחר הבדים מדלפט גילה שכדור זכוכית קטן מגדיל יותר, ובנה עדשות שהגדילו כ-×250 – פי חמישה מהמיקרוסקופים המורכבים.",
+          "en": "The cloth merchant from Delft discovered that a small glass ball magnifies more and built lenses that magnified about 250× – five times more than compound microscopes."
+        },
+        {
+          "he": "בטיפת מים מאגם הוא ראה יצורים חד-תאיים, ואחר כך גם חיידקים – שבהגדלה של ×50 נראים רק כנקודות.",
+          "en": "In a drop of lake water he saw single-celled organisms, and later bacteria – which at 50× look only like specks."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "microscope-lens"
+      }
+    },
+    {
+      "id": "better-lenses",
+      "rank": 2,
+      "title": {
+        "he": "עדשות טובות יותר וגרעין התא",
+        "en": "Better lenses and the cell nucleus"
+      },
+      "summary": {
+        "he": "1830–1831: מבט לתוך התא",
+        "en": "1830–1831: a look inside the cell"
+      },
+      "details": [
+        {
+          "he": "כ-150 שנה ההתקדמות הייתה איטית. ב-1830 הראה ג'וזף ג'קסון ליסטר איך לבנות עדשות שמתקנות את השוליים הצבעוניים המטושטשים, והתמונה נעשתה חדה הרבה יותר.",
+          "en": "For about 150 years progress was slow. In 1830 Joseph Jackson Lister showed how to build lenses that correct the blurry coloured fringes, and the image became much sharper."
+        },
+        {
+          "he": "ב-1831 תיאר רוברט בראון את גרעין התא בתאי צמח. עכשיו ראו לא רק דפנות, אלא גם מבנה בתוך התא.",
+          "en": "In 1831 Robert Brown described the cell nucleus in plant cells. Now people saw not only walls, but a structure inside the cell."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "cell-discovery"
+      }
+    },
+    {
+      "id": "schleiden",
+      "rank": 3,
+      "title": {
+        "he": "שליידן, 1838: צמחים",
+        "en": "Schleiden, 1838: plants"
+      },
+      "summary": {
+        "he": "כל רקמות הצמח בנויות מתאים",
+        "en": "All plant tissues are made of cells"
+      },
+      "details": [
+        {
+          "he": "הבוטניקאי מתיאס שליידן בדק עלים, גבעולים ושורשים, ומצא שכל רקמה בנויה מתאים, ולכל תא יש גרעין.",
+          "en": "The botanist Matthias Schleiden examined leaves, stems and roots and found that every tissue is made of cells, each with a nucleus."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "cell-discovery"
+      }
+    },
+    {
+      "id": "schwann",
+      "rank": 3,
+      "title": {
+        "he": "שוואן, 1839: בעלי חיים",
+        "en": "Schwann, 1839: animals"
+      },
+      "summary": {
+        "he": "גם בעלי חיים בנויים מתאים",
+        "en": "Animals are made of cells too"
+      },
+      "details": [
+        {
+          "he": "הזואולוג תיאודור שוואן הבין שגם ברקמות בעלי החיים שבדק יש תאים עם גרעין – וחיבר את התצפיות של שניהם.",
+          "en": "The zoologist Theodor Schwann realized that the animal tissues he studied also had cells with nuclei – and combined both sets of observations."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "cell-discovery"
+      }
+    },
+    {
+      "id": "cell-theory",
+      "rank": 4,
+      "title": {
+        "he": "תורת התא",
+        "en": "Cell theory"
+      },
+      "summary": {
+        "he": "הכללה מתצפיות רבות",
+        "en": "A generalization from many observations"
+      },
+      "details": [
+        {
+          "he": "(1) כל היצורים החיים בנויים מתא אחד או יותר. (2) התא הוא יחידת החיים הבסיסית.",
+          "en": "(1) All living things are made of one or more cells. (2) The cell is the basic unit of life."
+        },
+        {
+          "he": "זו הכללה: אותו ממצא חזר שוב ושוב, בצמחים ובבעלי חיים. את הטענה השנייה הם לא הוכיחו באותה תקופה, ומחקרים מאוחרים יותר אישרו אותה.",
+          "en": "This is a generalization: the same finding appeared again and again, in plants and animals. They did not prove the second claim at the time; later research confirmed it."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "cell-discovery"
+      }
+    },
+    {
+      "id": "virchow",
+      "rank": 5,
+      "title": {
+        "he": "וירכוב, 1855",
+        "en": "Virchow, 1855"
+      },
+      "summary": {
+        "he": "כל תא נוצר מתא",
+        "en": "Every cell comes from a cell"
+      },
+      "details": [
+        {
+          "he": "שליידן ושוואן טעו בשאלה איך נוצרים תאים חדשים. הרופא רודולף וירכוב קבע שתאים חדשים נוצרים רק מחלוקה של תאים קיימים – והטענה הפכה לחלק מתורת התא.",
+          "en": "Schleiden and Schwann were wrong about how new cells form. The physician Rudolf Virchow stated that new cells form only by division of existing cells – and this became part of cell theory."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "cell-discovery"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "microscope",
+      "to": "hooke",
+      "label": {
+        "he": "×50",
+        "en": "×50"
+      }
+    },
+    {
+      "from": "microscope",
+      "to": "leeuwenhoek",
+      "label": {
+        "he": "×250",
+        "en": "×250"
+      }
+    },
+    {
+      "from": "hooke",
+      "to": "better-lenses"
+    },
+    {
+      "from": "leeuwenhoek",
+      "to": "better-lenses"
+    },
+    {
+      "from": "better-lenses",
+      "to": "schleiden"
+    },
+    {
+      "from": "better-lenses",
+      "to": "schwann"
+    },
+    {
+      "from": "schleiden",
+      "to": "cell-theory"
+    },
+    {
+      "from": "schwann",
+      "to": "cell-theory"
+    },
+    {
+      "from": "cell-theory",
+      "to": "virchow",
+      "label": {
+        "he": "השלמה",
+        "en": "addition"
+      }
+    }
+  ]
+}

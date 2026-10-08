@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0 – 2026-10-08 (prototype, not released)
+
+- Topic maps: every Biology topic opens with a flowchart of its written content. Hover, focus or tap a box
+  to expand it (details + a link to the lesson or simulation). Four maps: the cell; genetic code and protein
+  synthesis; enzymes; viruses and immunity. See `docs/TOPIC_MAPS.md`.
+
 ## 0.5.0 – 2026-10-08 (prototype, not released)
 
 - Lesson model: `timeline` block – an integrative timeline with stages of progress, parallel tracks (e.g.

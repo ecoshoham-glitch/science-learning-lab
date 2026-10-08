@@ -1,6 +1,9 @@
 import { manifestSchema, type SimulationManifest } from "@/lib/simulation/manifest";
 import { activitySchema, type Activity } from "@/lib/activity/schema";
 import { lessonSchema, type Lesson } from "@/lib/lesson/schema";
+import { topicMapSchema, type TopicMap } from "@/lib/topic-map/schema";
+import { checkMapStructure } from "@/lib/topic-map/layout";
+import { topics } from "./taxonomy";
 
 import enzymeLab from "./simulations/enzyme-lab.json";
 import geneticCode from "./simulations/genetic-code.json";
@@ -16,6 +19,11 @@ import microscopeDiscoveryG10 from "./activities/microscope-discovery-g10.json";
 import virusesIntro from "./lessons/viruses-intro.json";
 import cellDiscovery from "./lessons/cell-discovery.json";
 
+import mapTheCell from "./topic-maps/the-cell.json";
+import mapCellAndProteins from "./topic-maps/cell-and-proteins.json";
+import mapEnzymes from "./topic-maps/enzymes.json";
+import mapVirusesImmunity from "./topic-maps/viruses-immunity.json";
+
 /**
  * Prototype content registry. In the next phase this moves to the database;
  * the validation below stays the same.
@@ -27,6 +35,27 @@ const rawLessons: unknown[] = [cellDiscovery, virusesIntro];
 export const simulations: SimulationManifest[] = rawManifests.map((m) => manifestSchema.parse(m));
 export const activities: Activity[] = rawActivities.map((a) => activitySchema.parse(a));
 export const lessons: Lesson[] = rawLessons.map((l) => lessonSchema.parse(l));
+
+const rawTopicMaps: unknown[] = [mapTheCell, mapCellAndProteins, mapEnzymes, mapVirusesImmunity];
+export const topicMaps: TopicMap[] = rawTopicMaps.map((m) => topicMapSchema.parse(m));
+
+export function getTopicMap(topicId: string): TopicMap | undefined {
+  return topicMaps.find((m) => m.topic === topicId);
+}
+
+/** A topic map must belong to a known topic, be well formed, and link only to available content. */
+export function checkTopicMap(map: TopicMap): string[] {
+  const problems = checkMapStructure(map.nodes, map.edges).map((p) => `${map.topic}: ${p}`);
+  if (!topics.some((t) => t.id === map.topic)) problems.push(`${map.topic}: unknown topic`);
+  for (const n of map.nodes) {
+    if (!n.link) continue;
+    if (n.link.kind === "lesson" && !getLesson(n.link.id)) problems.push(`${map.topic}: node ${n.id} links to unknown lesson ${n.link.id}`);
+    if (n.link.kind === "simulation" && getSimulation(n.link.id)?.status !== "available") {
+      problems.push(`${map.topic}: node ${n.link.id} is not an available simulation`);
+    }
+  }
+  return problems;
+}
 
 export function getLesson(id: string): Lesson | undefined {
   return lessons.find((l) => l.id === id);

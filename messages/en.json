@@ -196,6 +196,15 @@
     "lessonsHeading": "Lessons",
     "simsHeading": "Simulations",
     "emptyTopic": "No content in this topic yet.",
-    "back": "All subjects"
+    "back": "All subjects",
+    "map": {
+      "title": "Topic map",
+      "hint": "Point at an idea to expand it, or click to keep it open.",
+      "draft": "Draft – not reviewed",
+      "close": "Close",
+      "leadsTo": "Leads to: {targets}",
+      "toLesson": "To the lesson: {title}",
+      "toSimulation": "To the simulation: {title}"
+    }
   }
 }

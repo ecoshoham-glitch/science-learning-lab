@@ -54,6 +54,14 @@ Root cause of the earlier intermittent genetic-code failure found and fixed in 0
   (contract); stages, gaps, expand, filter, teacher-only "added" marks, axe (e2e, desktop + phone).
 - Last run 2026-10-08: unit 80/80; end-to-end 64/64.
 
+## Topic map tests (0.6.0)
+
+- Unit: rows, structure checks (skipped/upward arrows, duplicates, crowded rows, unconnected boxes),
+  arrow geometry, popover clamping; every topic has a valid map; bad links detected.
+- E2E: maps at the top of all four topics with arrows; hover/leave/click/Escape (desktop); keyboard focus;
+  tap opens under the chart (phone); link from the expansion; axe with an expansion open; English.
+- Last run 2026-10-08: unit 88/88; end-to-end 73 passed, 3 skipped by design (hover tests on phone, tap test on desktop).
+
 ## Not yet verified
 
 - Real iPhone/Safari and Firefox (tests use Chromium only).

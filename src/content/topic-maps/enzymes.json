@@ -1,0 +1,204 @@
+{
+  "mapVersion": 1,
+  "topic": "enzymes",
+  "origin": "ai-generated",
+  "reviewed": false,
+  "nodes": [
+    {
+      "id": "enzyme",
+      "rank": 0,
+      "title": {
+        "he": "אנזים",
+        "en": "Enzyme"
+      },
+      "summary": {
+        "he": "חלבון שמזרז תגובה",
+        "en": "A protein that speeds up a reaction"
+      },
+      "details": [
+        {
+          "he": "האנזים קושר את המצע באתר הפעיל והופך אותו לתוצר, בלי להשתנות בעצמו. מודדים את פעילותו לפי קצב התגובה: כמה תוצר נוצר בכל יחידת זמן.",
+          "en": "The enzyme binds the substrate at its active site and turns it into product, without being changed itself. Its activity is measured as the reaction rate: how much product forms per unit of time."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "enzyme-lab"
+      }
+    },
+    {
+      "id": "temperature",
+      "rank": 1,
+      "title": {
+        "he": "טמפרטורה",
+        "en": "Temperature"
+      },
+      "summary": {
+        "he": "עד האופטימום – הקצב עולה",
+        "en": "Up to the optimum – the rate rises"
+      },
+      "details": [
+        {
+          "he": "בטמפרטורה נמוכה המולקולות נעות לאט. בסימולציה, מתחת ל-37°C הקצב מוכפל בערך בכל עלייה של 10°C.",
+          "en": "At low temperature molecules move slowly. In the simulation, below 37°C the rate roughly doubles with every 10°C rise."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "enzyme-lab"
+      }
+    },
+    {
+      "id": "ph",
+      "rank": 1,
+      "title": {
+        "he": "pH",
+        "en": "pH"
+      },
+      "summary": {
+        "he": "לכל אנזים pH אופטימלי",
+        "en": "Every enzyme has an optimal pH"
+      },
+      "details": [
+        {
+          "he": "בסימולציה ה-pH האופטימלי הוא 7. אנזימים אמיתיים שונים זה מזה: למשל פפסין, שפועל בקיבה, פעיל במיוחד ב-pH חומצי של כ-2.",
+          "en": "In the simulation the optimal pH is 7. Real enzymes differ: for example pepsin, which works in the stomach, is most active at an acidic pH of about 2."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "enzyme-lab"
+      }
+    },
+    {
+      "id": "substrate",
+      "rank": 1,
+      "title": {
+        "he": "ריכוז מצע",
+        "en": "Substrate concentration"
+      },
+      "summary": {
+        "he": "יותר מצע – קצב גבוה יותר, עד גבול",
+        "en": "More substrate – a higher rate, up to a limit"
+      },
+      "details": [
+        {
+          "he": "כשיש מעט מצע, הוספת מצע מעלה את הקצב. בסימולציה, בריכוז 2 mM הקצב מגיע לחצי מהמרבי (Km).",
+          "en": "With little substrate, adding substrate raises the rate. In the simulation the rate reaches half its maximum at 2 mM (Km)."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "enzyme-lab"
+      }
+    },
+    {
+      "id": "denaturation",
+      "rank": 2,
+      "title": {
+        "he": "דה-נטורציה",
+        "en": "Denaturation"
+      },
+      "summary": {
+        "he": "המבנה נהרס – הקצב צונח",
+        "en": "The structure is lost – the rate falls"
+      },
+      "details": [
+        {
+          "he": "מעל הטמפרטורה האופטימלית, או ב-pH רחוק מהאופטימום, האנזים מאבד את המבנה המרחבי שלו. האתר הפעיל כבר לא מתאים למצע, והקצב יורד בחדות.",
+          "en": "Above the optimal temperature, or at a pH far from the optimum, the enzyme loses its three-dimensional structure. The active site no longer fits the substrate, and the rate falls sharply."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "enzyme-lab"
+      }
+    },
+    {
+      "id": "saturation",
+      "rank": 2,
+      "title": {
+        "he": "רוויה",
+        "en": "Saturation"
+      },
+      "summary": {
+        "he": "כל האתרים הפעילים תפוסים",
+        "en": "All active sites are occupied"
+      },
+      "details": [
+        {
+          "he": "בריכוז מצע גבוה כל האנזימים עסוקים כל הזמן, והוספת מצע כמעט לא משנה את הקצב – הגרף מגיע לרמה.",
+          "en": "At high substrate concentration all enzymes are busy all the time, and adding substrate hardly changes the rate – the graph levels off."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "enzyme-lab"
+      }
+    },
+    {
+      "id": "controlled",
+      "rank": 3,
+      "title": {
+        "he": "ניסוי מבוקר",
+        "en": "Controlled experiment"
+      },
+      "summary": {
+        "he": "משנים משתנה אחד בלבד",
+        "en": "Change one variable only"
+      },
+      "details": [
+        {
+          "he": "כדי לדעת מה משפיע על הקצב, משנים משתנה בלתי תלוי אחד (למשל pH) ושומרים את כל השאר קבועים (טמפרטורה, ריכוז מצע). כך אפשר להסיק מסקנה שנתמכת בנתונים.",
+          "en": "To know what affects the rate, change one independent variable (for example pH) and keep everything else constant (temperature, substrate concentration). Then a conclusion can be supported by the data."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "enzyme-lab"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "enzyme",
+      "to": "temperature"
+    },
+    {
+      "from": "enzyme",
+      "to": "ph"
+    },
+    {
+      "from": "enzyme",
+      "to": "substrate"
+    },
+    {
+      "from": "temperature",
+      "to": "denaturation",
+      "label": {
+        "he": "מעל האופטימום",
+        "en": "above the optimum"
+      }
+    },
+    {
+      "from": "ph",
+      "to": "denaturation"
+    },
+    {
+      "from": "substrate",
+      "to": "saturation",
+      "label": {
+        "he": "ריכוז גבוה",
+        "en": "high concentration"
+      }
+    },
+    {
+      "from": "denaturation",
+      "to": "controlled"
+    },
+    {
+      "from": "saturation",
+      "to": "controlled"
+    }
+  ]
+}

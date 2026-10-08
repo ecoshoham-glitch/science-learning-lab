@@ -1,0 +1,224 @@
+{
+  "mapVersion": 1,
+  "topic": "viruses-immunity",
+  "origin": "ai-generated",
+  "reviewed": false,
+  "nodes": [
+    {
+      "id": "cell-proteins",
+      "rank": 0,
+      "title": {
+        "he": "התא מייצר חלבונים",
+        "en": "The cell makes proteins"
+      },
+      "summary": {
+        "he": "מ-DNA ל-mRNA ולחלבון",
+        "en": "DNA → mRNA → protein"
+      },
+      "details": [
+        {
+          "he": "התא מעתיק גן ל-mRNA, והריבוזום מתרגם אותו לחלבון. הריבוזום לא בודק מאיפה הגיע ה-mRNA – ולכן נגיף יכול לנצל אותו.",
+          "en": "The cell copies a gene into mRNA, and the ribosome translates it into protein. The ribosome does not check where the mRNA came from – so a virus can exploit it."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "genetic-code"
+      }
+    },
+    {
+      "id": "virus",
+      "rank": 1,
+      "title": {
+        "he": "מהו נגיף",
+        "en": "What a virus is"
+      },
+      "summary": {
+        "he": "חומר תורשתי במעטפת",
+        "en": "Genetic material in a coat"
+      },
+      "details": [
+        {
+          "he": "נגיף בנוי מחומר תורשתי (DNA או RNA) בתוך מעטפת חלבון; לחלק מהנגיפים יש גם מעטפת שומנית. אין לו ריבוזומים ואין לו אנרגיה משלו – ולכן מחוץ לתא הוא לא יכול לעשות דבר.",
+          "en": "A virus is genetic material (DNA or RNA) inside a protein coat; some viruses also have a fatty envelope. It has no ribosomes and no energy of its own – so outside a cell it can do nothing."
+        },
+        {
+          "he": "נגיף אינו תא.",
+          "en": "A virus is not a cell."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "viruses-intro"
+      }
+    },
+    {
+      "id": "takeover",
+      "rank": 2,
+      "title": {
+        "he": "השתלטות על התא",
+        "en": "Taking over the cell"
+      },
+      "summary": {
+        "he": "התא מייצר עותקים של הנגיף",
+        "en": "The cell makes copies of the virus"
+      },
+      "details": [
+        {
+          "he": "בקירוב: הנגיף נצמד לחלבון על פני התא, חודר ומשחרר את החומר התורשתי. התא מתרגם את הוראות הנגיף כאילו היו שלו, מעתיק את החומר התורשתי, והעותקים החדשים יוצאים ומדביקים תאים נוספים.",
+          "en": "Roughly: the virus attaches to a protein on the cell surface, enters and releases its genetic material. The cell translates the virus's instructions as if they were its own, copies the genetic material, and the new copies leave and infect more cells."
+        },
+        {
+          "he": "זה תיאור מפושט; הפרטים שונים מנגיף לנגיף.",
+          "en": "This is a simplified description; the details differ from virus to virus."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "viruses-intro"
+      }
+    },
+    {
+      "id": "variants",
+      "rank": 3,
+      "title": {
+        "he": "מוטציות בנגיף",
+        "en": "Mutations in the virus"
+      },
+      "summary": {
+        "he": "שינויים בחלבוני המעטפת",
+        "en": "Changes in the coat proteins"
+      },
+      "details": [
+        {
+          "he": "בזמן העתקת החומר התורשתי של הנגיף נוצרות לפעמים טעויות. מוטציה שמחליפה חומצת אמינו בחלבון המעטפת יכולה לשנות מעט את צורתו.",
+          "en": "Copying the virus's genetic material sometimes produces errors. A mutation that replaces an amino acid in a coat protein can slightly change its shape."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "genetic-code"
+      }
+    },
+    {
+      "id": "immune",
+      "rank": 3,
+      "title": {
+        "he": "מערכת החיסון מזהה",
+        "en": "The immune system recognizes"
+      },
+      "summary": {
+        "he": "תאי דם לבנים תוקפים חלבונים זרים",
+        "en": "White blood cells attack foreign proteins"
+      },
+      "details": [
+        {
+          "he": "תאי הדם הלבנים מזהים חלבונים זרים, למשל חלבונים שעל פני נגיף, ותוקפים אותם. בפגישה הראשונה עם נגיף מסוים התגובה לוקחת כמה ימים.",
+          "en": "White blood cells recognize foreign proteins, for example proteins on a virus's surface, and attack them. The first time the body meets a particular virus, the response takes several days."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "viruses-intro"
+      }
+    },
+    {
+      "id": "memory",
+      "rank": 4,
+      "title": {
+        "he": "זיכרון חיסוני",
+        "en": "Immune memory"
+      },
+      "summary": {
+        "he": "בפעם הבאה – תגובה מהירה",
+        "en": "Next time – a fast response"
+      },
+      "details": [
+        {
+          "he": "אחרי ההחלמה נשארים בגוף תאי זיכרון. אם אותו נגיף מגיע שוב, התגובה מהירה וחזקה יותר – לרוב לפני שמרגישים חולים.",
+          "en": "After recovery, memory cells remain in the body. If the same virus returns, the response is faster and stronger – usually before you feel ill."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "viruses-intro"
+      }
+    },
+    {
+      "id": "vaccine",
+      "rank": 5,
+      "title": {
+        "he": "חיסונים",
+        "en": "Vaccines"
+      },
+      "summary": {
+        "he": "יוצרים זיכרון מראש",
+        "en": "Create the memory in advance"
+      },
+      "details": [
+        {
+          "he": "חיסון חושף את מערכת החיסון לחלק של הנגיף או לגרסה מוחלשת שלו, בלי לגרום למחלה – וכך נוצר זיכרון מראש. חיסון אינו תרופה שתוקפת את הנגיף.",
+          "en": "A vaccine exposes the immune system to part of the virus or a weakened version of it, without causing the disease – so the memory forms in advance. A vaccine is not a drug that attacks the virus."
+        },
+        {
+          "he": "נגיפים שמשתנים מהר, כמו שפעת, הם אחת הסיבות שחיסונים מסוימים מתעדכנים מדי פעם.",
+          "en": "Fast-changing viruses, such as influenza, are one reason some vaccines are updated from time to time."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "viruses-intro"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "cell-proteins",
+      "to": "virus",
+      "label": {
+        "he": "הנגיף מנצל",
+        "en": "the virus exploits"
+      }
+    },
+    {
+      "from": "virus",
+      "to": "takeover"
+    },
+    {
+      "from": "takeover",
+      "to": "variants",
+      "label": {
+        "he": "טעויות בהעתקה",
+        "en": "copying errors"
+      }
+    },
+    {
+      "from": "takeover",
+      "to": "immune",
+      "label": {
+        "he": "חלבונים זרים",
+        "en": "foreign proteins"
+      }
+    },
+    {
+      "from": "variants",
+      "to": "immune",
+      "label": {
+        "he": "עלולות להחליש זיהוי",
+        "en": "may weaken recognition"
+      }
+    },
+    {
+      "from": "immune",
+      "to": "memory"
+    },
+    {
+      "from": "memory",
+      "to": "vaccine",
+      "label": {
+        "he": "הבסיס ל",
+        "en": "the basis of"
+      }
+    }
+  ]
+}

@@ -3,9 +3,10 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { getActivitiesFor, lessons, simulations } from "@/content/registry";
+import { getActivitiesFor, getTopicMap, lessons, simulations } from "@/content/registry";
 import { inTopic, subjects, topicsFor } from "@/content/taxonomy";
 import { SimulationCard } from "@/components/SimulationCard";
+import { TopicMap } from "@/components/TopicMap";
 
 type Params = Promise<{ locale: string; subject: string }>;
 
@@ -30,6 +31,8 @@ export default async function SubjectPage({ params }: { params: Params }) {
   const subjectSims = simulations.filter((s) => s.subject === subject);
   const subjectLessons = lessons.filter((l) => l.subject === subject);
   const topics = topicsFor(subject);
+  // Titles for links inside topic maps (lesson and simulation ids → names in this language).
+  const titles = Object.fromEntries([...lessons, ...simulations].map((x) => [x.id, x.title[locale]]));
 
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
@@ -53,6 +56,10 @@ export default async function SubjectPage({ params }: { params: Params }) {
                   <h3 id={`topic-${topic.id}`} className="text-2xl font-semibold m-0">{topic.title[locale]}</h3>
                   <p className="m-0 mt-1 text-muted">{topic.description[locale]}</p>
                 </div>
+                {(() => {
+                  const map = getTopicMap(topic.id);
+                  return map ? <TopicMap map={map} locale={locale} titles={titles} /> : null;
+                })()}
                 {tLessons.length + tSims.length === 0 && <p className="m-0 text-muted">{t("emptyTopic")}</p>}
                 {tLessons.length > 0 && (
                   <div>

@@ -1,0 +1,152 @@
+{
+  "mapVersion": 1,
+  "topic": "cell-and-proteins",
+  "origin": "ai-generated",
+  "reviewed": false,
+  "nodes": [
+    {
+      "id": "mutation",
+      "rank": 0,
+      "title": {
+        "he": "מוטציה",
+        "en": "Mutation"
+      },
+      "summary": {
+        "he": "שינוי ברצף הבסיסים",
+        "en": "A change in the base sequence"
+      },
+      "details": [
+        {
+          "he": "החלפה, הוספה או מחיקה של בסיס ב-DNA. ההשפעה תלויה במקום: מוטציה שקטה לא משנה את החלבון; מחליפת משמעות מחליפה חומצת אמינו; מוטציית עצירה מקצרת אותו; הוספה או מחיקה מזיזות את מסגרת הקריאה.",
+          "en": "Replacing, adding or deleting a base in DNA. The effect depends on where it happens: a silent mutation does not change the protein; missense replaces an amino acid; nonsense shortens it; an insertion or deletion shifts the reading frame."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "genetic-code"
+      }
+    },
+    {
+      "id": "dna",
+      "rank": 0,
+      "title": {
+        "he": "DNA – ההוראות",
+        "en": "DNA – the instructions"
+      },
+      "summary": {
+        "he": "גן כתוב בארבעה בסיסים",
+        "en": "A gene is written in four bases"
+      },
+      "details": [
+        {
+          "he": "ההוראות לבניית כל חלבון כתובות ב-DNA, ברצף של ארבעה בסיסים: A, T, G, C. קטע DNA שמכיל הוראות לחלבון אחד נקרא גן.",
+          "en": "The instructions for building each protein are written in DNA, in a sequence of four bases: A, T, G, C. A stretch of DNA that holds the instructions for one protein is called a gene."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "genetic-code"
+      }
+    },
+    {
+      "id": "transcription",
+      "rank": 1,
+      "title": {
+        "he": "שעתוק",
+        "en": "Transcription"
+      },
+      "summary": {
+        "he": "מהגן ל-mRNA",
+        "en": "From gene to mRNA"
+      },
+      "details": [
+        {
+          "he": "התא מעתיק את הגן למולקולה של mRNA. ה-mRNA זהה לגדיל המקודד של ה-DNA, אבל עם U במקום T.",
+          "en": "The cell copies the gene into an mRNA molecule. The mRNA matches the DNA's coding strand, but with U instead of T."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "genetic-code"
+      }
+    },
+    {
+      "id": "translation",
+      "rank": 2,
+      "title": {
+        "he": "תרגום בריבוזום",
+        "en": "Translation in the ribosome"
+      },
+      "summary": {
+        "he": "כל שלישייה – חומצת אמינו",
+        "en": "Each triplet – one amino acid"
+      },
+      "details": [
+        {
+          "he": "הריבוזום קורא את ה-mRNA בשלישיות בסיסים (קודונים), ומתרגם כל קודון לחומצת אמינו לפי הקוד הגנטי. התרגום מתחיל ב-AUG ונעצר בקודון עצירה (UAA, UAG או UGA).",
+          "en": "The ribosome reads the mRNA in base triplets (codons) and translates each codon into an amino acid according to the genetic code. Translation starts at AUG and stops at a stop codon (UAA, UAG or UGA)."
+        },
+        {
+          "he": "הריבוזום לא \"בודק\" מאיפה הגיע ה-mRNA – נקודה חשובה להבנת נגיפים.",
+          "en": "The ribosome does not \"check\" where the mRNA came from – an important point for understanding viruses."
+        }
+      ],
+      "link": {
+        "kind": "simulation",
+        "id": "genetic-code"
+      }
+    },
+    {
+      "id": "protein",
+      "rank": 3,
+      "title": {
+        "he": "חלבון",
+        "en": "Protein"
+      },
+      "summary": {
+        "he": "עושה כמעט את כל העבודה בגוף",
+        "en": "Does almost all the work in the body"
+      },
+      "details": [
+        {
+          "he": "רצף חומצות האמינו קובע את החלבון. חלבונים מפרקים מזון (אנזימים), בונים שרירים, מעבירים חומרים ומגנים עלינו.",
+          "en": "The amino acid sequence determines the protein. Proteins digest food (enzymes), build muscles, carry substances and protect us."
+        }
+      ],
+      "link": {
+        "kind": "lesson",
+        "id": "viruses-intro"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "mutation",
+      "to": "dna",
+      "label": {
+        "he": "משנה את",
+        "en": "changes"
+      }
+    },
+    {
+      "from": "dna",
+      "to": "transcription"
+    },
+    {
+      "from": "transcription",
+      "to": "translation",
+      "label": {
+        "he": "mRNA",
+        "en": "mRNA"
+      }
+    },
+    {
+      "from": "translation",
+      "to": "protein",
+      "label": {
+        "he": "רצף חומצות אמינו",
+        "en": "amino acid chain"
+      }
+    }
+  ]
+}
