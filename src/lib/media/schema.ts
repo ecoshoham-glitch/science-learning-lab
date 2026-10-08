@@ -11,7 +11,8 @@ const localizedText = z.object({ he: z.string().min(1), en: z.string().min(1) })
 export const mediaSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   kind: z.enum(["portrait", "reconstruction", "illustration"]),
-  file: z.string().regex(/^\/media\/[a-z0-9/-]+\.(jpg|png|webp)$/),
+  /** `original`: drawn for this platform (no third-party rights). */
+  file: z.string().regex(/^\/media\/[a-z0-9/-]+\.(jpg|png|webp|svg)$/),
   /** The person's name, e.g. "Robert Hooke". */
   name: localizedText,
   /** Life years, e.g. "1635–1703". */
@@ -20,7 +21,7 @@ export const mediaSchema = z.object({
   /** Shown to students when the image needs explaining (e.g. a modern reconstruction). */
   note: localizedText.optional(),
   credit: localizedText,
-  licence: z.enum(["public-domain", "public-domain-mark", "free-art-license"]),
+  licence: z.enum(["public-domain", "public-domain-mark", "free-art-license", "original"]),
   sourceUrl: z.string().url().optional(),
   sourceVerified: z.boolean(),
 });

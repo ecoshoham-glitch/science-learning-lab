@@ -1,7 +1,7 @@
 {
   "lessonVersion": 1,
   "id": "cell-discovery",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "title": {
     "he": "גילוי התא: מכדור זכוכית לתורת התא",
     "en": "Discovering the cell: from a glass ball to cell theory"
@@ -794,9 +794,10 @@
             "en": "Leeuwenhoek's ball lens"
           },
           "text": {
-            "he": "ליווינהוק מתחיל לשלוח לחברה המלכותית בלונדון תיאורים של מה שהוא רואה בעדשות כדור זעירות: הגדלה של כ-×250, פי חמישה מהמיקרוסקופים המורכבים של התקופה.",
-            "en": "Leeuwenhoek begins sending the Royal Society in London descriptions of what he sees through tiny ball lenses: about 250× magnification, five times more than the compound microscopes of the time."
+            "he": "שני לוחות מתכת מסומררים, ביניהם עדשת זכוכית זעירה. מול העדשה עומדת סיכה שעליה מניחים את הדגימה, ושני ברגים מזיזים אותה עד שהתמונה חדה. ליווינהוק מתחיל לשלוח לחברה המלכותית בלונדון תיאורים של מה שראה בה: הגדלה של כ-×250, פי חמישה מהמיקרוסקופים המורכבים של התקופה.",
+            "en": "Two riveted metal plates with a tiny glass lens between them. A pin holding the specimen stands in front of the lens, and two screws move it until the image is sharp. Leeuwenhoek begins sending the Royal Society in London descriptions of what he saw with it: about 250× magnification, five times more than the compound microscopes of the time."
           },
+          "media": "leeuwenhoek-microscope",
           "fromSource": true
         },
         {

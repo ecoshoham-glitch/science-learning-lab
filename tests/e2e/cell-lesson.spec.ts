@@ -210,7 +210,9 @@ test.describe("cell-discovery lesson", () => {
     await expect(schwann).toContainText("קרדיט לתמונה");
     const hooke = page.getByTestId("event-hooke-cork");
     await expect(hooke).toContainText("שחזור אמנותי מודרני");
-    for (const id of ["hooke-cork", "protists", "schleiden", "schwann"]) {
+    await expect(page.getByTestId("event-ball-lens").getByRole("img", { name: /המיקרוסקופ של ליווינהוק מאחור/ })).toBeVisible();
+    await expect(page.getByTestId("event-ball-lens")).toContainText("איור סכמטי");
+    for (const id of ["hooke-cork", "ball-lens", "protists", "schleiden", "schwann"]) {
       const img = page.getByTestId(`event-${id}`).locator("img");
       await expect(img).toBeVisible();
       expect(await img.evaluate((el) => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(100);

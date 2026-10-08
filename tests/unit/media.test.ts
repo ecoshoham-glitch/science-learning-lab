@@ -12,9 +12,17 @@ describe("media library", () => {
       const head = readFileSync(file).subarray(0, 4);
       const isJpeg = head[0] === 0xff && head[1] === 0xd8;
       const isPng = head.toString("latin1", 1, 4) === "PNG";
-      expect(isJpeg || isPng, m.file).toBe(true);
+      const isSvg = m.file.endsWith(".svg") && readFileSync(file, "utf8").trimStart().startsWith("<svg");
+      expect(isJpeg || isPng || isSvg, m.file).toBe(true);
       expect(m.credit.he.length).toBeGreaterThan(5);
       expect(m.alt.he.length).toBeGreaterThan(5);
+    }
+  });
+
+  it("SVG images contain no scripts, external references or embedded images", () => {
+    for (const m of media.filter((x) => x.file.endsWith(".svg"))) {
+      const svg = readFileSync(path.join("public", m.file), "utf8");
+      expect(svg, m.file).not.toMatch(/<script|<foreignObject|href=|url\(|<image/i);
     }
   });
 

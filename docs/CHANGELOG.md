@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.1 – 2026-10-09 (prototype, not released)
+
+- Original illustration of Leeuwenhoek's single-lens microscope (SVG, gentle focusing motion, respects
+  reduced motion) on the 1673 timeline card; card text explains its parts. Lesson `cell-discovery` 0.3.1.
+- Design directions for the site (with motion) prepared on a design canvas for the owner to choose from.
+
 ## 0.7.0 – 2026-10-08 (prototype, not released)
 
 - Media library (`docs/MEDIA.md`): self-hosted images with alt text, credit, licence and source status.

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="330" height="450" viewBox="0 0 330 450" role="img" aria-label="Leeuwenhoek's single-lens microscope, seen from the back">
+  <title>Leeuwenhoek's single-lens microscope (schematic, back view)</title>
+  <style>
+    .bg { fill: #EEF2F7; }
+    .plate { fill: #C9A24B; stroke: #7A5C17; stroke-width: 3; }
+    .plate2 { fill: #B48D36; stroke: #7A5C17; stroke-width: 2; }
+    .rivet { fill: #E6C878; stroke: #7A5C17; stroke-width: 1.5; }
+    .lens { fill: #DDEBFA; stroke: #3A4F6E; stroke-width: 3; }
+    .glint { fill: #FFFFFF; }
+    .metal { fill: #9AA3AE; stroke: #4A5361; stroke-width: 2.5; }
+    .thread { stroke: #4A5361; stroke-width: 2; }
+    .knob { fill: #B7BEC7; stroke: #4A5361; stroke-width: 2.5; }
+    .pin { stroke: #4A5361; stroke-width: 5; stroke-linecap: round; }
+    .specimen { fill: #3C8D5A; }
+    .stage { animation: focus 4.5s ease-in-out infinite; }
+    @keyframes focus { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @media (prefers-reduced-motion: reduce) { .stage { animation: none; } }
+  </style>
+  <rect class="bg" x="0" y="0" width="330" height="450" />
+
+  <!-- Body: two riveted plates, about 5 x 2.5 cm, with the lens near the top -->
+  <rect class="plate2" x="103" y="44" width="128" height="300" rx="16" />
+  <rect class="plate" x="95" y="38" width="128" height="300" rx="16" />
+  <circle class="rivet" cx="114" cy="58" r="5" />
+  <circle class="rivet" cx="204" cy="58" r="5" />
+  <circle class="rivet" cx="114" cy="318" r="5" />
+  <circle class="rivet" cx="204" cy="318" r="5" />
+  <circle class="lens" cx="159" cy="96" r="11" />
+  <circle class="glint" cx="155" cy="92" r="3" />
+
+  <!-- L-bracket at the bottom, holding the long positioning screw -->
+  <path class="metal" d="M150 338 L150 372 L238 372 L238 356 L168 356 L168 338 Z" />
+
+  <!-- Mount with the specimen pin: moves up and down (focusing) -->
+  <g class="stage">
+    <rect class="metal" x="205" y="120" width="12" height="244" rx="4" />
+    <line class="thread" x1="205" y1="140" x2="217" y2="146" />
+    <line class="thread" x1="205" y1="160" x2="217" y2="166" />
+    <line class="thread" x1="205" y1="180" x2="217" y2="186" />
+    <line class="thread" x1="205" y1="200" x2="217" y2="206" />
+    <line class="thread" x1="205" y1="220" x2="217" y2="226" />
+    <line class="thread" x1="205" y1="240" x2="217" y2="246" />
+    <circle class="knob" cx="211" cy="112" r="11" />
+    <rect class="metal" x="136" y="176" width="92" height="46" rx="6" />
+    <circle class="knob" cx="240" cy="199" r="12" />
+    <line class="pin" x1="159" y1="176" x2="159" y2="104" />
+    <circle class="specimen" cx="159" cy="103" r="4.5" />
+    <rect class="knob" x="148" y="222" width="22" height="18" rx="4" />
+  </g>
+</svg>

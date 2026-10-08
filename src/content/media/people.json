@@ -85,5 +85,30 @@
     "licence": "public-domain",
     "sourceUrl": "https://wellcomecollection.org/works/wtwafh6w",
     "sourceVerified": false
+  },
+  {
+    "id": "leeuwenhoek-microscope",
+    "kind": "illustration",
+    "file": "/media/instruments/leeuwenhoek-microscope.svg",
+    "name": {
+      "he": "המיקרוסקופ של ליווינהוק",
+      "en": "Leeuwenhoek's microscope"
+    },
+    "years": "1670s",
+    "alt": {
+      "he": "איור של המיקרוסקופ של ליווינהוק מאחור: לוח פליז מלבני ובראשו עדשה זעירה; מולה סיכה שעליה הדגימה, על בסיס שזז למעלה ולמטה בעזרת ברגים",
+      "en": "Illustration of Leeuwenhoek's microscope from the back: a rectangular brass plate with a tiny lens near the top; facing it, a pin holding the specimen, on a block moved up and down by screws"
+    },
+    "note": {
+      "he": "איור סכמטי. המכשיר האמיתי באורך של כ-5 ס\"מ בלבד: מחזיקים אותו צמוד לעין, מול האור.",
+      "en": "A schematic drawing. The real instrument is only about 5 cm long: you hold it close to your eye, facing the light."
+    },
+    "credit": {
+      "he": "איור מקורי של מעבדת המדע, לפי תיאור המכשירים ששרדו.",
+      "en": "Original illustration by Science Learning Lab, based on descriptions of the surviving instruments."
+    },
+    "licence": "original",
+    "sourceUrl": "https://lensonleeuwenhoek.net/content/parts",
+    "sourceVerified": true
   }
 ]
