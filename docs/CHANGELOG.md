@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0 – 2026-10-08 (prototype, not released)
+
+- Subjects: "Subjects" page and a page per subject. Biology has three topic folders: the cell, genetic
+  code and protein synthesis; enzymes and inquiry; viruses and the immune system. Other subjects show
+  "coming soon".
+- Fix: clicks made before a simulation is initialized were lost; simulations now wait, inert, for `init`.
+
 ## 0.2.0 – 2026-10-08 (prototype, not released)
 
 - Lesson model v1 (blocks, delivery modes, provenance) and lesson player with self-paced and teacher-led modes.

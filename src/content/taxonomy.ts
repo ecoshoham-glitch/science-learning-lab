@@ -47,3 +47,57 @@ export const difficulties: Record<string, LocalizedText> = {
 export function label(map: Record<string, LocalizedText>, key: string, locale: "he" | "en"): string {
   return map[key]?.[locale] ?? key;
 }
+
+/**
+ * Topics are the folders inside a subject. A simulation or lesson appears in every topic
+ * that shares at least one of its concepts, so content never has to be filed by hand twice.
+ * Adding a topic (or a whole subject) is a data edit here.
+ */
+export type Topic = {
+  id: string;
+  subject: string;
+  title: LocalizedText;
+  description: LocalizedText;
+  concepts: string[];
+};
+
+export const topics: Topic[] = [
+  {
+    id: "cell-and-proteins",
+    subject: "biology",
+    title: { he: "התא, הקוד הגנטי וסינתזת חלבונים", en: "The cell, the genetic code and protein synthesis" },
+    description: {
+      he: "איך ההוראות שב-DNA הופכות לחלבון, ומה קורה כשהן משתנות.",
+      en: "How the instructions in DNA become a protein, and what happens when they change.",
+    },
+    concepts: ["genetic-code", "transcription", "translation", "mutations", "ribosome", "trna", "protein-synthesis"],
+  },
+  {
+    id: "enzymes",
+    subject: "biology",
+    title: { he: "אנזימים וחקר", en: "Enzymes and inquiry" },
+    description: {
+      he: "גורמים שמשפיעים על פעילות אנזימים, ותכנון ניסוי מבוקר.",
+      en: "What affects enzyme activity, and how to design a controlled experiment.",
+    },
+    concepts: ["enzymes", "reaction-rate", "denaturation", "controlled-experiment"],
+  },
+  {
+    id: "viruses-immunity",
+    subject: "biology",
+    title: { he: "נגיפים ומערכת החיסון", en: "Viruses and the immune system" },
+    description: {
+      he: "מהו נגיף, איך הוא משתלט על תא, ואיך הגוף נלחם בו וזוכר אותו.",
+      en: "What a virus is, how it takes over a cell, and how the body fights and remembers it.",
+    },
+    concepts: ["virus", "host-cell", "immune-memory", "vaccine"],
+  },
+];
+
+export function topicsFor(subject: string): Topic[] {
+  return topics.filter((t) => t.subject === subject);
+}
+
+export function inTopic(topic: Topic, itemConcepts: string[]): boolean {
+  return itemConcepts.some((c) => topic.concepts.includes(c));
+}

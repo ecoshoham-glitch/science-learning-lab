@@ -134,3 +134,21 @@ describe("activity checklists", () => {
         if (s.kind === "task" && s.checklist) expect(s.checklist.length, `${a.id}`).toBe(s.conditions.length);
   });
 });
+
+describe("subjects and topics", () => {
+  it("every simulation and lesson is filed in at least one topic of its subject", async () => {
+    const { topicsFor, inTopic } = await import("@/content/taxonomy");
+    const { lessons } = await import("@/content/registry");
+    for (const s of simulations) expect(topicsFor(s.subject).some((t) => inTopic(t, s.concepts)), s.id).toBe(true);
+    for (const l of lessons) expect(topicsFor(l.subject).some((t) => inTopic(t, l.keyConcepts)), l.id).toBe(true);
+  });
+
+  it("topics use known subjects and concepts, with unique ids", async () => {
+    const { topics } = await import("@/content/taxonomy");
+    expect(new Set(topics.map((t) => t.id)).size).toBe(topics.length);
+    for (const t of topics) {
+      expect(subjects[t.subject], t.id).toBeDefined();
+      for (const c of t.concepts) expect(concepts[c], c).toBeDefined();
+    }
+  });
+});

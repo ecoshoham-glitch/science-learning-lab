@@ -12,7 +12,8 @@
     "switchLanguage": "English",
     "switchLanguageLabel": "Switch to English",
     "prototype": "אב-טיפוס – לא לשימוש עם תלמידים",
-    "lessons": "שיעורים"
+    "lessons": "שיעורים",
+    "subjects": "נושאים"
   },
   "home": {
     "title": "לראות את המדע קורה",
@@ -154,5 +155,17 @@
     },
     "notSaved": "באב-הטיפוס ההתקדמות לא נשמרת.",
     "empty": "אין שיעורים עדיין."
+  },
+  "subjects": {
+    "title": "נושאים",
+    "lead": "כל התוכן מאורגן לפי תחום דעת ונושא: שיעורים וסימולציות במקום אחד.",
+    "items": "{lessons, plural, =0 {} one {שיעור אחד · } other {# שיעורים · }}{sims, plural, =0 {אין סימולציות עדיין} one {סימולציה אחת} other {# סימולציות}}",
+    "soon": "בקרוב",
+    "open": "כניסה",
+    "topicsTitle": "נושאים ב{subject}",
+    "lessonsHeading": "שיעורים",
+    "simsHeading": "סימולציות",
+    "emptyTopic": "עוד אין תוכן בנושא הזה.",
+    "back": "כל הנושאים"
   }
 }

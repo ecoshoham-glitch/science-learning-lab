@@ -35,6 +35,17 @@
     var readyTimer = null;
     var readyTries = 0;
 
+    // Until "init" arrives the simulation is inert, so an early click cannot be undone by the
+    // initialization that follows. If the host never answers, the simulation is released anyway.
+    var body = root.document.body;
+    function setWaiting(waiting) {
+      if (!body) return;
+      body.inert = waiting;
+      if (waiting) body.setAttribute("aria-busy", "true");
+      else body.removeAttribute("aria-busy");
+    }
+    if (!standalone) setWaiting(true);
+
     root.addEventListener("message", function (event) {
       if (event.source !== parent) return;
       var msg = event.data;
@@ -44,6 +55,7 @@
         readyTimer = null;
       }
       if (msg.type === "init") {
+        setWaiting(false);
         // The host is listening now: report the current height even if it has not changed.
         root.setTimeout(function () { lastHeight = 0; resize(); }, 0);
       }
@@ -73,6 +85,7 @@
         if (readyTries > 40) {
           root.clearInterval(readyTimer);
           readyTimer = null;
+          setWaiting(false);
           return;
         }
         sendReady();

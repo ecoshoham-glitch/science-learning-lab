@@ -30,7 +30,7 @@
 ## Last run
 
 2026-10-08 (0.2.0): unit 54/54 passed; end-to-end 38/38 passed (19 scenarios × desktop and phone).
-One intermittent timeout was seen once in the genetic-code e2e test under load; 12 repeated runs passed.
+Root cause of the earlier intermittent genetic-code failure found and fixed in 0.3.0 (early click undone by init); 16/16 repeated runs passed.
 
 ## Lesson tests
 

@@ -42,6 +42,8 @@ A simulation declares its level in its manifest. Activities may use only what is
   every message against the schema, and rate-limits to 30 messages per second. Invalid messages are dropped.
 - The host never sends user identity. `sessionId` is random per run.
 - The simulation must treat `params` as untrusted and clamp them to its valid ranges.
+- The bridge keeps the simulation inert (and `aria-busy`) until `init` arrives, or until it stops
+  retrying `ready`, so early user input is never undone by initialization.
 - The host sends `init` once per run; a simulation must be ready to receive it at any time after `ready`.
 - Backward compatibility: new message types or fields are optional additions. Existing types and fields are
   never removed or changed in meaning. A breaking change requires protocol version 2, with version 1 still

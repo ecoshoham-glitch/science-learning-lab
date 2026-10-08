@@ -8,6 +8,7 @@ Core principle: one platform, many independent scientific simulations, and multi
 ## What works today
 
 - Hebrew (RTL, default) and English (LTR) interface, language switch on every page
+- Subjects with topic folders (Biology: 3 topics)
 - Simulation library with search (both languages) and filters
 - Two independent simulations, each a self-contained package running in a sandbox:
   - **Enzyme virtual lab** (`public/sims/enzyme-lab/1.0.0`) – Canvas + SVG

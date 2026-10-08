@@ -15,6 +15,7 @@ export async function SiteHeader() {
         </Link>
         <nav aria-label={t("brand")} className="order-3 w-full sm:order-none sm:w-auto sm:flex-1">
           <ul className="flex gap-1 sm:gap-2 list-none m-0 p-0">
+            <li><NavLink href="/subjects">{t("subjects")}</NavLink></li>
             <li><NavLink href="/library">{t("library")}</NavLink></li>
             <li><NavLink href="/lessons">{t("lessons")}</NavLink></li>
             <li><NavLink href="/teachers">{t("teachers")}</NavLink></li>

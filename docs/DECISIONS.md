@@ -4,6 +4,8 @@ Newest first. "Owner" = project owner approval.
 
 | Date | Decision | Status |
 | --- | --- | --- |
+| 2026-10-08 | Subjects and topics: subject pages with topic "folders"; topics are data in the taxonomy, and items appear by shared concepts (no manual filing). First subject: Biology with 3 topics | Implemented |
+| 2026-10-08 | Bridge keeps an embedded simulation inert until `init` arrives (fixes lost early clicks; root cause of the intermittent genetic-code test) | Implemented, protocol v1 behaviour |
 | 2026-10-08 | Demo lesson "viruses-intro" generated from an owner-supplied transcript by running the §9.2 pipeline manually (Claude as the AI step). Transcript not committed; fingerprint only. Lesson text written in original words | Implemented, awaiting owner review |
 | 2026-10-08 | Lesson delivery modes are one component with configuration, not two copies (self-paced: answer before next; teacher-led: teacher reveals answers, arrow keys) | Implemented |
 | 2026-10-08 | Bridge measures body height (frames can shrink as well as grow). Packages are still pre-release 1.0.0, so updated in place | Implemented |

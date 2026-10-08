@@ -12,7 +12,8 @@
     "switchLanguage": "עברית",
     "switchLanguageLabel": "עבור לעברית",
     "prototype": "Prototype – not for use with students",
-    "lessons": "Lessons"
+    "lessons": "Lessons",
+    "subjects": "Subjects"
   },
   "home": {
     "title": "See science happen",
@@ -154,5 +155,17 @@
     },
     "notSaved": "Progress is not saved in the prototype.",
     "empty": "No lessons yet."
+  },
+  "subjects": {
+    "title": "Subjects",
+    "lead": "All content is organized by subject and topic: lessons and simulations in one place.",
+    "items": "{lessons, plural, =0 {} one {One lesson · } other {# lessons · }}{sims, plural, =0 {No simulations yet} one {One simulation} other {# simulations}}",
+    "soon": "Coming soon",
+    "open": "Open",
+    "topicsTitle": "Topics in {subject}",
+    "lessonsHeading": "Lessons",
+    "simsHeading": "Simulations",
+    "emptyTopic": "No content in this topic yet.",
+    "back": "All subjects"
   }
 }
