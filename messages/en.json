@@ -184,7 +184,9 @@
       "stage": "Stage {n}",
       "legend": "Legend",
       "imageCredit": "Image credit",
-      "unverifiedSource": "Image source not yet verified"
+      "unverifiedSource": "Image source not yet verified",
+      "openSim": "Open: {title}",
+      "closeSim": "Close the viewer"
     }
   },
   "subjects": {

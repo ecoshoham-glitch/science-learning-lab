@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>המיקרוסקופ של ליווינהוק בתלת-ממד</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="viewer" aria-labelledby="v-title">
+    <h1 id="v-title" class="visually-hidden" data-i18n="title"></h1>
+
+    <section class="stage-wrap">
+      <div id="stage" class="stage" role="img"></div>
+      <p class="hint only-3d" data-i18n="hint"></p>
+      <figure class="fallback">
+        <img id="fallback-img" src="photo.jpg" width="420" height="699" alt="">
+        <figcaption data-i18n="noWebgl"></figcaption>
+      </figure>
+      <div class="toolbar only-3d" role="group" aria-labelledby="views-label">
+        <span id="views-label" class="tool-label" data-i18n="views"></span>
+        <button id="view-back" type="button" data-i18n="back"></button>
+        <button id="view-front" type="button" data-i18n="front"></button>
+        <button id="view-side" type="button" data-i18n="side"></button>
+        <button id="rot-right" type="button" data-i18n="rotateRight"></button>
+        <button id="rot-left" type="button" data-i18n="rotateLeft"></button>
+        <button id="auto" type="button" aria-pressed="true" data-i18n="auto"></button>
+      </div>
+      <p id="live" class="visually-hidden" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="parts-title">
+      <h2 id="parts-title" data-i18n="parts"></h2>
+      <ul id="parts" class="parts"></ul>
+      <p id="part-text" class="part-text" aria-live="polite"></p>
+
+      <h2 class="only-3d" data-i18n="adjust"></h2>
+      <div class="control only-3d">
+        <label for="height" data-i18n="height"></label>
+        <input id="height" type="range" dir="ltr" min="-4" max="4" step="0.1" value="0">
+      </div>
+      <div class="control only-3d">
+        <label for="distance" data-i18n="distance"></label>
+        <input id="distance" type="range" dir="ltr" min="0" max="2" step="0.05" value="0">
+      </div>
+      <p id="aligned" class="status only-3d" aria-live="polite"></p>
+      <p class="note" data-i18n="scale"></p>
+      <p class="note small" data-i18n="model"></p>
+    </section>
+  </main>
+  <script src="sll-bridge.js"></script>
+  <script src="viewer.js"></script>
+</body>
+</html>

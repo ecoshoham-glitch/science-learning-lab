@@ -39,6 +39,8 @@ export default async function LessonPage({ params }: { params: Params }) {
   for (const b of lesson.blocks) {
     if (b.kind === "timeline") {
       for (const e of b.events) {
+        const sim = e.simulation ? getSimulation(e.simulation.id) : undefined;
+        if (sim) simulations[sim.id] = sim;
         for (const id of eventMedia(e)) {
           const m = getMedia(id);
           if (m) mediaById[m.id] = m;

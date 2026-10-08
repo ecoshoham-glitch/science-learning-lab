@@ -10,10 +10,11 @@ Core principle: one platform, many independent scientific simulations, and multi
 - Hebrew (RTL, default) and English (LTR) interface, language switch on every page
 - Subjects with topic folders (Biology: 3 topics)
 - Simulation library with search (both languages) and filters
-- Three independent simulations, each a self-contained package running in a sandbox:
+- Four independent simulations, each a self-contained package running in a sandbox:
   - **Enzyme virtual lab** (`public/sims/enzyme-lab/1.0.0`) – Canvas + SVG
   - **From gene to protein** (`public/sims/genetic-code/1.0.0`) – DOM/SVG
   - **Leeuwenhoek's microscope** (`public/sims/microscope-lens/1.0.0`) – Canvas
+  - **Leeuwenhoek's microscope in 3D** (`public/sims/leeuwenhoek-microscope-3d/1.0.0`) – three.js/WebGL, bundled from `sims-src/`
 - Three activities (data, not code); two of them reuse the same enzyme lab
 - Activity tasks checked live against what the simulation reports (protocol level 3)
 - Lessons: two demo lessons generated from transcripts, playable self-paced or teacher-led, with games (timeline, matching, true/false)

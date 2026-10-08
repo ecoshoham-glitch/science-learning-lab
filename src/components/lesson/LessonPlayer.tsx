@@ -240,7 +240,7 @@ function Block({
     case "categorize":
       return <Game block={block} locale={locale} teacher={teacher} onChecked={(id) => onAnswered(id, "checked")} />;
     case "timeline":
-      return <TimelineBlock block={block} locale={locale} teacher={teacher} media={media} />;
+      return <TimelineBlock block={block} locale={locale} teacher={teacher} media={media} simulations={simulations} />;
     case "summary":
       return (
         <div className="grid gap-4 max-w-[68ch]">

@@ -18,8 +18,9 @@ confirmed before public publication.
 | Schwann | 19th-century photograph | Public domain (age) | No |
 
 | Leeuwenhoek's microscope (photo) | Exact replica, photo by Jeroen Rouwkema | CC BY-SA 3.0 (credit + licence shown; resized copy stays CC BY-SA) | Yes – Wikimedia Commons |
-| Leeuwenhoek's microscope | Original schematic SVG drawn for the platform from descriptions of surviving instruments | Original | Yes (lensonleeuwenhoek.net, parts) |
 
 The four portrait files were supplied by the owner (a screenshot) and cropped; they are small (165×225 px).
 Higher-resolution copies from the verified sources can replace them without other changes.
 The workspace cannot download from Wikimedia, Wellcome or museum sites (network policy).
+
+The schematic SVG of the microscope was removed in 0.8.0 (owner request); the 3D model `leeuwenhoek-microscope-3d` replaces it.

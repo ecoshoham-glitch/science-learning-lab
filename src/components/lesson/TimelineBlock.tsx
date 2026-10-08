@@ -4,6 +4,8 @@ import { Fragment, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { eventMedia, type LessonBlock } from "@/lib/lesson/schema";
 import type { Media } from "@/lib/media/schema";
+import type { SimulationManifest } from "@/lib/simulation/manifest";
+import { SimulationHost } from "@/components/SimulationHost";
 import { overviewRange, scaleYear, stageRanges, timelineGaps } from "@/lib/lesson/timeline";
 
 type Locale = "he" | "en";
@@ -34,15 +36,18 @@ export function TimelineBlock({
   locale,
   teacher,
   media = {},
+  simulations = {},
 }: {
   block: Timeline;
   locale: Locale;
   teacher: boolean;
   media?: Record<string, Media>;
+  simulations?: Record<string, SimulationManifest>;
 }) {
   const t = useTranslations("lessons");
   const [track, setTrack] = useState<string>("all");
   const [selected, setSelected] = useState<string | null>(null);
+  const [openSim, setOpenSim] = useState<string | null>(null);
 
   const trackIndex = useMemo(() => new Map(block.tracks.map((tr, i) => [tr.id, i])), [block.tracks]);
   const stageIndex = useMemo(() => new Map(block.stages.map((s, i) => [s.id, i])), [block.stages]);
@@ -158,6 +163,7 @@ export function TimelineBlock({
           const ti = trackIndex.get(e.track) ?? 0;
           const ms = eventMedia(e).map((id) => media[id]).filter((x): x is Media => !!x);
           const m = ms[0];
+          const sim = e.simulation ? simulations[e.simulation.id] : undefined;
           return (
             <Fragment key={e.id}>
               {gaps[e.id] && (
@@ -228,6 +234,31 @@ export function TimelineBlock({
                     )}
                   </div>
                 </article>
+                {sim?.entry && (
+                  <div className="mt-2 grid gap-2">
+                    <button
+                      type="button"
+                      aria-expanded={openSim === e.id}
+                      aria-controls={`${block.id}-${e.id}-sim`}
+                      onClick={() => setOpenSim((o) => (o === e.id ? null : e.id))}
+                      className="justify-self-start min-h-11 px-4 rounded-xl border-2 border-leaf text-leaf-dark font-semibold hover:bg-leaf-tint"
+                    >
+                      {openSim === e.id ? t("timeline.closeSim") : t("timeline.openSim", { title: sim.title[locale] })}
+                    </button>
+                    {openSim === e.id && (
+                      <div id={`${block.id}-${e.id}-sim`} className="text-base">
+                        <SimulationHost
+                          entry={sim.entry}
+                          title={sim.title[locale]}
+                          locale={locale}
+                          params={{}}
+                          lockedParams={[]}
+                          onObservables={() => {}}
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
               </li>
             </Fragment>
           );

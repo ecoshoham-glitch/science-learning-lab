@@ -37,7 +37,8 @@ test.describe("topic: the cell – the unit of life", () => {
     await expect(page.getByRole("heading", { level: 3 }).first()).toHaveText("התא – יחידת החיים");
     const topic = page.getByRole("region", { name: "התא – יחידת החיים" });
     await expect(topic.getByRole("link", { name: /גילוי התא/ })).toBeVisible();
-    await expect(topic.getByRole("heading", { name: "המיקרוסקופ של ליווינהוק" })).toBeVisible();
+    await expect(topic.getByRole("heading", { name: "המיקרוסקופ של ליווינהוק", exact: true })).toBeVisible();
+    await expect(topic.getByRole("heading", { name: "המיקרוסקופ של ליווינהוק בתלת-ממד" })).toBeVisible();
   });
 });
 
@@ -225,11 +226,10 @@ test.describe("cell-discovery lesson", () => {
     await expect(schwann).toContainText("קרדיט לתמונה");
     const hooke = page.getByTestId("event-hooke-cork");
     await expect(hooke).toContainText("שחזור אמנותי מודרני");
-    await expect(page.getByTestId("event-ball-lens").getByRole("img", { name: /המיקרוסקופ של ליווינהוק מאחור/ })).toBeVisible();
-    await expect(page.getByTestId("event-ball-lens")).toContainText("איור סכמטי");
     await expect(page.getByTestId("event-ball-lens").getByRole("img", { name: /צילום של המיקרוסקופ של ליווינהוק/ })).toBeVisible();
     await expect(page.getByTestId("event-ball-lens")).toContainText("Jeroen Rouwkema");
-    await expect(page.getByTestId("event-ball-lens").locator("img")).toHaveCount(2);
+    await expect(page.getByTestId("event-ball-lens").locator("img")).toHaveCount(1); // the photo only; the drawing was removed
+    await expect(page.getByTestId("event-ball-lens").getByRole("button", { name: "לפתיחה: המיקרוסקופ של ליווינהוק בתלת-ממד" })).toBeVisible();
     for (const id of ["hooke-cork", "ball-lens", "protists", "schleiden", "schwann"]) {
       const img = page.getByTestId(`event-${id}`).locator("img").first();
       await expect(img).toBeVisible();
@@ -275,5 +275,58 @@ test.describe("cell-discovery lesson", () => {
     for (let i = 1; i < 8; i++) await page.getByRole("button", { name: "Next part" }).click();
     await expect(page.getByRole("heading", { name: "Who discovered what?" })).toBeVisible();
     await expect(await axeSerious(page)).toEqual([]);
+  });
+
+  test("3D microscope: opens from the 1673 card, renders, rotates, explains parts and screws", async ({ page }) => {
+    await goToPart(page, 11);
+    const card = page.getByTestId("event-ball-lens");
+    const open = card.getByRole("button", { name: "לפתיחה: המיקרוסקופ של ליווינהוק בתלת-ממד" });
+    await open.click();
+    await expect(card.getByRole("button", { name: "סגירת התצוגה" })).toHaveAttribute("aria-expanded", "true");
+    const frame = card.frameLocator('iframe[sandbox="allow-scripts"]');
+    await expect(frame.locator("body")).toHaveClass(/has-3d/);
+    await expect(frame.locator("body")).not.toHaveAttribute("aria-busy", "true");
+
+    // The model really drew something: the canvas is not a single flat colour.
+    const canvas = frame.locator("#stage canvas");
+    await expect(canvas).toBeVisible();
+    const shot = await canvas.screenshot();
+    expect(new Set(Array.from(shot.subarray(200, 6000)).map((v) => v >> 4)).size).toBeGreaterThan(3);
+
+    // Views from every side, with spoken feedback.
+    await frame.getByRole("button", { name: "מלפנים – צד העין" }).click();
+    await expect(frame.locator("#live")).toHaveText("מוצג מלפנים, מצד העין.");
+    await frame.getByRole("button", { name: "מהצד" }).click();
+    await expect(frame.locator("#live")).toHaveText("מוצג מהצד.");
+    const before = await canvas.screenshot();
+    await frame.getByRole("button", { name: "סיבוב ימינה" }).click();
+    await page.waitForTimeout(300);
+    expect(Buffer.compare(before, await canvas.screenshot())).not.toBe(0);
+
+    // Parts: chosen with buttons, explained in text.
+    await frame.getByRole("button", { name: "העדשה" }).click();
+    await expect(frame.getByRole("button", { name: "העדשה" })).toHaveAttribute("aria-pressed", "true");
+    await expect(frame.locator("#part-text")).toContainText("כדור זכוכית זעיר");
+
+    // Screws: move the specimen away, then back in front of the lens.
+    await expect(frame.locator("#aligned")).toContainText("בדיוק מול העדשה");
+    await frame.locator("#height").fill("3");
+    await expect(frame.locator("#aligned")).toContainText("לא מול העדשה");
+    await frame.locator("#height").fill("0");
+    await expect(frame.locator("#aligned")).toContainText("בדיוק מול העדשה");
+    await expect(await axeSerious(page)).toEqual([]);
+  });
+
+  test("3D microscope without WebGL shows the photo and the same explanations", async ({ page }) => {
+    await page.addInitScript(() => {
+      HTMLCanvasElement.prototype.getContext = (() => null) as typeof HTMLCanvasElement.prototype.getContext;
+    });
+    await page.goto("/he/simulations/leeuwenhoek-microscope-3d");
+    const frame = page.frameLocator('iframe[sandbox="allow-scripts"]');
+    await expect(frame.locator("body")).toHaveClass(/no-3d/);
+    await expect(frame.getByRole("img", { name: /צילום של העתק מדויק/ })).toBeVisible();
+    await expect(frame.getByText("התצוגה התלת-ממדית לא נתמכת במכשיר הזה")).toBeVisible();
+    await frame.getByRole("button", { name: "בורג המיקוד" }).click();
+    await expect(frame.locator("#part-text")).toContainText("ידית בצורת כנף");
   });
 });

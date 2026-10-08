@@ -1,0 +1,46 @@
+{
+  "manifestVersion": 1,
+  "id": "leeuwenhoek-microscope-3d",
+  "version": "1.0.0",
+  "title": { "he": "המיקרוסקופ של ליווינהוק בתלת-ממד", "en": "Leeuwenhoek's microscope in 3D" },
+  "summary": {
+    "he": "מסובבים את המיקרוסקופ של ליווינהוק מכל הצדדים, מכירים את חלקיו, ומזיזים את הברגים עד שהדגימה עומדת בדיוק מול העדשה.",
+    "en": "Turn Leeuwenhoek's microscope to see it from every side, get to know its parts, and move the screws until the specimen sits right in front of the lens."
+  },
+  "subject": "biology",
+  "concepts": ["microscope", "cell"],
+  "grades": { "from": 9, "to": 12 },
+  "difficulty": "intro",
+  "interaction": "3d-model",
+  "languages": ["he", "en"],
+  "status": "available",
+  "entry": "/sims/leeuwenhoek-microscope-3d/1.0.0/index.html",
+  "protocol": { "version": 1, "capabilityLevel": 3 },
+  "parameters": [],
+  "observables": [
+    { "id": "partsExplored", "type": "string[]", "label": { "he": "חלקים שנבחנו", "en": "Parts explored" } },
+    { "id": "partsExploredCount", "type": "number", "label": { "he": "מספר החלקים שנבחנו", "en": "Number of parts explored" } },
+    { "id": "viewsSeen", "type": "string[]", "label": { "he": "מבטים שנצפו (back / front / side)", "en": "Views seen (back / front / side)" } },
+    { "id": "specimenAligned", "type": "number", "label": { "he": "הדגימה מול העדשה עכשיו (0/1)", "en": "Specimen in front of the lens now (0/1)" } },
+    { "id": "alignedAfterMoving", "type": "number", "label": { "he": "החזיר את הדגימה מול העדשה אחרי שהזיז אותה (0/1)", "en": "Brought the specimen back in front of the lens after moving it (0/1)" } }
+  ],
+  "events": [],
+  "device": { "minWidth": 320, "touch": true, "webgl": true },
+  "accessibility": {
+    "he": "אפשר לסובב בגרירה או בכפתורי מבט וסיבוב. כל חלק נבחר בכפתור ומוסבר בטקסט שמוקרא לקורא מסך. בלי WebGL מוצג צילום של המכשיר עם אותם הסברים. הסיבוב האוטומטי כבוי למי שביקש הפחתת תנועה.",
+    "en": "Rotate by dragging or with the view and rotate buttons. Each part is chosen with a button and explained in text announced to screen readers. Without WebGL a photo of the instrument is shown with the same explanations. Auto-rotation is off for viewers who asked for reduced motion."
+  },
+  "license": { "id": "proprietary-draft; includes three.js (MIT) and a CC BY-SA 3.0 photo", "holder": "Science Learning Lab", "source": "first-party" },
+  "scientificModel": {
+    "kind": "simplified-educational",
+    "description": {
+      "he": "שחזור תלת-ממדי של מיקרוסקופ בעל עדשה יחידה מסוג ליווינהוק. הפרופורציות לפי צילום של העתק מדויק; החלקים ותפקידם לפי תיאור המכשירים ששרדו. החלקים שלא נראים בצילום (צד העין, תושבת העדשה, גב הבמה וחיבור התושבת) הושלמו לפי התיאורים.",
+      "en": "A 3D reconstruction of a Leeuwenhoek-type single-lens microscope. Proportions follow a photo of an exact replica; the parts and what they do follow descriptions of the surviving instruments. Parts not visible in the photo (eye side, lens socket, back of the mount, bracket fixing) are completed from those descriptions."
+    },
+    "assumptions": [
+      { "he": "המכשירים ששרדו שונים זה מזה מעט בגודל, בחומר (פליז או כסף) ובמספר המסמרות; זה מודל של מכשיר טיפוסי אחד.", "en": "Surviving instruments differ slightly in size, material (brass or silver) and number of rivets; this models one typical instrument." },
+      { "he": "התנועה של הברגים מוצגת כהזזה ישירה של הבמה, בלי סיבוב הברגים בפועל.", "en": "Screw movement is shown as a direct movement of the mount, not as actual screw turns." }
+    ]
+  },
+  "validation": { "status": "automated-tests-passed", "notes": "Unit tests in tests/unit/leeuwenhoek-3d-model.test.ts; e2e render check. Awaiting owner review." }
+}

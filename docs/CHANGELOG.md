@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.8.0 – 2026-10-09 (prototype, not released)
+
+- New simulation `leeuwenhoek-microscope-3d@1.0.0` (pre-release, `3d-model`): a three.js reconstruction of
+  Leeuwenhoek's microscope that students rotate from every side (drag, pinch, view and rotate buttons,
+  auto-rotate off for reduced motion). Parts the photo does not show – the eye side, the lens socket, the
+  back of the mount, the bracket's fixing screw and nut – are completed from descriptions of the surviving
+  instruments. Nine parts are highlighted and explained; two sliders work the positioning and focusing
+  screws. Without WebGL it shows the photo with the same explanations.
+- Timeline cards can open a library simulation in place. The 1673 card keeps the photo and opens the 3D model.
+- The schematic drawing of the microscope was removed (owner request).
+- Simulations that need npm libraries are bundled from `sims-src/` into classic scripts (`npm run build:sims`).
+
 ## 0.7.2 – 2026-10-09 (prototype, not released)
 
 - Real photo of Leeuwenhoek's microscope (exact replica; Jeroen Rouwkema, Wikimedia Commons, CC BY-SA 3.0,

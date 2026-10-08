@@ -5,7 +5,7 @@ import { defineConfig, devices } from "@playwright/test";
  * CHROMIUM_PATH lets the tests use a locally provided browser when Playwright's own download is unavailable.
  */
 const executablePath = process.env.CHROMIUM_PATH || undefined;
-const launchOptions = executablePath ? { executablePath, args: ["--no-sandbox", "--disable-gpu"] } : {};
+const launchOptions = executablePath ? { executablePath, args: ["--no-sandbox", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"] } : {};
 
 export default defineConfig({
   testDir: "tests/e2e",

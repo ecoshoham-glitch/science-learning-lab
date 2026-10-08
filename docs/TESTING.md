@@ -70,6 +70,16 @@ Root cause of the earlier intermittent genetic-code failure found and fixed in 0
   "modern reconstruction" note for Hooke; unverified-source flag only in teacher-led mode; axe.
 - Last run 2026-10-08: unit 92/92; end-to-end 73 passed, 3 skipped by design.
 
+## 3D model tests (0.8.0)
+
+- Unit: plate proportions and ~5 cm size, ~1 mm lens near the top inside the plates, rivets inside with two
+  above the lens, pin tip exactly at the lens at rest, mount on the specimen side, screws move the specimen
+  away and back, clamping, bilingual parts.
+- E2E (SwiftShader WebGL, desktop + phone): opens from the 1673 card, the canvas really renders (not one flat
+  colour), views and rotation change the picture, parts explained, sliders change alignment, axe; and a
+  no-WebGL run shows the photo fallback.
+- Last run 2026-10-09: unit 104/104; end-to-end 79 passed, 3 skipped by design.
+
 ## Not yet verified
 
 - Real iPhone/Safari and Firefox (tests use Chromium only).

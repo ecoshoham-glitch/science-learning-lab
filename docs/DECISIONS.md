@@ -4,6 +4,9 @@ Newest first. "Owner" = project owner approval.
 
 | Date | Decision | Status |
 | --- | --- | --- |
+| 2026-10-09 | 3D models may use three.js, bundled with esbuild into a classic script inside the package (sandboxed opaque-origin frames cannot load ES modules); no CDN, no network. Sources in `sims-src/`, bundle committed with the immutable package | Implemented |
+| 2026-10-09 | End-to-end tests run Chromium with SwiftShader (software WebGL) so 3D models are really rendered and checked; a WebGL-less run checks the fallback | Implemented |
+| 2026-10-09 | Leeuwenhoek's microscope: the schematic drawing was replaced by a 3D reconstruction (photo proportions + documented parts) shown from the timeline card, beside the real photo | Owner request |
 | 2026-10-08 | Images are self-hosted with recorded licence and credit. Hooke has no authentic portrait; Rita Greer's 2004 reconstruction is used with a visible "modern reconstruction" note (Free Art License, artist credited). Images with unconfirmed sources are flagged to teachers and must be confirmed before public publication | Implemented, Schleiden/Schwann sources to confirm |
 | 2026-10-08 | Timeline entries changed from expandable rows to always-open cards, per the owner's design | Owner design |
 | 2026-10-08 | Topic maps are data (nodes with explicit rows, edges one row down or sideways) rendered as HTML boxes with measured SVG arrows, not a diagram library: no new dependency, accessible buttons, correct RTL. Expansion opens on hover/focus, stays open on click/tap | Implemented |

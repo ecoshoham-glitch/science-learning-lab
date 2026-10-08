@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "check": "npm run typecheck && npm run lint && npm run test && npm run build",
-    "sims:sync-bridge": "node scripts/check-bridge.mjs"
+    "sims:sync-bridge": "node scripts/check-bridge.mjs",
+    "build:sims": "node scripts/build-sim-bundles.mjs"
   },
   "dependencies": {
     "@fontsource-variable/assistant": "^5.3.0",
@@ -30,9 +31,11 @@
     "@types/node": "^22.20.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "esbuild": "^0.28.2",
     "eslint": "^9",
     "eslint-config-next": "^16.4.0",
     "tailwindcss": "^4",
+    "three": "^0.169.0",
     "typescript": "^5",
     "vitest": "^5.0.3"
   },

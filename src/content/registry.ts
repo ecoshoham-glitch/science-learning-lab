@@ -11,6 +11,7 @@ import enzymeLab from "./simulations/enzyme-lab.json";
 import geneticCode from "./simulations/genetic-code.json";
 import ribosome3d from "./simulations/ribosome-3d.json";
 import microscopeLens from "./simulations/microscope-lens.json";
+import leeuwenhoek3d from "./simulations/leeuwenhoek-microscope-3d.json";
 
 import enzymeTemperatureG10 from "./activities/enzyme-temperature-g10.json";
 import enzymePhInquiryG12 from "./activities/enzyme-ph-inquiry-g12.json";
@@ -30,7 +31,7 @@ import mapVirusesImmunity from "./topic-maps/viruses-immunity.json";
  * Prototype content registry. In the next phase this moves to the database;
  * the validation below stays the same.
  */
-const rawManifests: unknown[] = [enzymeLab, geneticCode, microscopeLens, ribosome3d];
+const rawManifests: unknown[] = [enzymeLab, geneticCode, microscopeLens, leeuwenhoek3d, ribosome3d];
 const rawActivities: unknown[] = [enzymeTemperatureG10, enzymePhInquiryG12, mutationTypesG10, virusVariantsG10, microscopeDiscoveryG10];
 const rawLessons: unknown[] = [cellDiscovery, virusesIntro];
 
@@ -151,6 +152,11 @@ export function checkLessonReferences(lesson: Lesson): string[] {
         if (i > 0 && e.year < block.events[i - 1].year) problems.push(`block ${block.id}: event ${e.id} is out of year order`);
       });
       for (const e of block.events) {
+        if (e.simulation) {
+          const sim = getSimulation(e.simulation.id);
+          if (!sim || sim.status !== "available") problems.push(`block ${block.id}: event ${e.id} opens unavailable simulation ${e.simulation.id}`);
+          else if (sim.version !== e.simulation.version) problems.push(`block ${block.id}: event ${e.id} references ${e.simulation.version}, library has ${sim.version}`);
+        }
         for (const id of eventMedia(e)) if (!getMedia(id)) problems.push(`block ${block.id}: event ${e.id} uses unknown media ${id}`);
       }
       for (const s of stages) if (!block.events.some((e) => e.stage === s)) problems.push(`block ${block.id}: stage ${s} has no events`);

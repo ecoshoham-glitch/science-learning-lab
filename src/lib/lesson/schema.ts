@@ -124,6 +124,8 @@ const timelineBlock = z.object({
         text: localizedText,
         /** Optional picture from the media library (e.g. a portrait of the person who made the discovery). */
         media: z.union([itemId, z.array(itemId).min(1).max(3)]).optional(),
+        /** Optional library simulation (e.g. a 3D model) the card can open in place. */
+        simulation: z.object({ id: itemId, version: z.string() }).optional(),
         fromSource: z.boolean(),
       }),
     )

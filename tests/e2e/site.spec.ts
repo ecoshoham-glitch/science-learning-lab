@@ -43,7 +43,7 @@ test.describe("navigation and languages", () => {
 test.describe("simulation library", () => {
   test("search in Hebrew and filter by interaction type", async ({ page }) => {
     await page.goto("/he/library");
-    await expect(page.getByRole("status")).toHaveText("4 סימולציות");
+    await expect(page.getByRole("status")).toHaveText("5 סימולציות");
     await page.getByLabel("חיפוש").fill("מוטציה");
     await expect(page.getByRole("status")).toHaveText("סימולציה אחת");
     await expect(page.getByRole("heading", { name: "מהגן אל החלבון" })).toBeVisible();

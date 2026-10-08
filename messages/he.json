@@ -184,7 +184,9 @@
       "stage": "שלב {n}",
       "legend": "מקרא",
       "imageCredit": "קרדיט לתמונה",
-      "unverifiedSource": "מקור התמונה טרם אומת"
+      "unverifiedSource": "מקור התמונה טרם אומת",
+      "openSim": "לפתיחה: {title}",
+      "closeSim": "סגירת התצוגה"
     }
   },
   "subjects": {
