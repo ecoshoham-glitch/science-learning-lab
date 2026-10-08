@@ -41,6 +41,11 @@ describe("media library", () => {
     }
   });
 
+  it("ids are unique and digitally coloured micrographs say so", () => {
+    expect(new Set(media.map((m) => m.id)).size).toBe(media.length);
+    for (const m of media.filter((x) => x.file.includes("-color"))) expect(m.note?.he, m.id).toContain("צבע דיגיטלי");
+  });
+
   it("modern reconstructions are labelled as such for students", () => {
     for (const m of media.filter((x) => x.kind === "reconstruction")) expect(m.note, m.id).toBeDefined();
   });

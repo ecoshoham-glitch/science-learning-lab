@@ -1,0 +1,124 @@
+[
+  {
+    "id": "blood-sem",
+    "kind": "photo",
+    "file": "/media/micrographs/blood-sem-color.jpg",
+    "name": {
+      "he": "תאי דם במיקרוסקופ אלקטרונים",
+      "en": "Blood cells under an electron microscope"
+    },
+    "width": 1000,
+    "height": 1244,
+    "alt": {
+      "he": "צילום במיקרוסקופ אלקטרונים סורק: תאי דם אדומים בצורת דסקית (באדום) ותאי דם לבנים עגולים ומחוספסים (בסגול)",
+      "en": "Scanning electron micrograph: disc-shaped red blood cells (red) and round, rough white blood cells (purple)"
+    },
+    "note": {
+      "he": "צבע דיגיטלי: במיקרוסקופ אלקטרונים אין צבעים, והצבעים נבחרו כדי להבחין בין המבנים.",
+      "en": "Digital colour: electron microscopes record no colour; the colours were chosen to tell the structures apart."
+    },
+    "credit": {
+      "he": "צילום: NCI, Bruce Wetzel ו-Harry Schaefer, 1982. נחלת הכלל. צבע דיגיטלי: מעבדת המדע.",
+      "en": "Photo: NCI, Bruce Wetzel and Harry Schaefer, 1982. Public domain. Digital colour: Science Learning Lab."
+    },
+    "licence": "public-domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SEM_blood_cells.jpg",
+    "sourceVerified": true
+  },
+  {
+    "id": "ecoli-sem",
+    "kind": "photo",
+    "file": "/media/micrographs/ecoli-sem-color.jpg",
+    "name": {
+      "he": "חיידקי E. coli",
+      "en": "E. coli bacteria"
+    },
+    "width": 1200,
+    "height": 1009,
+    "alt": {
+      "he": "צילום במיקרוסקופ אלקטרונים סורק של חיידקי E. coli בצורת מתג (בירוק) על רקע כחול",
+      "en": "Scanning electron micrograph of rod-shaped E. coli bacteria (green) on a blue background"
+    },
+    "note": {
+      "he": "צבע דיגיטלי: במיקרוסקופ אלקטרונים אין צבעים, והצבעים נבחרו כדי להבחין בין המבנים.",
+      "en": "Digital colour: electron microscopes record no colour; the colours were chosen to tell the structures apart."
+    },
+    "credit": {
+      "he": "צילום: NIAID (Rocky Mountain Laboratories). נחלת הכלל. צבע דיגיטלי: מעבדת המדע.",
+      "en": "Photo: NIAID (Rocky Mountain Laboratories). Public domain. Digital colour: Science Learning Lab."
+    },
+    "licence": "public-domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:E._coli_Bacteria_(7316101966).jpg",
+    "sourceVerified": true
+  },
+  {
+    "id": "sars-cov-2-tem",
+    "kind": "photo",
+    "file": "/media/micrographs/sars-cov-2-tem-color.jpg",
+    "name": {
+      "he": "נגיף SARS-CoV-2 בתוך תא",
+      "en": "SARS-CoV-2 inside a cell"
+    },
+    "width": 700,
+    "height": 466,
+    "alt": {
+      "he": "צילום במיקרוסקופ אלקטרונים חודר: חתך דק של תא, ובתוכו חלקיקי נגיף קורונה עגולים בצבע כחול",
+      "en": "Transmission electron micrograph: a thin section of a cell with round coronavirus particles in blue"
+    },
+    "note": {
+      "he": "צבע דיגיטלי: במיקרוסקופ אלקטרונים אין צבעים, והצבעים נבחרו כדי להבחין בין המבנים.",
+      "en": "Digital colour: electron microscopes record no colour; the colours were chosen to tell the structures apart."
+    },
+    "credit": {
+      "he": "צילום: CDC, Hannah A. Bullock ו-Azaibi Tamin, 2020. נחלת הכלל. צבע דיגיטלי: CDC (החלקיקים) ומעבדת המדע (התא).",
+      "en": "Photo: CDC, Hannah A. Bullock and Azaibi Tamin, 2020. Public domain. Digital colour: CDC (particles) and Science Learning Lab (cell)."
+    },
+    "licence": "public-domain",
+    "sourceUrl": "https://phil.cdc.gov/Details.aspx?pid=23354",
+    "sourceVerified": true
+  },
+  {
+    "id": "hooke-cork-fig1",
+    "kind": "illustration",
+    "file": "/media/micrographs/hooke-cork-fig1.jpg",
+    "name": {
+      "he": "תאי השעם של הוק, 1665",
+      "en": "Hooke's cork cells, 1665"
+    },
+    "width": 1000,
+    "height": 1008,
+    "alt": {
+      "he": "האיור המקורי של רוברט הוק מ-1665: שתי פרוסות שעם בתוך עיגול שדה הראייה, מלאות חללים קטנים כמו חלת דבש",
+      "en": "Robert Hooke's original 1665 illustration: two slices of cork inside the circular field of view, full of small honeycomb-like spaces"
+    },
+    "credit": {
+      "he": "רוברט הוק, מיקרוגרפיה, לונדון 1665. באדיבות Science History Institute. נחלת הכלל.",
+      "en": "Robert Hooke, Micrographia, London 1665. Courtesy of Science History Institute. Public Domain Mark."
+    },
+    "licence": "public-domain-mark",
+    "sourceUrl": "https://digital.sciencehistory.org/works/fx719n66r",
+    "sourceVerified": true
+  },
+  {
+    "id": "hooke-micrographia-page",
+    "kind": "illustration",
+    "file": "/media/micrographs/hooke-micrographia-page.jpg",
+    "name": {
+      "he": "עמוד מהספר מיקרוגרפיה",
+      "en": "A page from Micrographia"
+    },
+    "width": 1000,
+    "height": 1390,
+    "alt": {
+      "he": "עמוד מקורי מהספר מיקרוגרפיה של רוברט הוק, 1665: איור תאי שעם בתוך עיגול, ומתחתיו ענף צמח",
+      "en": "An original page from Robert Hooke's Micrographia, 1665: cork cells inside a circle, with a plant sprig below"
+    },
+    "credit": {
+      "he": "רוברט הוק, מיקרוגרפיה, לונדון 1665. באדיבות Science History Institute. נחלת הכלל.",
+      "en": "Robert Hooke, Micrographia, London 1665. Courtesy of Science History Institute. Public Domain Mark."
+    },
+    "licence": "public-domain-mark",
+    "sourceUrl": "https://digital.sciencehistory.org/works/fx719n66r",
+    "sourceVerified": true
+  }
+]

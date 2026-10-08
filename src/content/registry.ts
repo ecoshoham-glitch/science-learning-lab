@@ -6,6 +6,7 @@ import { checkMapStructure } from "@/lib/topic-map/layout";
 import { topics } from "./taxonomy";
 import { mediaSchema, type Media } from "@/lib/media/schema";
 import rawPeople from "./media/people.json";
+import rawMicrographs from "./media/micrographs.json";
 
 import enzymeLab from "./simulations/enzyme-lab.json";
 import geneticCode from "./simulations/genetic-code.json";
@@ -39,7 +40,7 @@ export const simulations: SimulationManifest[] = rawManifests.map((m) => manifes
 export const activities: Activity[] = rawActivities.map((a) => activitySchema.parse(a));
 export const lessons: Lesson[] = rawLessons.map((l) => lessonSchema.parse(l));
 
-export const media: Media[] = (rawPeople as unknown[]).map((m) => mediaSchema.parse(m));
+export const media: Media[] = [...(rawPeople as unknown[]), ...(rawMicrographs as unknown[])].map((m) => mediaSchema.parse(m));
 
 export function getMedia(id: string): Media | undefined {
   return media.find((m) => m.id === id);

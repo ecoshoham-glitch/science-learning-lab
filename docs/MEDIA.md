@@ -24,3 +24,15 @@ Higher-resolution copies from the verified sources can replace them without othe
 The workspace cannot download from Wikimedia, Wellcome or museum sites (network policy).
 
 The schematic SVG of the microscope was removed in 0.8.0 (owner request); the 3D model `leeuwenhoek-microscope-3d` replaces it.
+
+## Micrographs (0.8.1)
+
+Real photos supplied by the owner; licences verified at the source. Electron micrographs have no colour: the
+colours are digital and every image says so to students ("צבע דיגיטלי").
+
+| Image | Source | Licence | Colouring |
+| --- | --- | --- | --- |
+| Blood cells (SEM) | NCI – Bruce Wetzel, Harry Schaefer, 1982 | Public domain | Gradient map; the four white blood cells traced by hand (automatic texture masks also caught red-cell rims) |
+| E. coli (SEM) | NIAID, Rocky Mountain Laboratories | Public domain (US gov.) | Gradient map, scale bar kept |
+| SARS-CoV-2 in a cell (TEM) | CDC – Hannah A. Bullock, Azaibi Tamin, 2020 | Public domain | CDC's blue particles kept; cell warmed |
+| Hooke, Micrographia page and Fig. 1 | Science History Institute | Public Domain Mark | None (photo of the book page) |

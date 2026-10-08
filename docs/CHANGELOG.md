@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.1 – 2026-10-09 (prototype, not released)
+
+- Media library: real micrographs supplied by the owner, digitally coloured and credited – blood cells (NCI,
+  white cells coloured from hand-traced outlines), E. coli (NIAID), SARS-CoV-2 in a cell (CDC), and Hooke's
+  original Micrographia page and cork figure (Science History Institute). Ready for the chosen site design.
+- Design canvas: a second row of the three directions built on these real photos (with motion).
+
 ## 0.8.0 – 2026-10-09 (prototype, not released)
 
 - New simulation `leeuwenhoek-microscope-3d@1.0.0` (pre-release, `3d-model`): a three.js reconstruction of
