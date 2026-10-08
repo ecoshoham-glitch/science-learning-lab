@@ -181,9 +181,10 @@
       "gap": "{years} years",
       "added": "Added – not from the source",
       "overview": "The whole timeline, from {from} to {to}: {count} events in {stages} stages.",
-      "more": "More about {title}",
       "stage": "Stage {n}",
-      "legend": "Legend"
+      "legend": "Legend",
+      "imageCredit": "Image credit",
+      "unverifiedSource": "Image source not yet verified"
     }
   },
   "subjects": {

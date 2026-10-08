@@ -3,6 +3,7 @@
 import { Fragment, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import type { LessonBlock } from "@/lib/lesson/schema";
+import type { Media } from "@/lib/media/schema";
 import { overviewRange, scaleYear, stageRanges, timelineGaps } from "@/lib/lesson/timeline";
 
 type Locale = "he" | "en";
@@ -28,10 +29,19 @@ function OverviewShape({ index, x, y, r, selected }: { index: number; x: number;
   return <rect className={cls} strokeWidth={sw} x={x - r * 0.75} y={y - r * 0.75} width={r * 1.5} height={r * 1.5} />;
 }
 
-export function TimelineBlock({ block, locale, teacher }: { block: Timeline; locale: Locale; teacher: boolean }) {
+export function TimelineBlock({
+  block,
+  locale,
+  teacher,
+  media = {},
+}: {
+  block: Timeline;
+  locale: Locale;
+  teacher: boolean;
+  media?: Record<string, Media>;
+}) {
   const t = useTranslations("lessons");
   const [track, setTrack] = useState<string>("all");
-  const [open, setOpen] = useState<Record<string, boolean>>({});
   const [selected, setSelected] = useState<string | null>(null);
 
   const trackIndex = useMemo(() => new Map(block.tracks.map((tr, i) => [tr.id, i])), [block.tracks]);
@@ -42,9 +52,11 @@ export function TimelineBlock({ block, locale, teacher }: { block: Timeline; loc
   const gaps = timelineGaps(visible, 40);
 
   const yearText = (e: Timeline["events"][number]) => e.yearLabel?.[locale] ?? String(e.year);
-  const toggle = (id: string) => {
-    setOpen((o) => ({ ...o, [id]: !o[id] }));
+  // Choosing an event on the overview strip highlights its card and brings it into view.
+  const select = (id: string) => {
     setSelected(id);
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    document.getElementById(`${block.id}-${id}`)?.scrollIntoView({ block: "nearest", behavior: reduce ? "auto" : "smooth" });
   };
 
   // Overview strip geometry (SVG units). Always left-to-right, like any time axis.
@@ -97,7 +109,7 @@ export function TimelineBlock({ block, locale, teacher }: { block: Timeline; loc
             const ti = trackIndex.get(e.track) ?? 0;
             const dim = track !== "all" && e.track !== track;
             return (
-              <g key={e.id} opacity={dim ? 0.2 : 1} className="cursor-pointer" onClick={() => toggle(e.id)}>
+              <g key={e.id} opacity={dim ? 0.2 : 1} className="cursor-pointer" onClick={() => select(e.id)}>
                 <OverviewShape index={ti} x={x(e.year)} y={rowY(ti)} r={selected === e.id ? 11 : 8} selected={selected === e.id} />
               </g>
             );
@@ -144,8 +156,7 @@ export function TimelineBlock({ block, locale, teacher }: { block: Timeline; loc
           const stage = stageIndex.get(e.stage) ?? 0;
           const newStage = i === 0 || visible[i - 1].stage !== e.stage;
           const ti = trackIndex.get(e.track) ?? 0;
-          const isOpen = !!open[e.id];
-          const panelId = `${block.id}-${e.id}-text`;
+          const m = e.media ? media[e.media] : undefined;
           return (
             <Fragment key={e.id}>
               {gaps[e.id] && (
@@ -162,30 +173,50 @@ export function TimelineBlock({ block, locale, teacher }: { block: Timeline; loc
                   </h3>
                 </li>
               )}
-              <li className="relative ps-7 pb-2 border-s-2 border-line ms-[13px]" data-testid={`event-${e.id}`}>
-                <span className="absolute -start-[9px] top-3 bg-paper rounded-full p-[1px]" aria-hidden="true">
+              <li className="relative ps-7 pb-3 border-s-2 border-line ms-[13px]" data-testid={`event-${e.id}`} id={`${block.id}-${e.id}`}>
+                <span className="absolute -start-[9px] top-4 bg-paper rounded-full p-[1px]" aria-hidden="true">
                   <Shape index={ti} size={16} className={selected === e.id ? "fill-[var(--leaf-dark)]" : "fill-[var(--leaf)]"} />
                 </span>
-                <button
-                  type="button"
-                  onClick={() => toggle(e.id)}
-                  aria-expanded={isOpen}
-                  aria-controls={panelId}
-                  className={"w-full text-start flex items-baseline gap-x-3 gap-y-1 min-h-11 p-2 rounded-xl border hover:bg-paper " + (selected === e.id ? "border-leaf bg-surface" : "border-transparent")}
+                <article
+                  aria-labelledby={`${block.id}-${e.id}-title`}
+                  className={"flex items-start gap-3 sm:gap-4 p-3 rounded-xl border bg-surface " + (selected === e.id ? "border-leaf" : "border-line")}
                 >
-                  <span dir="ltr" className="font-bold text-leaf-dark tabular-nums min-w-[5.5ch]">
-                    <bdi>{yearText(e)}</bdi>
-                  </span>
-                  <span className="font-semibold flex-1 min-w-[12ch]">{e.title[locale]}</span>
-                  <span className="sr-only sm:not-sr-only text-xs text-muted">{block.tracks[ti].label[locale]}</span>
-                  {teacher && !e.fromSource && (
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-warn-soft text-warn">{t("timeline.added")}</span>
+                  {m && (
+                    <figure className="m-0 shrink-0 w-20 sm:w-28">
+                      {/* Self-hosted, small portrait; next/image adds nothing for these static thumbnails. */}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={m.file}
+                        alt={m.alt[locale]}
+                        width={165}
+                        height={225}
+                        loading="lazy"
+                        className="block w-full h-auto aspect-[165/225] object-cover rounded-lg border border-line bg-paper"
+                      />
+                    </figure>
                   )}
-                  <span aria-hidden="true" className="text-muted ms-auto">{isOpen ? "−" : "+"}</span>
-                </button>
-                <div id={panelId} hidden={!isOpen} className="px-2 pb-2">
-                  <p className="m-0">{e.text[locale]}</p>
-                </div>
+                  <div className="min-w-0 grid gap-1">
+                    <p className="m-0 text-sm text-muted flex flex-wrap items-center gap-x-2">
+                      <span dir="ltr" className="font-bold text-leaf-dark tabular-nums"><bdi>{yearText(e)}</bdi></span>
+                      <span className="sr-only sm:not-sr-only">· {block.tracks[ti].label[locale]}</span>
+                    </p>
+                    {m && (
+                      <p className="m-0 text-lg font-bold leading-snug">
+                        {m.name[locale]} <span dir="ltr" className="text-sm font-normal text-muted whitespace-nowrap"><bdi>({m.years})</bdi></span>
+                      </p>
+                    )}
+                    <h4 id={`${block.id}-${e.id}-title`} className={"m-0 leading-snug " + (m ? "font-semibold" : "font-bold text-lg")}>{e.title[locale]}</h4>
+                    <p className="m-0">{e.text[locale]}</p>
+                    {m?.note && <p className="m-0 text-sm font-semibold text-warn">{m.note[locale]}</p>}
+                    {m && <p className="m-0 text-xs text-muted">{t("timeline.imageCredit")}: {m.credit[locale]}</p>}
+                    {teacher && (!e.fromSource || (m && !m.sourceVerified)) && (
+                      <p className="m-0 flex flex-wrap gap-2">
+                        {!e.fromSource && <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-warn-soft text-warn">{t("timeline.added")}</span>}
+                        {m && !m.sourceVerified && <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-warn-soft text-warn">{t("timeline.unverifiedSource")}</span>}
+                      </p>
+                    )}
+                  </div>
+                </article>
               </li>
             </Fragment>
           );

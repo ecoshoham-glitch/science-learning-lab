@@ -198,12 +198,23 @@ test.describe("cell-discovery lesson", () => {
     await expect(page.getByTestId("gap-achromatic")).toHaveText("154 שנים");
     await expect(page.getByRole("img", { name: /מ-1550 עד 1950: 12 אירועים ב-6 שלבים/ })).toBeVisible();
 
-    const bacteria = page.getByTestId("event-bacteria").getByRole("button");
-    await expect(bacteria).toHaveAttribute("aria-expanded", "false");
+    // Cards show year, discovery and description; scientists' cards add a portrait, name and credit.
+    const bacteria = page.getByTestId("event-bacteria");
     await expect(bacteria).toContainText("1676");
-    await bacteria.click();
-    await expect(bacteria).toHaveAttribute("aria-expanded", "true");
-    await expect(page.getByText("ליווינהוק מתאר יצורים קטנים עוד יותר – חיידקים.")).toBeVisible();
+    await expect(bacteria.getByText("ליווינהוק מתאר יצורים קטנים עוד יותר – חיידקים.")).toBeVisible();
+    const schwann = page.getByTestId("event-schwann");
+    await expect(schwann.getByRole("img", { name: /דיוקן|תצלום/ })).toBeVisible();
+    await expect(schwann).toContainText("תיאודור שוואן");
+    await expect(schwann).toContainText("1810–1882");
+    await expect(schwann.getByRole("heading", { name: "גם בעלי חיים בנויים מתאים – תורת התא" })).toBeVisible();
+    await expect(schwann).toContainText("קרדיט לתמונה");
+    const hooke = page.getByTestId("event-hooke-cork");
+    await expect(hooke).toContainText("שחזור אמנותי מודרני");
+    for (const id of ["hooke-cork", "protists", "schleiden", "schwann"]) {
+      const img = page.getByTestId(`event-${id}`).locator("img");
+      await expect(img).toBeVisible();
+      expect(await img.evaluate((el) => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(100);
+    }
 
     // Filter to the tools track: only the four tool events remain.
     await page.getByLabel("כלים וטכנולוגיה").check();
@@ -212,6 +223,7 @@ test.describe("cell-discovery lesson", () => {
     await expect(list.locator('[data-testid^="event-"]')).toHaveCount(12);
     // Additions beyond the transcript are marked only for the teacher.
     await expect(page.getByText("תוספת – לא מהמקור")).toHaveCount(0);
+    await expect(page.getByText("מקור התמונה טרם אומת")).toHaveCount(0);
     await expect(await axeSerious(page)).toEqual([]);
   });
 
@@ -222,6 +234,8 @@ test.describe("cell-discovery lesson", () => {
     await expect(page.getByText("חלק 11 מתוך 13")).toBeVisible();
     await expect(page.getByTestId("event-virchow").getByText("תוספת – לא מהמקור")).toBeVisible();
     await expect(page.getByTestId("event-hooke-cork").getByText("תוספת – לא מהמקור")).toHaveCount(0);
+    await expect(page.getByTestId("event-schleiden").getByText("מקור התמונה טרם אומת")).toBeVisible();
+    await expect(page.getByTestId("event-hooke-cork").getByText("מקור התמונה טרם אומת")).toHaveCount(0);
   });
 
   test("teacher-led: the teacher can show a game's solution to the class", async ({ page }) => {

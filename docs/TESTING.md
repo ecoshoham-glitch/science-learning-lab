@@ -62,6 +62,14 @@ Root cause of the earlier intermittent genetic-code failure found and fixed in 0
   tap opens under the chart (phone); link from the expansion; axe with an expansion open; English.
 - Last run 2026-10-08: unit 88/88; end-to-end 73 passed, 3 skipped by design (hover tests on phone, tap test on desktop).
 
+## Media tests (0.7.0)
+
+- Unit: every image file exists and is a real JPEG/PNG, with credit, alt text and licence; reconstructions
+  carry a note; Free Art License names the artist; unknown media in a timeline is detected.
+- E2E: portraits load (natural width checked), names, years, discovery headings and credits on the cards;
+  "modern reconstruction" note for Hooke; unverified-source flag only in teacher-led mode; axe.
+- Last run 2026-10-08: unit 92/92; end-to-end 73 passed, 3 skipped by design.
+
 ## Not yet verified
 
 - Real iPhone/Safari and Firefox (tests use Chromium only).

@@ -1,0 +1,89 @@
+[
+  {
+    "id": "hooke",
+    "kind": "reconstruction",
+    "file": "/media/people/hooke.jpg",
+    "name": {
+      "he": "רוברט הוק",
+      "en": "Robert Hooke"
+    },
+    "years": "1635–1703",
+    "alt": {
+      "he": "ציור של גבר בשיער ארוך ומתולתל, ליד חלון עם שמיים כחולים, מחזיק קפיץ; על השולחן שעון כיס",
+      "en": "Painting of a man with long curly hair beside a window with blue sky, holding a spring; a pocket watch on the table"
+    },
+    "note": {
+      "he": "שחזור אמנותי מודרני: לא שרד דיוקן של הוק מימיו.",
+      "en": "A modern artistic reconstruction: no portrait of Hooke from his lifetime survives."
+    },
+    "credit": {
+      "he": "ריטה גריר, 2004, לפי תיאורים של בני תקופתו. Free Art License.",
+      "en": "Rita Greer, 2004, based on descriptions by his contemporaries. Free Art License."
+    },
+    "licence": "free-art-license",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:13_Portrait_of_Robert_Hooke.JPG",
+    "sourceVerified": true
+  },
+  {
+    "id": "leeuwenhoek",
+    "kind": "portrait",
+    "file": "/media/people/leeuwenhoek.jpg",
+    "name": {
+      "he": "אנטוני ואן ליווינהוק",
+      "en": "Antonie van Leeuwenhoek"
+    },
+    "years": "1632–1723",
+    "alt": {
+      "he": "דיוקן צבעוני של ליווינהוק בפאה ארוכה ובגלימה חומה-כתומה, יושב ליד שולחן",
+      "en": "Colour portrait of Leeuwenhoek in a long wig and an orange-brown robe, seated at a table"
+    },
+    "credit": {
+      "he": "ציור: יאן ורקולייה, בערך 1673. רייקסמוזיאום, אמסטרדם. נחלת הכלל.",
+      "en": "Painting: Jan Verkolje, c. 1673. Rijksmuseum, Amsterdam. Public domain."
+    },
+    "licence": "public-domain",
+    "sourceUrl": "https://www.rijksmuseum.nl/en/collection/SK-A-957",
+    "sourceVerified": true
+  },
+  {
+    "id": "schleiden",
+    "kind": "portrait",
+    "file": "/media/people/schleiden.jpg",
+    "name": {
+      "he": "מתיאס יאקוב שליידן",
+      "en": "Matthias Jacob Schleiden"
+    },
+    "years": "1804–1881",
+    "alt": {
+      "he": "תחריט צבוע של שליידן, גבר מגולח בחליפה כהה ועניבה",
+      "en": "Coloured engraving of Schleiden, a clean-shaven man in a dark suit and tie"
+    },
+    "credit": {
+      "he": "תחריט מהמאה ה-19 (הצביעה מאוחרת יותר). נחלת הכלל.",
+      "en": "19th-century engraving (later colouring). Public domain."
+    },
+    "licence": "public-domain",
+    "sourceVerified": false
+  },
+  {
+    "id": "schwann",
+    "kind": "portrait",
+    "file": "/media/people/schwann.jpg",
+    "name": {
+      "he": "תיאודור שוואן",
+      "en": "Theodor Schwann"
+    },
+    "years": "1810–1882",
+    "alt": {
+      "he": "תצלום בשחור-לבן של שוואן בגיל מבוגר, עם פאות לחיים ועניבת פרפר",
+      "en": "Black-and-white photograph of Schwann in later life, with side-whiskers and a bow tie"
+    },
+    "credit": {
+      "he": "תצלום מהמאה ה-19. נחלת הכלל.",
+      "en": "19th-century photograph. Public domain."
+    },
+    "licence": "public-domain",
+    "sourceUrl": "https://wellcomecollection.org/works/wtwafh6w",
+    "sourceVerified": false
+  }
+]

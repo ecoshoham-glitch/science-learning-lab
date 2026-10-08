@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { getActivity, getLesson, getSimulation, lessons } from "@/content/registry";
+import { getActivity, getLesson, getMedia, getSimulation, lessons } from "@/content/registry";
+import type { Media } from "@/lib/media/schema";
 import type { SimulationManifest } from "@/lib/simulation/manifest";
 import type { Activity } from "@/lib/activity/schema";
 import type { Lesson } from "@/lib/lesson/schema";
@@ -34,7 +35,14 @@ export default async function LessonPage({ params }: { params: Params }) {
   // Resolve only the library items this lesson references.
   const simulations: Record<string, SimulationManifest> = {};
   const activities: Record<string, Activity> = {};
+  const mediaById: Record<string, Media> = {};
   for (const b of lesson.blocks) {
+    if (b.kind === "timeline") {
+      for (const e of b.events) {
+        const m = e.media ? getMedia(e.media) : undefined;
+        if (m) mediaById[m.id] = m;
+      }
+    }
     if (b.kind !== "simulation") continue;
     const sim = getSimulation(b.simulation.id);
     if (sim) simulations[sim.id] = sim;
@@ -71,7 +79,7 @@ export default async function LessonPage({ params }: { params: Params }) {
         <Provenance lesson={lesson} locale={locale} t={t} />
       </div>
 
-      <LessonPlayer lesson={lesson} locale={locale} simulations={simulations} activities={activities} />
+      <LessonPlayer lesson={lesson} locale={locale} simulations={simulations} activities={activities} media={mediaById} />
     </div>
   );
 }

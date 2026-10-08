@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import type { Lesson, LessonBlock } from "@/lib/lesson/schema";
 import type { SimulationManifest } from "@/lib/simulation/manifest";
 import type { Activity } from "@/lib/activity/schema";
+import type { Media } from "@/lib/media/schema";
 import type { ObservableValues } from "@/lib/simulation/protocol";
 import { SimulationHost } from "@/components/SimulationHost";
 import { ActivityPanel } from "@/components/ActivityPanel";
@@ -22,11 +23,13 @@ export function LessonPlayer({
   locale,
   simulations,
   activities,
+  media = {},
 }: {
   lesson: Lesson;
   locale: "he" | "en";
   simulations: Record<string, SimulationManifest>;
   activities: Record<string, Activity>;
+  media?: Record<string, Media>;
 }) {
   const t = useTranslations("lessons");
   const [mode, setMode] = useState<Mode>(lesson.delivery.modes[0]);
@@ -136,6 +139,7 @@ export function LessonPlayer({
               revealByTeacher={lesson.delivery.teacherLed.revealAnswersByTeacher}
               simulations={simulations}
               activities={activities}
+              media={media}
               onAnswered={(id, option) => setAnswered((a) => ({ ...a, [id]: option }))}
             />
           </>
@@ -186,6 +190,7 @@ function Block({
   revealByTeacher,
   simulations,
   activities,
+  media,
   onAnswered,
 }: {
   block: LessonBlock;
@@ -194,6 +199,7 @@ function Block({
   revealByTeacher: boolean;
   simulations: Record<string, SimulationManifest>;
   activities: Record<string, Activity>;
+  media: Record<string, Media>;
   onAnswered: (blockId: string, option: string) => void;
 }) {
   const t = useTranslations("lessons");
@@ -234,7 +240,7 @@ function Block({
     case "categorize":
       return <Game block={block} locale={locale} teacher={teacher} onChecked={(id) => onAnswered(id, "checked")} />;
     case "timeline":
-      return <TimelineBlock block={block} locale={locale} teacher={teacher} />;
+      return <TimelineBlock block={block} locale={locale} teacher={teacher} media={media} />;
     case "summary":
       return (
         <div className="grid gap-4 max-w-[68ch]">

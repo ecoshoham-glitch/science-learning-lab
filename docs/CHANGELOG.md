@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 – 2026-10-08 (prototype, not released)
+
+- Media library (`docs/MEDIA.md`): self-hosted images with alt text, credit, licence and source status.
+- Timeline events can show a picture. Timeline entries are now cards (picture, year, name and years,
+  discovery, description, credit), following the owner's design; the overview strip jumps to a card.
+- Lesson `cell-discovery` 0.3.0: portraits of Hooke (labelled as a modern reconstruction), Leeuwenhoek,
+  Schleiden and Schwann on their timeline cards.
+
 ## 0.6.0 – 2026-10-08 (prototype, not released)
 
 - Topic maps: every Biology topic opens with a flowchart of its written content. Hover, focus or tap a box

@@ -181,9 +181,10 @@
       "gap": "{years} שנים",
       "added": "תוספת – לא מהמקור",
       "overview": "ציר הזמן כולו, מ-{from} עד {to}: {count} אירועים ב-{stages} שלבים.",
-      "more": "עוד על {title}",
       "stage": "שלב {n}",
-      "legend": "מקרא"
+      "legend": "מקרא",
+      "imageCredit": "קרדיט לתמונה",
+      "unverifiedSource": "מקור התמונה טרם אומת"
     }
   },
   "subjects": {

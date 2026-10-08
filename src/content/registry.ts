@@ -4,6 +4,8 @@ import { lessonSchema, type Lesson } from "@/lib/lesson/schema";
 import { topicMapSchema, type TopicMap } from "@/lib/topic-map/schema";
 import { checkMapStructure } from "@/lib/topic-map/layout";
 import { topics } from "./taxonomy";
+import { mediaSchema, type Media } from "@/lib/media/schema";
+import rawPeople from "./media/people.json";
 
 import enzymeLab from "./simulations/enzyme-lab.json";
 import geneticCode from "./simulations/genetic-code.json";
@@ -35,6 +37,12 @@ const rawLessons: unknown[] = [cellDiscovery, virusesIntro];
 export const simulations: SimulationManifest[] = rawManifests.map((m) => manifestSchema.parse(m));
 export const activities: Activity[] = rawActivities.map((a) => activitySchema.parse(a));
 export const lessons: Lesson[] = rawLessons.map((l) => lessonSchema.parse(l));
+
+export const media: Media[] = (rawPeople as unknown[]).map((m) => mediaSchema.parse(m));
+
+export function getMedia(id: string): Media | undefined {
+  return media.find((m) => m.id === id);
+}
 
 const rawTopicMaps: unknown[] = [mapTheCell, mapCellAndProteins, mapEnzymes, mapVirusesImmunity];
 export const topicMaps: TopicMap[] = rawTopicMaps.map((m) => topicMapSchema.parse(m));
@@ -142,6 +150,9 @@ export function checkLessonReferences(lesson: Lesson): string[] {
         if (!tracks.has(e.track)) problems.push(`block ${block.id}: event ${e.id} has unknown track ${e.track}`);
         if (i > 0 && e.year < block.events[i - 1].year) problems.push(`block ${block.id}: event ${e.id} is out of year order`);
       });
+      for (const e of block.events) {
+        if (e.media && !getMedia(e.media)) problems.push(`block ${block.id}: event ${e.id} uses unknown media ${e.media}`);
+      }
       for (const s of stages) if (!block.events.some((e) => e.stage === s)) problems.push(`block ${block.id}: stage ${s} has no events`);
       // Stages must follow each other in time: a stage cannot start before the previous one starts.
       let lastStage = -1;

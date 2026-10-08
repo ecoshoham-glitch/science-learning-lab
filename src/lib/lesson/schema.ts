@@ -122,6 +122,8 @@ const timelineBlock = z.object({
         track: itemId,
         title: localizedText,
         text: localizedText,
+        /** Optional picture from the media library (e.g. a portrait of the person who made the discovery). */
+        media: itemId.optional(),
         fromSource: z.boolean(),
       }),
     )
