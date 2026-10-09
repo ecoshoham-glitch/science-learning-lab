@@ -24,6 +24,20 @@ Player: `src/components/lesson/LessonPlayer.tsx`. Pages: `/[locale]/lessons`, `/
   tools and ideas) and `events` in year order (year, optional approximate `yearLabel`, stage, track, title,
   text, `fromSource`). Shown as a proportional overview strip (always left-to-right) plus an accessible
   list grouped by stage, with gaps of 40+ years marked. Not scored.
+- Worksheet blocks (assignments):
+  - `fill-table` – students fill a table: `columns` (1–4, `long` for a text area) and `rows`, each with a
+    given `cue` (e.g. a year), an optional `hint` and one cell per column with a model `answer`. Cells with an
+    `accept` list (short answers such as names) are checked automatically and tolerantly (case, spaces,
+    punctuation, niqqud and Hebrew final letters are ignored; a full name containing an accepted surname
+    counts). Other cells are self-assessed against the model answer. A model answer appears only for a cell
+    the student has filled in (or when the teacher shows them to the class in teacher-led mode).
+  - `reflection` – an open, ungraded question with optional sentence starters, a minimum length and a teacher
+    note.
+  Answers are kept by the player for the whole lesson (not saved yet; accounts come later), and the student
+  can copy all answers as plain text to send to the teacher. Validation: unique column and row ids, one cell
+  per column, no unknown columns.
+- A lesson has `type`: `lesson` (default) or `assignment` (a short student task, shown with an "Assignment"
+  badge in topic and lesson lists).
 - Every block records `origin` (`ai-generated`, `teacher`, `library`) and `reviewed`. Unreviewed AI blocks
   are labelled in the UI.
 - Lessons reference library items; they never copy simulation code. `checkLessonReferences` verifies that

@@ -187,6 +187,30 @@
       "unverifiedSource": "Image source not yet verified",
       "openSim": "Open: {title}",
       "closeSim": "Close the viewer"
+    },
+    "answerFirstTask": "Fill in and check the task to continue",
+    "assignment": "Assignment",
+    "worksheet": {
+      "label": "Task – fill in the table",
+      "hint": "Hint",
+      "hideHint": "Hide hint",
+      "right": "Correct",
+      "notYet": "Not yet – check the spelling or the video",
+      "model": "Model answer",
+      "check": "Check my answers",
+      "showModels": "Show model answers to the class",
+      "fillFirst": "Fill in at least one cell to check.",
+      "namesScore": "Correct names: {correct} of {total}",
+      "compare": "Compare what you wrote with the model answers. The wording need not match – what matters is the idea. A model answer appears only in cells you filled in.",
+      "copy": "Copy my answers to send to the teacher",
+      "copied": "Answers copied. Paste them into a message to your teacher.",
+      "copyFailed": "Couldn't copy automatically. Select the text below and copy it.",
+      "reflectionLabel": "Task – reflection",
+      "starters": "You could start with:",
+      "done": "I'm done",
+      "needMore": "Write a little more to finish.",
+      "thanks": "Thank you! You can copy your answers and send them to your teacher.",
+      "teacherNote": "Teacher note"
     }
   },
   "subjects": {

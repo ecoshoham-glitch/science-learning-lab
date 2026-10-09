@@ -22,6 +22,7 @@ import microscopeDiscoveryG10 from "./activities/microscope-discovery-g10.json";
 
 import virusesIntro from "./lessons/viruses-intro.json";
 import cellDiscovery from "./lessons/cell-discovery.json";
+import cellTimelineTask from "./lessons/cell-timeline-task.json";
 
 import mapTheCell from "./topic-maps/the-cell.json";
 import mapCellAndProteins from "./topic-maps/cell-and-proteins.json";
@@ -34,7 +35,7 @@ import mapVirusesImmunity from "./topic-maps/viruses-immunity.json";
  */
 const rawManifests: unknown[] = [enzymeLab, geneticCode, microscopeLens, leeuwenhoek3d, ribosome3d];
 const rawActivities: unknown[] = [enzymeTemperatureG10, enzymePhInquiryG12, mutationTypesG10, virusVariantsG10, microscopeDiscoveryG10];
-const rawLessons: unknown[] = [cellDiscovery, virusesIntro];
+const rawLessons: unknown[] = [cellDiscovery, cellTimelineTask, virusesIntro];
 
 export const simulations: SimulationManifest[] = rawManifests.map((m) => manifestSchema.parse(m));
 export const activities: Activity[] = rawActivities.map((a) => activitySchema.parse(a));
@@ -168,6 +169,16 @@ export function checkLessonReferences(lesson: Lesson): string[] {
         const idx = order.indexOf(e.stage);
         if (idx < lastStage) problems.push(`block ${block.id}: event ${e.id} goes back to an earlier stage`);
         lastStage = Math.max(lastStage, idx);
+      }
+    }
+    if (block.kind === "fill-table") {
+      const cols = block.columns.map((c) => c.id);
+      if (new Set(cols).size !== cols.length) problems.push(`block ${block.id}: duplicate column ids`);
+      const rowIds = block.rows.map((r) => r.id);
+      if (new Set(rowIds).size !== rowIds.length) problems.push(`block ${block.id}: duplicate row ids`);
+      for (const r of block.rows) {
+        for (const c of cols) if (!r.cells[c]) problems.push(`block ${block.id}: row ${r.id} has no cell for column ${c}`);
+        for (const k of Object.keys(r.cells)) if (!cols.includes(k)) problems.push(`block ${block.id}: row ${r.id} has unknown column ${k}`);
       }
     }
     if (block.kind !== "simulation") continue;

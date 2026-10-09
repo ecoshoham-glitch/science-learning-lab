@@ -4,6 +4,7 @@ Newest first. "Owner" = project owner approval.
 
 | Date | Decision | Status |
 | --- | --- | --- |
+| 2026-10-09 | Worksheet blocks (`fill-table`, `reflection`) are lesson data. Short answers (names) are checked tolerantly by a pure function; open answers are self-assessed against model answers, which appear only for cells the student filled in. Answers live in the player until student accounts exist; students copy them as text to send to the teacher. An assignment is a lesson with `type: "assignment"`, not a new content type | Implemented, awaiting owner review |
 | 2026-10-09 | 3D models may use three.js, bundled with esbuild into a classic script inside the package (sandboxed opaque-origin frames cannot load ES modules); no CDN, no network. Sources in `sims-src/`, bundle committed with the immutable package | Implemented |
 | 2026-10-09 | End-to-end tests run Chromium with SwiftShader (software WebGL) so 3D models are really rendered and checked; a WebGL-less run checks the fallback | Implemented |
 | 2026-10-09 | Leeuwenhoek's microscope: the schematic drawing was replaced by a 3D reconstruction (photo proportions + documented parts) shown from the timeline card, beside the real photo | Owner request |

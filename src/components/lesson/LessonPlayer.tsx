@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import type { Lesson, LessonBlock } from "@/lib/lesson/schema";
 import type { SimulationManifest } from "@/lib/simulation/manifest";
@@ -11,6 +11,8 @@ import { SimulationHost } from "@/components/SimulationHost";
 import { ActivityPanel } from "@/components/ActivityPanel";
 import { Game } from "@/components/lesson/GameBlocks";
 import { TimelineBlock } from "@/components/lesson/TimelineBlock";
+import { FillTableBlock, ReflectionBlock, type WorkStore } from "@/components/lesson/WorksheetBlocks";
+import { answersAsText, type ExportRow } from "@/lib/lesson/worksheet";
 
 type Mode = "self-paced" | "teacher-led";
 
@@ -36,14 +38,41 @@ export function LessonPlayer({
   const [index, setIndex] = useState(0);
   const [finished, setFinished] = useState(false);
   const [answered, setAnswered] = useState<Record<string, string>>({});
+  const [work, setWork] = useState<Record<string, Record<string, string>>>({});
   const total = lesson.blocks.length;
   const block = lesson.blocks[index];
 
+  // Worksheet answers live here so they survive moving between parts (and the copy button sees them all).
+  const store: WorkStore = useMemo(
+    () => ({
+      get: (b, k) => work[b]?.[k] ?? "",
+      set: (b, k, v) => setWork((w) => ({ ...w, [b]: { ...w[b], [k]: v } })),
+      exportText: () => {
+        const rows: ExportRow[] = [];
+        let reflection: { prompt: string; text: string } | undefined;
+        for (const b of lesson.blocks) {
+          if (b.kind === "fill-table") {
+            for (const r of b.rows) {
+              rows.push({
+                label: r.cue[locale],
+                fields: b.columns.map((c) => ({ label: c.label[locale], value: work[b.id]?.[`${r.id}.${c.id}`] ?? "" })),
+              });
+            }
+          }
+          if (b.kind === "reflection") reflection = { prompt: b.prompt[locale], text: work[b.id]?.text ?? "" };
+        }
+        return answersAsText(lesson.title[locale], rows, reflection);
+      },
+    }),
+    [work, lesson, locale],
+  );
+
   const isGame = block.kind === "sequence" || block.kind === "match" || block.kind === "categorize";
+  const isTask = block.kind === "fill-table" || block.kind === "reflection";
   const mustAnswer =
     mode === "self-paced" &&
     lesson.delivery.selfPaced.requireAnswerBeforeNext &&
-    (block.kind === "question" || isGame) &&
+    (block.kind === "question" || isGame || isTask) &&
     !answered[block.id];
 
   const go = useCallback(
@@ -140,6 +169,7 @@ export function LessonPlayer({
               simulations={simulations}
               activities={activities}
               media={media}
+              store={store}
               onAnswered={(id, option) => setAnswered((a) => ({ ...a, [id]: option }))}
             />
           </>
@@ -165,7 +195,7 @@ export function LessonPlayer({
           >
             {t("next")}
           </button>
-          {mustAnswer && <span id="must-answer" className="text-sm text-muted">{isGame ? t("answerFirstGame") : t("answerFirst")}</span>}
+          {mustAnswer && <span id="must-answer" className="text-sm text-muted">{isGame ? t("answerFirstGame") : isTask ? t("answerFirstTask") : t("answerFirst")}</span>}
         </div>
       )}
     </div>
@@ -191,6 +221,7 @@ function Block({
   simulations,
   activities,
   media,
+  store,
   onAnswered,
 }: {
   block: LessonBlock;
@@ -200,6 +231,7 @@ function Block({
   simulations: Record<string, SimulationManifest>;
   activities: Record<string, Activity>;
   media: Record<string, Media>;
+  store: WorkStore;
   onAnswered: (blockId: string, option: string) => void;
 }) {
   const t = useTranslations("lessons");
@@ -241,6 +273,10 @@ function Block({
       return <Game block={block} locale={locale} teacher={teacher} onChecked={(id) => onAnswered(id, "checked")} />;
     case "timeline":
       return <TimelineBlock block={block} locale={locale} teacher={teacher} media={media} simulations={simulations} />;
+    case "fill-table":
+      return <FillTableBlock block={block} locale={locale} teacher={teacher} store={store} onChecked={(id) => onAnswered(id, "checked")} />;
+    case "reflection":
+      return <ReflectionBlock block={block} locale={locale} teacher={teacher} store={store} onDone={(id) => onAnswered(id, "done")} />;
     case "summary":
       return (
         <div className="grid gap-4 max-w-[68ch]">

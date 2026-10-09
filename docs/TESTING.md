@@ -80,6 +80,15 @@ Root cause of the earlier intermittent genetic-code failure found and fixed in 0
   no-WebGL run shows the photo fallback.
 - Last run 2026-10-09: unit 104/104; end-to-end 79 passed, 3 skipped by design.
 
+## Assignment tests (0.9.0)
+
+- Unit: answer normalization (case, punctuation, niqqud, final letters), name variants accepted and wrong
+  names rejected, export text, the cell assignment's structure, broken tables detected.
+- E2E (desktop + phone): listed in the cell topic with a badge, "next" blocked until checked, hints, name
+  score, model answers only for filled cells, answers kept when moving back, reflection starters and minimum
+  length, copy answers, teacher-led "show model answers", axe.
+- Last run 2026-10-09: unit 114/114; end-to-end 87 passed, 3 skipped by design.
+
 ## Not yet verified
 
 - Real iPhone/Safari and Firefox (tests use Chromium only).

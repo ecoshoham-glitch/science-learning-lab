@@ -1,0 +1,382 @@
+{
+  "lessonVersion": 1,
+  "id": "cell-timeline-task",
+  "type": "assignment",
+  "version": "0.1.0",
+  "title": {
+    "he": "משימה: ציר הזמן של גילוי התא",
+    "en": "Assignment: the timeline of the discovery of the cell"
+  },
+  "summary": {
+    "he": "אחרי צפייה בסרטון על גילוי התאים: ממלאים ציר זמן של ארבעה חוקרים – מי הוא, במה עסק ואיך גילה את התאים – וכותבים מה הסרטון חידש לכם.",
+    "en": "After watching the video on the discovery of cells: fill in a timeline of four researchers – who they were, what they did and how they discovered cells – and write what the video taught you."
+  },
+  "audience": {
+    "he": "כיתה י', משימת סיכום לסרטון, כ-20 דקות",
+    "en": "Grade 10, a follow-up task to the video, about 20 minutes"
+  },
+  "subject": "biology",
+  "grades": {
+    "from": 10,
+    "to": 12
+  },
+  "durationMinutes": 20,
+  "objectives": [
+    {
+      "he": "לזהות את החוקרים המרכזיים בגילוי התא ולסדר אותם על ציר הזמן",
+      "en": "Identify the key researchers in the discovery of the cell and place them on the timeline"
+    },
+    {
+      "he": "לתאר במילים שלכם במה עסק כל חוקר ואיך הגיע לתגלית",
+      "en": "Describe in your own words what each researcher did and how he reached his discovery"
+    },
+    {
+      "he": "לנסח מה למדתם מהסרטון ואיזו שאלה נשארה פתוחה",
+      "en": "Put into words what you learned from the video and which question is still open"
+    }
+  ],
+  "keyConcepts": [
+    "cell",
+    "cell-theory",
+    "microscope"
+  ],
+  "misconceptions": [
+    {
+      "he": "\"הוק ראה תאים חיים\" – בשעם הוא ראה דפנות של תאים מתים, חללים ריקים.",
+      "en": "\"Hooke saw living cells\" – in cork he saw the walls of dead cells, empty spaces."
+    },
+    {
+      "he": "\"מיקרוסקופ עם הרבה עדשות תמיד מגדיל יותר\" – בתקופה ההיא עדשת כדור אחת וזעירה הגדילה פי חמישה יותר.",
+      "en": "\"A microscope with many lenses always magnifies more\" – at the time a single tiny ball lens magnified five times more."
+    }
+  ],
+  "curriculum": {
+    "status": "suggested",
+    "note": {
+      "he": "הצעה של ה-AI בלבד – מקביל לנושא \"התא – יחידת המבנה והתפקוד\" ולהיסטוריה של המדע. טרם נבדק מול תוכנית הלימודים הרשמית.",
+      "en": "AI suggestion only – parallels the topic \"the cell – the unit of structure and function\" and the history of science. Not yet checked against the official curriculum."
+    }
+  },
+  "delivery": {
+    "modes": [
+      "self-paced",
+      "teacher-led"
+    ],
+    "selfPaced": {
+      "requireAnswerBeforeNext": true
+    },
+    "teacherLed": {
+      "revealAnswersByTeacher": true
+    }
+  },
+  "provenance": {
+    "source": "transcript",
+    "transcript": {
+      "label": {
+        "he": "תמלול סרטון על גילוי התאים (89 שורות)",
+        "en": "Transcript of a video on the discovery of cells (89 lines)"
+      },
+      "sha256": "863500ffc6bbe6701157c82841e7e91829eb65f8ce055cccc7f569878ba5488b",
+      "characters": 5959
+    },
+    "pipeline": {
+      "rights": {
+        "status": "pending",
+        "note": {
+          "he": "נדרש אישור המורה שמותר להשתמש בתמלול. נראה שהוא מסרטון חיצוני שפורסם; השיעור נכתב במילים מקוריות ואינו מעתיק את הטקסט.",
+          "en": "The teacher must confirm the right to use the transcript. It appears to come from a published external video; the lesson is written in original words and does not copy its text."
+        }
+      },
+      "privacy": {
+        "status": "done",
+        "note": {
+          "he": "סינון אוטומטי: 0 פרטים הוסרו. השמות בתמלול הם של דמויות היסטוריות בלבד. אין קולות של תלמידים.",
+          "en": "Automatic screening: 0 details removed. The names in the transcript are historical figures only. No student voices."
+        }
+      },
+      "analysis": {
+        "status": "done",
+        "note": {
+          "he": "תיקונים ותוספות: מהוק (1665) עד שליידן ושוואן (1838–1839) עברו כ-170 שנה, לא 150. נוספו: וירכוב (1855) \"כל תא נוצר מתא\", וההבהרה שהוק ראה תאים מתים. הושמטו: אנקדוטה שאינה מתאימה לגיל, והטענה שליווינהוק דגמן לציורי ורמיר (השערה שלא הוכחה).",
+          "en": "Corrections and additions: about 170 years passed from Hooke (1665) to Schleiden and Schwann (1838–1839), not 150. Added: Virchow (1855) \"every cell from a cell\", and the clarification that Hooke saw dead cells. Omitted: an anecdote unsuitable for the age group, and the claim that Leeuwenhoek modelled for Vermeer's paintings (an unproven hypothesis)."
+        }
+      },
+      "outline": {
+        "status": "done",
+        "note": {
+          "he": "מבנה המשימה נקבע על ידי המורה: ציר זמן עם שם, עיסוק ודרך הגילוי, ושאלה \"מה הסרטון חידש לכם\".",
+          "en": "The task structure was set by the teacher: a timeline with name, occupation and method of discovery, and the question \"what did the video teach you\"."
+        }
+      },
+      "generation": {
+        "status": "done",
+        "note": {
+          "he": "נוצר בעזרת AI מאותו תמלול כמו שיעור \"גילוי התא\". התשובות לדוגמה נבדקו מול מקורות היסטוריים; ממתין לבדיקת המורה.",
+          "en": "Generated with AI from the same transcript as the \"Discovering the cell\" lesson. Model answers were checked against historical sources; awaiting teacher review."
+        }
+      },
+      "teacherReview": {
+        "status": "pending",
+        "note": {
+          "he": "ממתין לבדיקה ולעריכה של המורה.",
+          "en": "Waiting for the teacher to review and edit."
+        }
+      },
+      "contentReview": {
+        "status": "pending",
+        "note": {
+          "he": "נדרשת בדיקת תוכן לפני פרסום ציבורי.",
+          "en": "Content review is required before public publication."
+        }
+      }
+    }
+  },
+  "blocks": [
+    {
+      "id": "instructions",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "kind": "explanation",
+      "title": {
+        "he": "לפני שמתחילים",
+        "en": "Before you start"
+      },
+      "body": [
+        {
+          "he": "המשימה הזאת באה אחרי הצפייה בסרטון על גילוי התאים.",
+          "en": "This task follows the video on the discovery of cells."
+        },
+        {
+          "he": "בחלק הראשון תמלאו ציר זמן: לכל שנה – שם הממציא או המדען, במה הוא עסק, והדרך שבה גילה את התאים. כתבו במילים שלכם. אם נתקעתם – יש רמז בכל שורה.",
+          "en": "In the first part you will fill in a timeline: for each year – the name of the inventor or scientist, what he did, and how he discovered cells. Write in your own words. If you get stuck, every row has a hint."
+        },
+        {
+          "he": "בחלק השני תכתבו מה הסרטון חידש לכם. בסוף אפשר להעתיק את כל התשובות ולשלוח למורה.",
+          "en": "In the second part you will write what the video taught you. At the end you can copy all your answers and send them to your teacher."
+        }
+      ]
+    },
+    {
+      "id": "timeline-table",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "kind": "fill-table",
+      "title": {
+        "he": "מלאו את ציר הזמן",
+        "en": "Fill in the timeline"
+      },
+      "prompt": {
+        "he": "לכל שנה על ציר הזמן מלאו: 1. שם הממציא או המדען 2. במה הוא עסק 3. הדרך שבה גילה את התאים. השמות נבדקים אוטומטית; את שאר התשובות תשוו לתשובה לדוגמה.",
+        "en": "For each year on the timeline fill in: 1. the name of the inventor or scientist 2. what he did 3. how he discovered cells. Names are checked automatically; compare the other answers with the model answer."
+      },
+      "columns": [
+        {
+          "id": "name",
+          "label": {
+            "he": "שם הממציא או המדען",
+            "en": "Name of the inventor or scientist"
+          },
+          "long": false
+        },
+        {
+          "id": "occupation",
+          "label": {
+            "he": "במה הוא עסק?",
+            "en": "What did he do?"
+          },
+          "long": false
+        },
+        {
+          "id": "method",
+          "label": {
+            "he": "הדרך שבה גילה את התאים",
+            "en": "How he discovered cells"
+          },
+          "long": true
+        }
+      ],
+      "rows": [
+        {
+          "id": "hooke",
+          "cue": {
+            "he": "1665",
+            "en": "1665"
+          },
+          "hint": {
+            "he": "ראו בסרטון: מי הסתכל על פרוסת שעם?",
+            "en": "In the video: who looked at a slice of cork?"
+          },
+          "cells": {
+            "name": {
+              "answer": {
+                "he": "רוברט הוק",
+                "en": "Robert Hooke"
+              },
+              "accept": [
+                "הוק",
+                "hooke"
+              ]
+            },
+            "occupation": {
+              "answer": {
+                "he": "מדען אנגלי – חוקר טבע ומדען ניסויי, שבנה מכשירים מדעיים",
+                "en": "An English scientist – a natural philosopher and experimenter who built scientific instruments"
+              }
+            },
+            "method": {
+              "answer": {
+                "he": "הסתכל על פרוסה דקה של שעם במיקרוסקופ מורכב (כמה עדשות, הגדלה של בערך פי 50). ראה חללים קטנים כמו בחלת דבש וקרא להם \"תאים\". אלה היו דפנות של תאים מתים.",
+                "en": "He looked at a thin slice of cork through a compound microscope (several lenses, about ×50). He saw small spaces like a honeycomb and called them \"cells\". These were the walls of dead cells."
+              }
+            }
+          }
+        },
+        {
+          "id": "leeuwenhoek",
+          "cue": {
+            "he": "שנות ה-70 של המאה ה-17",
+            "en": "1670s"
+          },
+          "hint": {
+            "he": "סוחר בדים מהולנד שליטש עדשות בעצמו",
+            "en": "A Dutch cloth merchant who made his own lenses"
+          },
+          "cells": {
+            "name": {
+              "answer": {
+                "he": "אנטוני ואן ליווינהוק",
+                "en": "Antonie van Leeuwenhoek"
+              },
+              "accept": [
+                "ליווינהוק",
+                "לוונהוק",
+                "ליוונהוק",
+                "לייוונהוק",
+                "leeuwenhoek",
+                "levenhuk"
+              ]
+            },
+            "occupation": {
+              "answer": {
+                "he": "סוחר בדים מהעיר דלפט בהולנד – לא מדען מקצועי",
+                "en": "A cloth merchant from Delft in the Netherlands – not a professional scientist"
+              }
+            },
+            "method": {
+              "answer": {
+                "he": "בנה מיקרוסקופ עם עדשה אחת – כדור זכוכית זעיר – שהגדיל כ-250 ויותר. הסתכל על טיפת מים מאגם וראה בה יצורים חד-תאיים זעירים שזזים; מאוחר יותר ראה גם חיידקים.",
+                "en": "He built a microscope with a single lens – a tiny glass ball – that magnified about ×250 or more. He looked at a drop of lake water and saw tiny single-celled organisms moving; later he also saw bacteria."
+              }
+            }
+          }
+        },
+        {
+          "id": "schleiden",
+          "cue": {
+            "he": "1838",
+            "en": "1838"
+          },
+          "hint": {
+            "he": "חוקר גרמני שבדק צמחים",
+            "en": "A German researcher who studied plants"
+          },
+          "cells": {
+            "name": {
+              "answer": {
+                "he": "מתיאס יאקוב שליידן",
+                "en": "Matthias Jakob Schleiden"
+              },
+              "accept": [
+                "שליידן",
+                "שלידן",
+                "schleiden"
+              ]
+            },
+            "occupation": {
+              "answer": {
+                "he": "בוטנאי – חקר צמחים",
+                "en": "A botanist – he studied plants"
+              }
+            },
+            "method": {
+              "answer": {
+                "he": "בדק במיקרוסקופ רקמות של צמחים שונים (עלים, גבעולים, שורשים) ומצא שכולן בנויות מתאים, ולכל תא יש גרעין.",
+                "en": "He examined tissues of many plants (leaves, stems, roots) under the microscope and found they are all made of cells, each with a nucleus."
+              }
+            }
+          }
+        },
+        {
+          "id": "schwann",
+          "cue": {
+            "he": "1839",
+            "en": "1839"
+          },
+          "hint": {
+            "he": "חוקר גרמני שבדק בעלי חיים, שנה אחרי שליידן",
+            "en": "A German researcher who studied animals, a year after Schleiden"
+          },
+          "cells": {
+            "name": {
+              "answer": {
+                "he": "תיאודור שוואן",
+                "en": "Theodor Schwann"
+              },
+              "accept": [
+                "שוואן",
+                "שוון",
+                "שואן",
+                "schwann"
+              ]
+            },
+            "occupation": {
+              "answer": {
+                "he": "זואולוג ופיזיולוג – חקר בעלי חיים",
+                "en": "A zoologist and physiologist – he studied animals"
+              }
+            },
+            "method": {
+              "answer": {
+                "he": "בדק במיקרוסקופ רקמות של בעלי חיים ומצא גם בהן תאים עם גרעין. יחד עם שליידן הסיק שכל היצורים החיים בנויים מתאים – תורת התא.",
+                "en": "He examined animal tissues under the microscope and found cells with nuclei there too. Together with Schleiden he concluded that all living things are made of cells – cell theory."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "what-was-new",
+      "origin": "ai-generated",
+      "reviewed": false,
+      "kind": "reflection",
+      "title": {
+        "he": "מה הסרטון חידש לכם?",
+        "en": "What did the video teach you?"
+      },
+      "prompt": {
+        "he": "כתבו 2–3 משפטים: מה חדש למדתם מהסרטון? מה הפתיע אתכם?",
+        "en": "Write 2–3 sentences: what new things did you learn from the video? What surprised you?"
+      },
+      "starters": [
+        {
+          "he": "לא ידעתי ש…",
+          "en": "I didn't know that…"
+        },
+        {
+          "he": "הופתעתי ש…",
+          "en": "I was surprised that…"
+        },
+        {
+          "he": "שאלה שנשארה לי…",
+          "en": "A question I still have…"
+        }
+      ],
+      "minChars": 25,
+      "teacherNote": {
+        "he": "אין תשובה אחת נכונה. כדאי לאסוף כמה תשובות לדיון כיתתי, ולהתייחס לשאלות שנשארו פתוחות – הן פתיחה טובה לשיעור הבא על מבנה התא.",
+        "en": "There is no single right answer. Collect a few answers for a class discussion, and address the open questions – they are a good opening for the next lesson on cell structure."
+      }
+    }
+  ]
+}

@@ -68,6 +68,9 @@ export default async function SubjectPage({ params }: { params: Params }) {
                       {tLessons.map((l) => (
                         <li key={l.id} className="bg-surface border border-line rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3">
                           <span>
+                            {l.type === "assignment" && (
+                              <span className="inline-block me-2 mb-1 text-xs font-bold px-2.5 py-1 rounded-full bg-leaf text-white">{tl("assignment")}</span>
+                            )}
                             <Link href={`/lessons/${l.id}`} className="font-semibold text-ink no-underline hover:underline">{l.title[locale]}</Link>
                             <span className="block text-sm text-muted">{l.audience[locale]}</span>
                           </span>

@@ -36,7 +36,7 @@ test.describe("topic: the cell – the unit of life", () => {
     await page.goto("/he/subjects/biology");
     await expect(page.getByRole("heading", { level: 3 }).first()).toHaveText("התא – יחידת החיים");
     const topic = page.getByRole("region", { name: "התא – יחידת החיים" });
-    await expect(topic.getByRole("link", { name: /גילוי התא/ })).toBeVisible();
+    await expect(topic.getByRole("link", { name: /^גילוי התא/ })).toBeVisible();
     await expect(topic.getByRole("heading", { name: "המיקרוסקופ של ליווינהוק", exact: true })).toBeVisible();
     await expect(topic.getByRole("heading", { name: "המיקרוסקופ של ליווינהוק בתלת-ממד" })).toBeVisible();
   });

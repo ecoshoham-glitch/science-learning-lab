@@ -43,6 +43,9 @@ export default async function LessonsPage({ params }: { params: Promise<{ locale
                   </h2>
                   <p className="m-0 text-muted max-w-[70ch]">{l.summary[locale]}</p>
                   <div className="flex flex-wrap gap-2 mt-3">
+                    {l.type === "assignment" && (
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-leaf text-white">{t("assignment")}</span>
+                    )}
                     {l.provenance.source === "transcript" && (
                       <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-leaf-tint text-leaf-dark">{t("fromTranscript")}</span>
                     )}

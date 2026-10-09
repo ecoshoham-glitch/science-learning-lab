@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.9.0 – 2026-10-09 (prototype, not released)
+
+- New assignment in the topic "the cell – the unit of life": `cell-timeline-task` – after the video on the
+  discovery of cells, students fill a timeline (1665, 1670s, 1838, 1839) with the name of the inventor or
+  scientist, what he did and how he discovered cells, then write what the video taught them. Names are
+  checked automatically; other answers are compared with model answers; hints per row; answers can be
+  copied to send to the teacher. Teacher-led mode shows the model answers to the class.
+- New lesson block kinds `fill-table` and `reflection`, and lesson `type: "assignment"` with a badge.
+
 ## 0.8.1 – 2026-10-09 (prototype, not released)
 
 - Media library: real micrographs supplied by the owner, digitally coloured and credited – blood cells (NCI,

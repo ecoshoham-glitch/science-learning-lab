@@ -137,6 +137,43 @@ export function eventMedia(e: { media?: string | string[] }): string[] {
   return e.media === undefined ? [] : Array.isArray(e.media) ? e.media : [e.media];
 }
 
+/**
+ * Worksheet: students fill a table. Each row has a given cue (e.g. a year) and one cell per column.
+ * `accept` (short answers such as names) is checked automatically and tolerantly; otherwise the
+ * student compares with the model `answer` after trying (self-assessment).
+ */
+const fillTableBlock = z.object({
+  ...blockMeta,
+  kind: z.literal("fill-table"),
+  title: localizedText,
+  prompt: localizedText,
+  columns: z.array(z.object({ id: itemId, label: localizedText, long: z.boolean() })).min(1).max(4),
+  rows: z
+    .array(
+      z.object({
+        id: itemId,
+        cue: localizedText,
+        hint: localizedText.optional(),
+        cells: z.record(
+          itemId,
+          z.object({ answer: localizedText, accept: z.array(z.string().min(2)).optional() }),
+        ),
+      }),
+    )
+    .min(1),
+});
+
+/** An open question with no single right answer (e.g. "what was new to you?"). Not graded. */
+const reflectionBlock = z.object({
+  ...blockMeta,
+  kind: z.literal("reflection"),
+  title: localizedText,
+  prompt: localizedText,
+  starters: z.array(localizedText).max(5),
+  minChars: z.number().int().min(1).max(500),
+  teacherNote: localizedText.optional(),
+});
+
 export const GAME_KINDS = ["sequence", "match", "categorize"] as const;
 
 export const lessonBlockSchema = z.discriminatedUnion("kind", [
@@ -149,6 +186,8 @@ export const lessonBlockSchema = z.discriminatedUnion("kind", [
   matchBlock,
   categorizeBlock,
   timelineBlock,
+  fillTableBlock,
+  reflectionBlock,
 ]);
 export type LessonBlock = z.infer<typeof lessonBlockSchema>;
 
@@ -160,6 +199,8 @@ const pipelineStep = z.object({
 export const lessonSchema = z.object({
   lessonVersion: z.literal(1),
   id: z.string().regex(/^[a-z0-9-]+$/),
+  /** "assignment": a short task for students (shown with its own badge); default "lesson". */
+  type: z.enum(["lesson", "assignment"]).default("lesson"),
   version: z.string().regex(/^\d+\.\d+\.\d+$/),
   title: localizedText,
   summary: localizedText,

@@ -63,7 +63,10 @@ export default async function LessonPage({ params }: { params: Params }) {
         <h1 className="text-3xl sm:text-4xl font-semibold m-0 max-w-[30ch]">{lesson.title[locale]}</h1>
         <p className="text-muted m-0">{lesson.audience[locale]}</p>
         <div className="flex flex-wrap gap-2">
-          {lesson.provenance.source === "transcript" && (
+          {lesson.type === "assignment" && (
+                      <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-leaf text-white">{t("assignment")}</span>
+                    )}
+                    {lesson.provenance.source === "transcript" && (
             <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-leaf-tint text-leaf-dark">{t("fromTranscript")}</span>
           )}
           {lesson.provenance.pipeline.contentReview.status !== "done" && (
